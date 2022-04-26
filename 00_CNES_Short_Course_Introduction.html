@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Guillaume Eynard-Bontemps, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
-  <meta name="dcterms.date" content="2022-02-08">
-  <title>OBD Data Distribution Course</title>
+  <meta name="dcterms.date" content="2022-04-08">
+  <title>CNES Big Data Processing &amp; Distribution Course</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,10 +30,11 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">OBD Data Distribution Course</h1>
+  <h1 class="title">CNES Big Data Processing &amp; Distribution
+Course</h1>
   <p class="author">Guillaume Eynard-Bontemps, CNES (Centre National
 d’Etudes Spatiales - French Space Agency)</p>
-  <p class="date">2022-02-08</p>
+  <p class="date">2022-04-08</p>
 </section>
 
 <section>
@@ -44,14 +45,15 @@ d’Etudes Spatiales - French Space Agency)</p>
 <section id="course-overview" class="slide level2">
 <h2>Course Overview</h2>
 <ul>
-<li>Data Distribution &amp; Big Data Processing</li>
+<li>Big Data Processing &amp; Distribution</li>
 </ul>
 <p>Harnessing the complexity of large amounts of data is a challenge in
 itself.</p>
 <p>But Big Data processing is more than that: originally characterized
 by the 3 Vs of Volume, Velocity and Variety, the concepts popularized by
-Hadoop and Google require dedicated computing solutions (both software
-and infrastructure), which will be explored in this module.</p>
+Hadoop and Google require dedicated computing and storage solutions
+(both software and infrastructure), which will be explored in this
+module.</p>
 </section>
 <section id="objectives" class="slide level2">
 <h2>Objectives</h2>
@@ -61,11 +63,11 @@ and infrastructure), which will be explored in this module.</p>
 computing architectures (HPC, Big Data, Cloud, CPU vs GPGPU)</li>
 <li>Implement the distribution of simple operations via the Map/Reduce
 principle in PySpark</li>
-<li>Understand the principle of Kubernetes</li>
-<li>Deploy a Big Data Processing Platform on the Cloud</li>
-<li>Implement the distribution of data wrangling/cleaning and training
-machine learning algorithms using PyData stack, Jupyter notebooks and
-Dask</li>
+<li>Understand the principle of Kubernetes and object storage</li>
+<li>Deploy a Big Data Processing Platform (Pangeo) on the Cloud</li>
+<li>Either implement the distribution of data wrangling/cleaning and
+training machine learning algorithms using Dask</li>
+<li>Or implement a NDVI processing at scale using Pangeo platform.</li>
 </ul>
 </section>
 <section id="about-myself" class="slide level2"
@@ -93,7 +95,7 @@ style="color:white">About myself</h2>
 <p>What is this course module main subject?</p>
 <ul>
 <li>Answer A: Cloud computing</li>
-<li>Answer B: Data Distribution</li>
+<li>Answer B: Data Distribution &amp; Processing</li>
 <li>Answer C: Machine Learning</li>
 </ul>
 <figure>
@@ -110,60 +112,89 @@ alt="Answer" />
 <h1>Program</h1>
 
 </section>
-<section id="big-data-distributed-computing-3h" class="slide level2">
-<h2>Big Data &amp; Distributed Computing (3h)</h2>
+<section id="big-data-distributed-computing-3.5h" class="slide level2">
+<h2>Big Data &amp; Distributed Computing (3.5h)</h2>
 <ul>
-<li>Introduction to Big Data and its ecosystem (1h)
+<li><a href="01_Introduction_Big_Data.html">Introduction to Big Data and
+its ecosystem (45min)</a>
 <ul>
 <li>What is Big Data?</li>
 <li>Legacy “Big Data” ecosystem</li>
 <li>Big Data use cases</li>
 <li>Big Data to Machine Learning</li>
 </ul></li>
-<li>Big Data platforms, Hadoop &amp; Beyond (2h)
+<li><a href="02_Big_Data_Platforms.html">Big Data platforms, Hadoop, HPC
+&amp; Beyond (1h45min)</a>
 <ul>
-<li>Hadoop, HDFS and MapReduce,</li>
+<li>Hadoop, HDFS and MapReduce</li>
 <li>Datalakes, Data Pipelines</li>
+<li>HPC Platforms Architecture</li>
 <li>From HPC to Big Data to Cloud and High Performance Data
 Analytics</li>
 <li>BI vs Big Data</li>
 <li>Hadoop legacy: Spark, Dask, Object Storage …</li>
 </ul></li>
-</ul>
-</section>
-<section id="spark-3.5h" class="slide level2">
-<h2>Spark (3.5h)</h2>
+<li><a href="03_Spark_Introduction.html">Spark</a>
 <ul>
-<li>Spark Introduction (1h)</li>
-<li>Play with MapReduce through Spark (Notebook on small datasets)
-(2.5h)</li>
-</ul>
-</section>
-<section id="kubernetes-dask-3.5h" class="slide level2">
-<h2>Kubernetes &amp; Dask (3.5h)</h2>
-<ul>
-<li>Containers Orchestration (1h)
-<ul>
-<li>Kubernetes &amp; CaaS &amp; PaaS (Databricks, Coiled)</li>
-<li>Play with Kubernetes (if we have time)</li>
+<li>Spark Introduction (30min)</li>
+<li>Exercise: Play with MapReudce through Spark (30min)</li>
 </ul></li>
-<li>Dask Presentation (1h)</li>
-<li>Dask Tutorial (1.5h)</li>
 </ul>
 </section>
-<section id="evaluation-daskhub-dask-preprocess-ml-training-6-or-7h"
-class="slide level2">
-<h2>Evaluation: DaskHub, Dask preprocess, ML training (6 or 7h)</h2>
+<section id="cloud-kubernetes-object-stores-3.5h" class="slide level2">
+<h2>Cloud, Kubernetes &amp; Object stores (3.5h)</h2>
 <ul>
-<li>Deploy a Data processing platform on the Cloud based on Kubernetes
-and Dask (1.5h)
+<li><a href="10_Cloud_Computing.html">The Cloud in 30 minutes
+(30min)</a>
+<ul>
+<li>What’s the Cloud, Virtualization</li>
+<li>Cloud history, layers, Engines</li>
+<li>Usage revolution and new Data processing standard</li>
+</ul></li>
+<li><a href="12_OrchestrationKubernetes.html">Containers Orchestration
+(1h)</a>
+<ul>
+<li>Container orchestration and Kubernetes</li>
+<li>Processing Platform over Kubernetes (Databricks, Coiled)</li>
+</ul></li>
+<li><a href="14_ObjectStorage.html">Object storage (30min)</a>
+<ul>
+<li>Object storage concepts: POSIX vs Object</li>
+<li>Object storage architecture</li>
+<li>Processing tools interfaces, Cloud Optimized files</li>
+</ul></li>
+<li><a href="13_Dask_On_Cloud.html">Deploy a Data processing platform on
+the Cloud based on Kubernetes and Dask (1.5h)</a>
 <ul>
 <li>Exercise: DaskHub or Dask Kubernetes or Pangeo</li>
 </ul></li>
-<li>Clean big amounts of data using Dask in the cloud (2h)</li>
-<li>Train machine learning models in parallel (hyper parameter search)
-(2.5h)</li>
-<li>Notebook with cell codes to fill or answers to give</li>
+</ul>
+</section>
+<section
+id="python-ecosystem-for-data-processing-and-dask-at-scale-3.5h"
+class="slide level2">
+<h2>Python ecosystem for data processing and Dask at scale (3.5h)</h2>
+<ul>
+<li><a href="21_Python_Data_Processing.html">The rise of the Python
+ecosystem for Data Processing (1h)</a>
+<ul>
+<li>Data Science programming languages</li>
+<li>Pydata stack (Pandas, Numpy, Matlplotlib, Jupyter)</li>
+<li>Distributed and sctientific processing (Dask, PySpark)</li>
+<li>Data vizualisation (Seaborn, Plotly, Pyviz)</li>
+<li>Machine and Deep Learning (Sickit Learn, TensorFlow, Pytorch)</li>
+<li>Jupyter notebooks, Binder, Google Colab</li>
+</ul></li>
+<li><a href="22_Dask_Pangeo.html">Dask Presentation (30min)</a></li>
+<li>Dask/Pangeo practice:
+<ul>
+<li>Either play with Pangeo notebooks (<a
+href="https://gallery.pangeo.io/">in the cloud</a> or <a
+href="https://gitlab.cnes.fr/inno/pangeo-jupyter-demo">on HAL
+cluster</a></li>
+<li><a href="30_Evaluation.html">Or try to answer Supaero evaluation
+notebook!</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="quizz" class="slide level2">
