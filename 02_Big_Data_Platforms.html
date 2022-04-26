@@ -460,17 +460,92 @@ alt="Airflow" />
 <h1>HPC Platforms</h1>
 
 </section>
-<section id="use-cases" class="slide level2">
-<h2>Use cases</h2>
+<section id="overview-and-use-cases" class="slide level2">
+<h2>Overview and Use cases</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<blockquote>
+<p>HPC = High Performance Computing</p>
+</blockquote>
+<ul>
+<li>HPC were built to solve compute bound problems</li>
+<li>Some early fields of research:
+<ul>
+<li>Weather forecasting</li>
+<li>Atmospheric and climate research</li>
+<li>Rockets and Aeronautics design</li>
+<li>Computational Fluid Dynamics in general</li>
+</ul></li>
+<li>High performance infrastructure: compute, CPU, storage, Network</li>
+</ul>
+</div><div class="column" style="width:60%;">
+Some pictures of a simulations: Pangeo/Ocean/Earth?
+https://vimeo.com/300943265
+<iframe src="https://player.vimeo.com/video/300943265?h=ef84e12ec0" width="640" height="362" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+<p>
+<a href="https://vimeo.com/300943265">Current speed in eNATL60
+simulation with explicit tidal motion.</a> from
+<a href="https://vimeo.com/oceannumerique">Océan Numérique</a> on
+<a href="https://vimeo.com">Vimeo</a>.
+</p>
+</div>
+</div>
+</section>
+<section id="cnes-typical-use-cases" class="slide level2">
+<h2>CNES typical use cases</h2>
+<p>Take slide from Roadmap.</p>
 </section>
 <section id="architecture-big-picture" class="slide level2">
 <h2>Architecture, big picture</h2>
+<p>Just a schema with all elements: login nodes, job scheduler, compute
+nodes, storage, IB network…</p>
 </section>
 <section id="job-scheduler" class="slide level2">
 <h2>Job scheduler</h2>
+<ul>
+<li>Job Queuing System</li>
+<li>Resources management</li>
+<li>SLURM, PBS, SGE, LSF, etc.</li>
+<li>Priority, fairshare partition, QoS</li>
+</ul>
+<p>Example resources reservation Some schema?</p>
 </section>
 <section id="high-performance-storage" class="slide level2">
 <h2>High Performance Storage</h2>
+<ul>
+<li>POSIX file system</li>
+<li>Usually based on powerfull SAN storage infrastructure</li>
+<li>High performance and capacity: millions IO/s, undreds GB/s, undreds
+PB capacity.</li>
+<li>Spectrum Scale (GPFS) and Lustre</li>
+<li>Other players: WekaIO, BeeGFS</li>
+</ul>
+<p>Schema IO nodes and SAN</p>
+</section>
+<section id="software-technologies" class="slide level2">
+<h2>Software technologies</h2>
+<ul>
+<li>Classical HPC: C and Fortran
+<ul>
+<li>Compile languages, hardware optimized</li>
+<li>MPI</li>
+<li>OpenMP</li>
+<li>CUDA, OpenACC</li>
+</ul></li>
+<li>More and More: Python, Julia
+<ul>
+<li>Interpreted Languages, easyer to use</li>
+<li>Lots of performant libraries to reuse (e.g. Numpy, Scipy, Pandas,
+etc.)</li>
+<li>Parallel and distributed computations:
+<ul>
+<li>Multiprocessing</li>
+<li>MPI4Py : Python over MPI</li>
+<li>Dask, Ray, etc.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Some MPI Code?</p>
 </section></section>
 <section>
 <section
