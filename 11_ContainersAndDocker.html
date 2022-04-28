@@ -150,9 +150,25 @@ style="width:50.0%" /></p>
 <section id="container-vs-vm-similarities-and-drawbacks"
 class="slide level2">
 <h2>Container vs VM: similarities and drawbacks</h2>
-</section>
-<section id="containers-drawbacks" class="slide level2">
-<h2>Containers Drawbacks</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<h3 id="similarities">Similarities</h3>
+<ul>
+<li>Isolated environments for applications</li>
+<li>Movable between hosts</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<h3 id="vm-drawbacks">VM Drawbacks</h3>
+<ul>
+<li>VM Contains full OS at each install =&gt; Install + Resource
+overhead</li>
+<li>VM needs pre-allocation of resource for each VM (=&gt; Waste if not
+used)</li>
+<li>Communication between VM &lt;=&gt; Communication between
+computers</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<h3 id="containers-drawbacks">Containers Drawbacks</h3>
 <ul>
 <li>Containers are Linux based (but still works on Windows)</li>
 <li>Isolation is not perfect since containers share underlying kernels
@@ -160,7 +176,8 @@ class="slide level2">
 <li>(security and stability)</li>
 </ul></li>
 </ul>
-<p>::: ::::::::::::::</p>
+</div>
+</div>
 </section>
 <section id="applications-concept" class="slide level2">
 <h2>Applications concept</h2>
@@ -283,9 +300,8 @@ docker.com</li>
 <section id="layers-container-image" class="slide level2">
 <h2>Layers, Container, Image</h2>
 <figure>
-<img
-data-src="https://jfrog--c.documentforce.com/servlet/servlet.ImageServer?id=0151r000006uDeN&amp;oid=00D20000000M3v0&amp;lastMod=1584629516000"
-style="width:50.0%" alt="layers" />
+<img data-src="images/servlet.ImageServer.jpg" style="width:50.0%"
+alt="layers" />
 <figcaption aria-hidden="true">layers</figcaption>
 </figure>
 </section>
