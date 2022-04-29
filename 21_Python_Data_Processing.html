@@ -570,91 +570,12 @@ it simple to work with widgets inside and outside of a notebook
 context</li>
 </ul>
 </section></section>
-<section>
 <section id="machine-and-deep-learning"
 class="title-slide slide level1">
 <h1>Machine and Deep Learning</h1>
 
 </section>
-<section id="kaggle-stats" class="slide level2">
-<h2>Kaggle stats</h2>
-<figure>
-<img data-src="images/KaggleFrameworkUsage.png"
-alt="Machine Learning Frameworks usage" />
-<figcaption aria-hidden="true">Machine Learning Frameworks
-usage</figcaption>
-</figure>
-</section>
-<section id="sickit-learn" class="slide level2">
-<h2>Sickit Learn</h2>
-<p><img
-data-src="https://scikit-learn.org/stable/_images/scikit-learn-logo-notext.png"
-height="100" /></p>
-<ul>
-<li>Simple and efficient tools for predictive data analysis</li>
-<li>Built on NumPy, SciPy, and matplotlib</li>
-<li>Every classical ML Algorithms</li>
-<li>Standard interface with Pipelines, estimators, transformers</li>
-<li>No GPU support (so not good for Deep Learning)</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> [[ <span class="dv">1</span>,  <span class="dv">2</span>,  <span class="dv">3</span>],  <span class="co"># 2 samples, 3 features</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>]]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]  <span class="co"># classes of each sample</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>clf.fit(X, y)</span></code></pre></div>
-</section>
-<section id="tensorflow-keras-pytorch" class="slide level2">
-<h2>TensorFlow, Keras, Pytorch</h2>
-<p><img
-data-src="https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67"
-height="100" /> <img
-data-src="https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67"
-height="100" /> <img
-data-src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"
-height="100" /></p>
-<ul>
-<li>Deep Learning on GPU with no previous knowledge</li>
-<li>Keras on top of Tensorflow</li>
-<li>Tensorflow complete platform, with TensorBoard and other tools</li>
-<li>Always trolls about Keras/TF vs PyTorch</li>
-</ul>
-<p><img
-data-src="https://www.tensorflow.org/tensorboard/images/tensorboard.gif"
-style="width:50.0%" /></p>
-</section>
-<section id="gradient-boosting-algorithms" class="slide level2">
-<h2>Gradient boosting algorithms</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<h3 id="xgboost"><a
-href="https://xgboost.readthedocs.io/en/latest/">XGBoost</a></h3>
-<ul>
-<li>Distributed gradient boosting library</li>
-<li>Efficient, flexible and portable</li>
-<li>XGBoost provides a parallel tree boosting</li>
-<li>Runs on major distributed environment (Hadoop, SGE, MPI, Spark)</li>
-<li>Solve problems beyond billions of examples</li>
-</ul>
-<p><img
-data-src="https://raw.githubusercontent.com/dmlc/dmlc.github.io/master/img/logo-m/xgboost.png"
-height="100" /></p>
-</div><div class="column" style="width:50%;">
-<h3 id="lighgbm"><a
-href="https://lightgbm.readthedocs.io/en/latest/">LighGBM</a></h3>
-<ul>
-<li>Distributed gradient boosting framework</li>
-<li>Efficient, Faster, lower memory usage, better accuracy</li>
-<li>Support of parallel, distributed, and GPU learning</li>
-<li>Capable of handling large-scale data</li>
-</ul>
-<p><img
-data-src="https://lightgbm.readthedocs.io/en/latest/_images/LightGBM_logo_black_text.svg"
-height="100" /></p>
-</div>
-</div>
-</section></section>
+
 <section id="others-1" class="title-slide slide level1">
 <h1>Others</h1>
 
