@@ -606,50 +606,11 @@ alt="Answer" />
 <p><a href="https://toreply.univ-lille.fr/reponse_72">Answer
 link</a></p>
 </section></section>
-<section>
 <section id="others-1" class="title-slide slide level1">
 <h1>Others</h1>
 
 </section>
-<section id="numba" class="slide level2">
-<h2>Numba</h2>
-<p><img
-data-src="https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg"
-height="100" /></p>
-<blockquote>
-<p>Numba makes Python code fast</p>
-</blockquote>
-<ul>
-<li>Translates Python functions to optimized machine code at
-runtime</li>
-<li>Use LLVM compiler library</li>
-<li>Python can approach the speeds of C or FORTRAN</li>
-<li>Just apply one of the Numba decorators</li>
-</ul>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
-</section>
-<section id="binder" class="slide level2">
-<h2>Binder</h2>
-<p><img
-data-src="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b" /></p>
-<blockquote>
-<p>Turn a Git repo into a collection of interactive notebooks</p>
-</blockquote>
-<p><img
-data-src="https://binderhub.readthedocs.io/en/latest/_images/architecture.png" /></p>
-</section></section>
+
 <section>
 <section id="exercise" class="title-slide slide level1">
 <h1>Exercise</h1>
