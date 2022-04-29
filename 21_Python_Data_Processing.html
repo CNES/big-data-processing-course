@@ -503,86 +503,91 @@ alt="Answer" />
 link</a></p>
 </section></section>
 <section>
-<section id="vizualisation-other-than-matplotlib"
+<section id="machine-and-deep-learning"
 class="title-slide slide level1">
-<h1>Vizualisation (other than Matplotlib)</h1>
+<h1>Machine and Deep Learning</h1>
 
 </section>
-<section id="landscape" class="slide level2">
-<h2>Landscape</h2>
+<section id="kaggle-stats" class="slide level2">
+<h2>Kaggle stats</h2>
 <figure>
-<img
-data-src="https://rougier.github.io/python-visualization-landscape/landscape-colors.png"
-alt="Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier" />
-<figcaption aria-hidden="true">Adaptation of Jake VanderPlas graphic
-about the Python visualization landscape, by Nicolas P.
-Rougier</figcaption>
+<img data-src="images/KaggleFrameworkUsage.png"
+alt="Machine Learning Frameworks usage" />
+<figcaption aria-hidden="true">Machine Learning Frameworks
+usage</figcaption>
 </figure>
 </section>
-<section id="seaborn" class="slide level2">
-<h2>Seaborn</h2>
+<section id="sickit-learn" class="slide level2">
+<h2>Sickit Learn</h2>
 <p><img
-data-src="https://seaborn.pydata.org/_images/logo-wide-lightbg.svg"
+data-src="https://scikit-learn.org/stable/_images/scikit-learn-logo-notext.png"
 height="100" /></p>
 <ul>
-<li>Based on Matplotlib</li>
-<li>Integrates closely with Pandas</li>
-<li>Dataset oriented to produce informative plots</li>
+<li>Simple and efficient tools for predictive data analysis</li>
+<li>Built on NumPy, SciPy, and matplotlib</li>
+<li>Every classical ML Algorithms</li>
+<li>Standard interface with Pipelines, estimators, transformers</li>
+<li>No GPU support (so not good for Deep Learning)</li>
 </ul>
-<p><img
-data-src="https://seaborn.pydata.org/_images/faceted_lineplot.png" /></p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> [[ <span class="dv">1</span>,  <span class="dv">2</span>,  <span class="dv">3</span>],  <span class="co"># 2 samples, 3 features</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>]]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]  <span class="co"># classes of each sample</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>clf.fit(X, y)</span></code></pre></div>
 </section>
-<section id="plotly" class="slide level2">
-<h2>Plotly</h2>
+<section id="tensorflow-keras-pytorch" class="slide level2">
+<h2>TensorFlow, Keras, Pytorch</h2>
 <p><img
-data-src="https://upload.wikimedia.org/wikipedia/commons/3/37/Plotly-logo-01-square.png"
+data-src="https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67"
+height="100" /> <img
+data-src="https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67"
+height="100" /> <img
+data-src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"
 height="100" /></p>
 <ul>
-<li>Interactive, publication-quality graphs</li>
-<li>Make dashboard with Dash</li>
+<li>Deep Learning on GPU with no previous knowledge</li>
+<li>Keras on top of Tensorflow</li>
+<li>Tensorflow complete platform, with TensorBoard and other tools</li>
+<li>Always trolls about Keras/TF vs PyTorch</li>
 </ul>
 <p><img
-data-src="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/anim.gif" /></p>
+data-src="https://www.tensorflow.org/tensorboard/images/tensorboard.gif"
+style="width:50.0%" /></p>
 </section>
-<section id="pyviz" class="slide level2">
-<h2>Pyviz</h2>
-<p><img
-data-src="https://miro.medium.com/max/518/1*Tw1LzNLwcmpJPVI0v1ZsVA.png" />
-<img
-data-src="https://miro.medium.com/max/2400/1*I-xXZpedIymi1cP3RRrhHw.png" /></p>
+<section id="gradient-boosting-algorithms" class="slide level2">
+<h2>Gradient boosting algorithms</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="xgboost"><a
+href="https://xgboost.readthedocs.io/en/latest/">XGBoost</a></h3>
 <ul>
-<li><strong>HoloViews</strong>: Declarative objects for instantly
-visualizable data, building Bokeh plots from convenient high-level
-specifications</li>
-<li><strong>GeoViews</strong>: Visualizable geographic data that that
-can be mixed and matched with HoloViews objects</li>
-<li><strong>Bokeh</strong>: Interactive plotting in web browsers,
-running JavaScript but controlled by Python</li>
-<li><strong>Panel</strong>: Assembling objects from many different
-libraries into a layout or app, whether in a Jupyter notebook or in a
-standalone serveable dashboard</li>
-<li><strong>Datashader</strong>: Rasterizing huge datasets quickly as
-fixed-size images</li>
-<li><strong>hvPlot</strong>: Quickly return interactive HoloViews or
-GeoViews objects from your Pandas, Xarray, or other data structures</li>
-<li><strong>Param</strong>: Declaring user-relevant parameters, making
-it simple to work with widgets inside and outside of a notebook
-context</li>
+<li>Distributed gradient boosting library</li>
+<li>Efficient, flexible and portable</li>
+<li>XGBoost provides a parallel tree boosting</li>
+<li>Runs on major distributed environment (Hadoop, SGE, MPI, Spark)</li>
+<li>Solve problems beyond billions of examples</li>
 </ul>
+<p><img
+data-src="https://raw.githubusercontent.com/dmlc/dmlc.github.io/master/img/logo-m/xgboost.png"
+height="100" /></p>
+</div><div class="column" style="width:50%;">
+<h3 id="lighgbm"><a
+href="https://lightgbm.readthedocs.io/en/latest/">LighGBM</a></h3>
+<ul>
+<li>Distributed gradient boosting framework</li>
+<li>Efficient, Faster, lower memory usage, better accuracy</li>
+<li>Support of parallel, distributed, and GPU learning</li>
+<li>Capable of handling large-scale data</li>
+</ul>
+<p><img
+data-src="https://lightgbm.readthedocs.io/en/latest/_images/LightGBM_logo_black_text.svg"
+height="100" /></p>
+</div>
+</div>
 </section>
 <section id="quizz-3" class="slide level2">
-<h2>Quizz</h2>
-<p>Matlplotlib is the only vizualisation library for Python.</p>
-<figure>
-<img
-data-src="data:image/png;base64,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"
-alt="Answer" />
-<figcaption aria-hidden="true">Answer</figcaption>
-</figure>
-<p><a href="https://toreply.univ-lille.fr/reponse_672">Answer
-link</a></p>
-</section>
-<section id="quizz-4" class="slide level2">
 <h2>Quizz</h2>
 <p>Which is the best Deep Learning library in Python?</p>
 <ul>
@@ -621,19 +626,19 @@ runtime</li>
 <li>Python can approach the speeds of C or FORTRAN</li>
 <li>Just apply one of the Numba decorators</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
 </section>
 <section id="binder" class="slide level2">
 <h2>Binder</h2>
