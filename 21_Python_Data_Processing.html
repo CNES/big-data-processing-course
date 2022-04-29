@@ -521,17 +521,43 @@ height="100" /></p>
 <p><img
 data-src="https://seaborn.pydata.org/_images/faceted_lineplot.png" /></p>
 </section>
-<section id="plotly" class="slide level2">
-<h2>Plotly</h2>
+<section id="pyviz" class="slide level2">
+<h2>Pyviz</h2>
 <p><img
-data-src="https://upload.wikimedia.org/wikipedia/commons/3/37/Plotly-logo-01-square.png"
-height="100" /></p>
+data-src="https://miro.medium.com/max/518/1*Tw1LzNLwcmpJPVI0v1ZsVA.png" />
+<img
+data-src="https://miro.medium.com/max/2400/1*I-xXZpedIymi1cP3RRrhHw.png" /></p>
 <ul>
-<li>Interactive, publication-quality graphs</li>
-<li>Make dashboard with Dash</li>
+<li><strong>HoloViews</strong>: Declarative objects for instantly
+visualizable data, building Bokeh plots from convenient high-level
+specifications</li>
+<li><strong>GeoViews</strong>: Visualizable geographic data that that
+can be mixed and matched with HoloViews objects</li>
+<li><strong>Bokeh</strong>: Interactive plotting in web browsers,
+running JavaScript but controlled by Python</li>
+<li><strong>Panel</strong>: Assembling objects from many different
+libraries into a layout or app, whether in a Jupyter notebook or in a
+standalone serveable dashboard</li>
+<li><strong>Datashader</strong>: Rasterizing huge datasets quickly as
+fixed-size images</li>
+<li><strong>hvPlot</strong>: Quickly return interactive HoloViews or
+GeoViews objects from your Pandas, Xarray, or other data structures</li>
+<li><strong>Param</strong>: Declaring user-relevant parameters, making
+it simple to work with widgets inside and outside of a notebook
+context</li>
 </ul>
-<p><img
-data-src="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/anim.gif" /></p>
+</section>
+<section id="quizz-3" class="slide level2">
+<h2>Quizz</h2>
+<p>Matlplotlib is the only vizualisation library for Python.</p>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_672">Answer
+link</a></p>
 </section></section>
 <section>
 <section id="exercise" class="title-slide slide level1">
