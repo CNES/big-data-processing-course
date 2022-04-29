@@ -502,90 +502,11 @@ alt="Answer" />
 <p><a href="https://toreply.univ-lille.fr/reponse_618">Answer
 link</a></p>
 </section></section>
-<section>
 <section id="others-1" class="title-slide slide level1">
 <h1>Others</h1>
 
 </section>
-<section id="packaging-pip-conda" class="slide level2">
-<h2>Packaging: Pip / Conda</h2>
-<p><img
-data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/PyPI_logo.svg/1200px-PyPI_logo.svg.png"
-height="100" /> <img
-data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Conda_logo.svg/1280px-Conda_logo.svg.png"
-height="100" /></p>
-<ul>
-<li>Package libraries</li>
-<li>Make them available on repositories</li>
-<li>Build environments automatically</li>
-</ul>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>conda</th>
-<th>pip</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>manages</td>
-<td>binaries</td>
-<td>wheel or source</td>
-</tr>
-<tr class="even">
-<td>can require compilers</td>
-<td>no</td>
-<td>yes</td>
-</tr>
-<tr class="odd">
-<td>package types</td>
-<td>any</td>
-<td>Python-only</td>
-</tr>
-<tr class="even">
-<td>create environment</td>
-<td>yes, built-in</td>
-<td>no, requires virtualenv or venv</td>
-</tr>
-<tr class="odd">
-<td>dependency checks</td>
-<td>yes</td>
-<td>no</td>
-</tr>
-</tbody>
-</table>
-<p>Difference between Conda and Pip according to Anaconda.</p>
-</section>
-<section id="numba" class="slide level2">
-<h2>Numba</h2>
-<p><img
-data-src="https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg"
-height="100" /></p>
-<blockquote>
-<p>Numba makes Python code fast</p>
-</blockquote>
-<ul>
-<li>Translates Python functions to optimized machine code at
-runtime</li>
-<li>Use LLVM compiler library</li>
-<li>Python can approach the speeds of C or FORTRAN</li>
-<li>Just apply one of the Numba decorators</li>
-</ul>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
-</section></section>
+
 <section>
 <section id="exercise" class="title-slide slide level1">
 <h1>Exercise</h1>
