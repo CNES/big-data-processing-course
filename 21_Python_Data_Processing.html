@@ -257,8 +257,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a hr
 <h2>Numpy</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><img
-data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/2560px-NumPy_logo_2020.svg.png"
+<p><img data-src="https://numpy.org/doc/stable/_static/numpylogo.svg"
 height="100" /></p>
 <ul>
 <li>Manipulate N-dimensionnal arrays</li>
@@ -508,6 +507,16 @@ class="title-slide slide level1">
 <h1>Vizualisation (other than Matplotlib)</h1>
 
 </section>
+<section id="landscape" class="slide level2">
+<h2>Landscape</h2>
+<figure>
+<img data-src="images/Python-viz-landscape-colors.png"
+alt="Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier" />
+<figcaption aria-hidden="true">Adaptation of Jake VanderPlas graphic
+about the Python visualization landscape, by Nicolas P.
+Rougier</figcaption>
+</figure>
+</section>
 <section id="seaborn" class="slide level2">
 <h2>Seaborn</h2>
 <p><img
@@ -520,6 +529,16 @@ height="100" /></p>
 </ul>
 <p><img
 data-src="https://seaborn.pydata.org/_images/faceted_lineplot.png" /></p>
+</section>
+<section id="plotly" class="slide level2">
+<h2>Plotly</h2>
+<p><img data-src="images/Plotly-logo-01-square.png" height="100" /></p>
+<ul>
+<li>Interactive, publication-quality graphs</li>
+<li>Make dashboard with Dash</li>
+</ul>
+<p><img
+data-src="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/anim.gif" /></p>
 </section>
 <section id="pyviz" class="slide level2">
 <h2>Pyviz</h2>
@@ -594,6 +613,56 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a hr
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]  <span class="co"># classes of each sample</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>clf.fit(X, y)</span></code></pre></div>
 </section>
+<section id="tensorflow-keras-pytorch" class="slide level2">
+<h2>TensorFlow, Keras, Pytorch</h2>
+<p><img
+data-src="https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67"
+height="100" /> <img
+data-src="https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67"
+height="100" /> <img
+data-src="https://upload.wikimedia.org/wikipedia/commons/9/96/Pytorch_logo.png"
+height="100" /></p>
+<ul>
+<li>Deep Learning on GPU with no previous knowledge</li>
+<li>Keras on top of Tensorflow</li>
+<li>Tensorflow complete platform, with TensorBoard and other tools</li>
+<li>Always trolls about Keras/TF vs PyTorch</li>
+</ul>
+<p><img
+data-src="https://www.tensorflow.org/tensorboard/images/tensorboard.gif"
+style="width:50.0%" /></p>
+</section>
+<section id="gradient-boosting-algorithms" class="slide level2">
+<h2>Gradient boosting algorithms</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="xgboost"><a
+href="https://xgboost.readthedocs.io/en/latest/">XGBoost</a></h3>
+<ul>
+<li>Distributed gradient boosting library</li>
+<li>Efficient, flexible and portable</li>
+<li>XGBoost provides a parallel tree boosting</li>
+<li>Runs on major distributed environment (Hadoop, SGE, MPI, Spark)</li>
+<li>Solve problems beyond billions of examples</li>
+</ul>
+<p><img
+data-src="https://raw.githubusercontent.com/dmlc/dmlc.github.io/master/img/logo-m/xgboost.png"
+height="100" /></p>
+</div><div class="column" style="width:50%;">
+<h3 id="lighgbm"><a
+href="https://lightgbm.readthedocs.io/en/latest/">LighGBM</a></h3>
+<ul>
+<li>Distributed gradient boosting framework</li>
+<li>Efficient, Faster, lower memory usage, better accuracy</li>
+<li>Support of parallel, distributed, and GPU learning</li>
+<li>Capable of handling large-scale data</li>
+</ul>
+<p><img
+data-src="https://lightgbm.readthedocs.io/en/latest/_images/LightGBM_logo_black_text.svg"
+height="100" /></p>
+</div>
+</div>
+</section>
 <section id="quizz-4" class="slide level2">
 <h2>Quizz</h2>
 <p>Which is the best Deep Learning library in Python?</p>
@@ -612,6 +681,100 @@ alt="Answer" />
 </figure>
 <p><a href="https://toreply.univ-lille.fr/reponse_72">Answer
 link</a></p>
+</section></section>
+<section>
+<section id="others-1" class="title-slide slide level1">
+<h1>Others</h1>
+
+</section>
+<section id="packaging-pip-conda" class="slide level2">
+<h2>Packaging: Pip / Conda</h2>
+<p><img
+data-src="https://pypi.org/static/images/logo-large.6bdbb439.svg"
+height="100" /> <img
+data-src="https://docs.conda.io/en/latest/_images/conda_logo.svg"
+height="100" /></p>
+<ul>
+<li>Package libraries</li>
+<li>Make them available on repositories</li>
+<li>Build environments automatically</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>conda</th>
+<th>pip</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>manages</td>
+<td>binaries</td>
+<td>wheel or source</td>
+</tr>
+<tr class="even">
+<td>can require compilers</td>
+<td>no</td>
+<td>yes</td>
+</tr>
+<tr class="odd">
+<td>package types</td>
+<td>any</td>
+<td>Python-only</td>
+</tr>
+<tr class="even">
+<td>create environment</td>
+<td>yes, built-in</td>
+<td>no, requires virtualenv or venv</td>
+</tr>
+<tr class="odd">
+<td>dependency checks</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+</tbody>
+</table>
+<p>Difference between Conda and Pip according to Anaconda.</p>
+</section>
+<section id="numba" class="slide level2">
+<h2>Numba</h2>
+<p><img
+data-src="https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg"
+height="100" /></p>
+<blockquote>
+<p>Numba makes Python code fast</p>
+</blockquote>
+<ul>
+<li>Translates Python functions to optimized machine code at
+runtime</li>
+<li>Use LLVM compiler library</li>
+<li>Python can approach the speeds of C or FORTRAN</li>
+<li>Just apply one of the Numba decorators</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
+</section>
+<section id="binder" class="slide level2">
+<h2>Binder</h2>
+<p><img
+data-src="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b" /></p>
+<blockquote>
+<p>Turn a Git repo into a collection of interactive notebooks</p>
+</blockquote>
+<p><img
+data-src="https://binderhub.readthedocs.io/en/latest/_images/architecture.png" /></p>
 </section></section>
 <section>
 <section id="exercise" class="title-slide slide level1">
