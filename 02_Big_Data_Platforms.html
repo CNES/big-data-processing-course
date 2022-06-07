@@ -559,10 +559,11 @@ simulation with explicit tidal motion.</a> from
 </div>
 </div>
 </section>
-<section id="cnes-typical-use-cases" class="slide level2">
-<h2>CNES typical use cases</h2>
+<section id="cnes-typical-use-cases-1" class="slide level2">
+<h2>CNES typical use cases (1)</h2>
 <div class="columns">
-<div class="column" style="width:35%;">
+
+</div>
 <h3 id="rd-studies-upstream-research">R&amp;D, Studies, upstream
 research</h3>
 <ul>
@@ -572,17 +573,25 @@ research</h3>
 <li>Satellite structure and materials</li>
 <li>Technical domain: MPI, HTC, Big Data, AI</li>
 </ul>
+<p>::: :::</p>
 <figure>
 <img data-src="images/HPCUpstream.png" alt="HPC Upstream" />
 <figcaption aria-hidden="true">HPC Upstream</figcaption>
 </figure>
-</div><div class="column" style="width:30%;">
-<h3 id="data-production-and-diffusion">Data production and
-diffusion</h3>
+<p>::: ::::::::::::::</p>
+</section>
+<section id="cnes-typical-use-cases-2" class="slide level2">
+<h2>CNES typical use cases (2)</h2>
+<div class="columns">
+
+</div>
 <figure>
 <img data-src="images/HPCProduction.png" alt="HPC production" />
 <figcaption aria-hidden="true">HPC production</figcaption>
 </figure>
+<p>::: :::</p>
+<h3 id="data-production-and-diffusion">Data production and
+diffusion</h3>
 <ul>
 <li>Continuous data production (L0 –&gt; L2)</li>
 <li>Data portals, catalogs</li>
@@ -590,7 +599,13 @@ diffusion</h3>
 <li>Technical Domain: HTC</li>
 <li>CNES Projects: SWOT, THEIA, SWH, SSALTO, PEPS</li>
 </ul>
-</div><div class="column" style="width:30%;">
+<p>::: ::::::::::::::</p>
+</section>
+<section id="cnes-typical-use-cases-3" class="slide level2">
+<h2>CNES typical use cases (3)</h2>
+<div class="columns">
+
+</div>
 <h3 id="data-analysis-dowstream-research">Data analysis, dowstream
 research</h3>
 <ul>
@@ -599,18 +614,17 @@ research</h3>
 <li>EO or astronomical Data</li>
 <li>Technical Domain: HTC, Big Data, AI</li>
 <li>CNES labs or projects : CESBIO, LEGOS, AI4Geo, EOLab</li>
-<li><img data-src="images/HPCDownstream.png" title="fig:"
-alt="HPC downstream" /></li>
 </ul>
-</div>
-</div>
+<p>::: ::: - <img data-src="images/HPCDownstream.png"
+alt="HPC downstream" /></p>
+<p>::: ::::::::::::::</p>
 </section>
 <section id="architecture-big-picture" class="slide level2">
 <h2>Architecture, big picture</h2>
 <figure>
 <img
 data-src="https://www.marquette.edu/high-performance-computing/images/architecture.png"
-alt="HPC Architecture" />
+style="width:60.0%" alt="HPC Architecture" />
 <figcaption aria-hidden="true">HPC Architecture</figcaption>
 </figure>
 <p>Several things: Login nodes, Admin/Scheduler nodes, Compute
@@ -619,7 +633,8 @@ resources, Parallel FS, RMDA Network</p>
 <section id="job-scheduler" class="slide level2">
 <h2>Job scheduler</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
+
+</div>
 <ul>
 <li>Job Queuing System</li>
 <li>Job = Resources, Walltime, Queue, Account, etc.</li>
@@ -627,6 +642,11 @@ resources, Parallel FS, RMDA Network</p>
 <li>Priority, fairshare partition, QoS</li>
 <li>SLURM, PBS, SGE, LSF, etc.</li>
 </ul>
+<figure>
+<img data-src="images/HPCScheduler.png" alt="HPC Scheduler" />
+<figcaption aria-hidden="true">HPC Scheduler</figcaption>
+</figure>
+<p>::: :::</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#SBATCH --job-name=serial_job_test    # Job name</span></span>
@@ -638,18 +658,13 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ex">module</span> load python</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> /data/training/SLURM/plot_template.py</span></code></pre></div>
-</div><div class="column" style="width:70%;">
-<figure>
-<img data-src="images/HPCScheduler.png" alt="HPC Scheduler" />
-<figcaption aria-hidden="true">HPC Scheduler</figcaption>
-</figure>
-</div>
-</div>
+<p>::: ::::::::::::::</p>
 </section>
 <section id="high-performance-storage" class="slide level2">
 <h2>High Performance Storage</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
+
+</div>
 <ul>
 <li>POSIX file system</li>
 <li>Usually based on powerfull SAN storage infrastructure</li>
@@ -658,18 +673,17 @@ hundreds PB capacity.</li>
 <li>Spectrum Scale (GPFS) and Lustre</li>
 <li>Other players: WekaIO, BeeGFS</li>
 </ul>
-</div><div class="column" style="width:70%;">
+<p>::: :::</p>
 <figure>
 <img data-src="images/GPFSHALArchitecture.png" alt="HAL GPFS" />
 <figcaption aria-hidden="true">HAL GPFS</figcaption>
 </figure>
-</div>
-</div>
+<p>::: ::::::::::::::</p>
 </section>
 <section id="software-technologies" class="slide level2">
 <h2>Software technologies</h2>
 <div class="columns">
-<div class="column" style="width:40%;">
+<div class="column" style="width:60%;">
 <ul>
 <li>Classical HPC: C and Fortran
 <ul>
@@ -690,7 +704,7 @@ etc.)</li>
 </ul></li>
 </ul></li>
 </ul>
-</div><div class="column" style="width:60%;">
+</div><div class="column" style="width:40%;">
 <figure>
 <img
 data-src="https://cvw.cac.cornell.edu/hybrid/images/mpimultistampede70pct.png"
