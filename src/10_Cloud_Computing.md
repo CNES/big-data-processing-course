@@ -191,7 +191,7 @@ And that infrastructure is often there to answer peak load...
 
 ## Different layers of abstractions
 
-![](images/../../images/modeles-de-services-cloud.png)
+![](images/modeles-de-services-cloud.png)
 
 ## Abstraction examples
 
