@@ -21,6 +21,69 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
@@ -56,7 +119,7 @@ identifier. (Wikipedia)</p>
 <li>Scalability. Scale-out, infinitly.</li>
 <li>Security/Reliability/Availability. Erasure Coding.</li>
 <li>Cost. Commodity hardware.</li>
-<li>Performance (bandwith). Just need good network.</li>
+<li>Performance (bandwith). Just need good network, and scale.</li>
 </ul>
 </section>
 <section id="posix-vs-object-storage" class="slide level2">
@@ -72,6 +135,27 @@ data-src="https://www.glennklockwood.com/data-intensive/storage/object-store-sch
 <section id="ceph-cnes" class="slide level2">
 <h2>Ceph <span class="citation" data-cites="CNES">@CNES</span></h2>
 <p><img data-src="images/Ceph-CNES.png" /></p>
+</section>
+<section id="quizz" class="slide level2">
+<h2>Quizz</h2>
+<p>What makes object storage efficient? (multiple choices)</p>
+<ul>
+<li>Answer A: The use of high-end and complex harware for storage
+solutions</li>
+<li>Answer B: The multiplication of standard servers with JBOD
+storage</li>
+<li>Answer C: High performance network</li>
+<li>Answer D: POSIX API</li>
+<li>Answer E: Dedicated API developed for simple transactions</li>
+</ul>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_716">Answer link</a>
+<em>Key: hl</em></p>
 </section></section>
 <section>
 <section id="processing-and-cloud-optimized-datasets"
@@ -79,9 +163,30 @@ class="title-slide slide level1">
 <h1>Processing and Cloud Optimized datasets</h1>
 
 </section>
-<section id="object-storage-interface-libraries" class="slide level2">
-<h2>Object storage interface libraries</h2>
-<p>Boto S3FS GCSFS ADLFS</p>
+<section id="object-storage-interface-and-libraries"
+class="slide level2">
+<h2>Object storage interface and libraries</h2>
+<ul>
+<li>Just HTTP Rest Calls: GET, PUT</li>
+<li>With authentification and authorizations: Access key and secret
+access key.</li>
+<li>Easier with AWS CLI or alike:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Needs a keys file in your $HOME dir, or to dynamically obtain a key</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> s3 cp /tmp/foo/ s3://bucket/ <span class="at">--recursive</span> <span class="at">--exclude</span> <span class="st">&quot;*&quot;</span> <span class="at">--include</span> <span class="st">&quot;*.jpg&quot;</span></span></code></pre></div>
+<p>Interfaces and libraries for major programming languages - <a
+href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">Boto3
+for Python</a>: not just S3, all AWS services - Higher level for Python:
+<a href="https://s3fs.readthedocs.io/en/latest/">s3fs: Pythonic file
+interface for S3</a> - Other languages: - <a
+href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html">Java
+SDK</a> - <a href="https://aws.amazon.com/fr/sdk-for-cpp/">C++ SDK</a> -
+Other Object storage interfaces: - <a
+href="https://cloud.google.com/storage/docs/reference/libraries">Google
+Cloud Storage</a> - <a
+href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-directory-file-acl-python">Azure
+Blob Storage</a></p>
 </section>
 <section id="processing-framework-and-object-store"
 class="slide level2">
@@ -107,7 +212,7 @@ class="slide level2">
 <p>Cloud outreach link
 https://www.youtube.com/playlist?list=PLQsQNjNIDU87yUFyKy1seaiRps389RPwk</p>
 </section>
-<section id="quizz" class="slide level2">
+<section id="quizz-1" class="slide level2">
 <h2>Quizz</h2>
 <p>What allows container orchestration (multiple choices)?</p>
 <ul>
