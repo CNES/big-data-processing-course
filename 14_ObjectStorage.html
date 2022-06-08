@@ -175,28 +175,94 @@ access key.</li>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Needs a keys file in your $HOME dir, or to dynamically obtain a key</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aws</span> s3 cp /tmp/foo/ s3://bucket/ <span class="at">--recursive</span> <span class="at">--exclude</span> <span class="st">&quot;*&quot;</span> <span class="at">--include</span> <span class="st">&quot;*.jpg&quot;</span></span></code></pre></div>
-<p>Interfaces and libraries for major programming languages - <a
+<p>Interfaces and libraries for major programming languages:</p>
+<ul>
+<li><a
 href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">Boto3
-for Python</a>: not just S3, all AWS services - Higher level for Python:
-<a href="https://s3fs.readthedocs.io/en/latest/">s3fs: Pythonic file
-interface for S3</a> - Other languages: - <a
+for Python</a>: not just S3, all AWS services</li>
+<li>Higher level for Python: <a
+href="https://s3fs.readthedocs.io/en/latest/">s3fs: Pythonic file
+interface for S3</a></li>
+<li>Other languages:
+<ul>
+<li><a
 href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html">Java
-SDK</a> - <a href="https://aws.amazon.com/fr/sdk-for-cpp/">C++ SDK</a> -
-Other Object storage interfaces: - <a
+SDK</a></li>
+<li><a href="https://aws.amazon.com/fr/sdk-for-cpp/">C++ SDK</a></li>
+</ul></li>
+<li>Other Object storage interfaces:
+<ul>
+<li><a
 href="https://cloud.google.com/storage/docs/reference/libraries">Google
-Cloud Storage</a> - <a
+Cloud Storage</a></li>
+<li><a
 href="https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-directory-file-acl-python">Azure
-Blob Storage</a></p>
+Blob Storage</a></li>
+</ul></li>
+</ul>
 </section>
 <section id="processing-framework-and-object-store"
 class="slide level2">
 <h2>Processing framework and Object store</h2>
-<p>Pandas Spark Dask</p>
-<p>Just replace / by s3://</p>
+<p>All Major Data processing framework are compatible with S3 like
+interfaces.</p>
+<ul>
+<li><a href="https://pandas.pydata.org/docs/user_guide/io.html">Pandas
+dataframes</a></li>
+<li><a
+href="https://spark.apache.org/docs/latest/cloud-integration.html">Spark</a></li>
+<li><a
+href="https://docs.dask.org/en/stable/how-to/connect-to-remote-data.html">Dask</a></li>
+</ul>
+<p>Just replace <em>/</em> or <em>file://</em> by <em>s3://</em>.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> dask.dataframe <span class="im">as</span> dd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> dd.read_csv(<span class="st">&#39;s3://bucket/path/to/data-*.csv&#39;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> dd.read_parquet(<span class="st">&#39;gcs://bucket/path/to/data-*.parq&#39;</span>)</span></code></pre></div>
+<p>More on the next part of the course.</p>
 </section>
-<section id="cloud-optimized-data" class="slide level2">
-<h2>Cloud Optimized data?</h2>
-<p>Compatible with Object store</p>
+<section id="arco-data" class="slide level2">
+<h2>ARCO Data</h2>
+<p><strong>A</strong>nalysis <strong>R</strong>eady
+<strong>C</strong>loud <strong>O</strong>ptimized Data.</p>
+<p>Thanks to Ryan Abernathey.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>What is Analysis Ready?</p>
+<ul>
+<li>Think in Datasets, not data files</li>
+<li>No need for tedious homogenizing, cleaning steps</li>
+<li>Curated and cataloged</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<figure>
+<img
+data-src="images/What-data-scientists-spend-the-most-time-doing-7.ppm.png"
+alt="How do data scientists spend their time (Crowdflower Data Science Report, 2016)" />
+<figcaption aria-hidden="true">How do data scientists spend their time
+(Crowdflower Data Science Report, 2016)</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="arco-data-2" class="slide level2">
+<h2>ARCO Data (2)</h2>
+<p><strong>A</strong>nalysis <strong>R</strong>eady
+<strong>C</strong>loud <strong>O</strong>ptimized Data.</p>
+<p>Thanks to Ryan Abernathey.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>What is Cloud Optimized?</p>
+<ul>
+<li>Compatible with object storage (access via HTTP)</li>
+<li>Support lazy access and intelligent subsetting</li>
+<li>Integrates with high-level analysis libraries and distributed
+frameworks</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/ARCOData.png" /></p>
+</div>
+</div>
 </section>
 <section id="cloud-optimized-geotiff" class="slide level2">
 <h2>Cloud Optimized Geotiff</h2>
