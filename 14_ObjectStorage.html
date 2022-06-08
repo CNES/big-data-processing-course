@@ -266,17 +266,54 @@ frameworks</li>
 </section>
 <section id="cloud-optimized-geotiff" class="slide level2">
 <h2>Cloud Optimized Geotiff</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Metadata at the start of the file only</li>
+<li>Tiling instead of stripes (chunks)</li>
+<li>Compression</li>
+<li>Overviews (zoom out)</li>
+<li>HTTP range requests, and so object storage!</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img
+data-src="https://staging.dev.element84.com/wp-content/uploads/2019/04/smiley_tiled.png" /></p>
+</div>
+</div>
 </section>
 <section id="zarr" class="slide level2">
 <h2>Zarr</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img data-src="images/Zarr.png" /></p>
+</div><div class="column" style="width:70%;">
+<ul>
+<li>Python library for storage of chunked, compressed NDarrays</li>
+<li>Developed by Alistair Miles (Imperial) for genomics research (<span
+class="citation" data-cites="alimanfoo">@alimanfoo</span>)</li>
+<li>Arrays are split into user-defined chunks; each chunk is optional
+compressed (zlib, zstd, etc.)</li>
+<li>Can store arrays in memory, directories, zip files, or any python
+mutable mapping interface (dictionary)</li>
+<li>External libraries (s3fs, gcsf) provide a way to store directly into
+cloud object storage</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="parquet" class="slide level2">
 <h2>Parquet</h2>
+<ul>
+<li>Chunked binary file</li>
+<li>Compressed</li>
+<li>Metadata easily accessible</li>
+</ul>
+<p><img data-src="images/Parquet.png" /></p>
 </section>
 <section id="see-more" class="slide level2">
 <h2>See more</h2>
-<p>Cloud outreach link
-https://www.youtube.com/playlist?list=PLQsQNjNIDU87yUFyKy1seaiRps389RPwk</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hprPIr9Vt4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </section>
 <section id="quizz-1" class="slide level2">
 <h2>Quizz</h2>
