@@ -60,8 +60,8 @@ Matlab (and equivalent Scilab)
 C/C++, Java
 
 - Static languages
-- Not much visualization
-- For under layers of use libraries.
+- Not much visualization tooling
+- For under layers of other high level libraries.
 
 ## Python
 
@@ -82,7 +82,7 @@ C/C++, Java
 :::
 ::: {.column width="50%"}
 
-![](https://ipython.org/_static/ipy_0.13.png)
+![](images/Python.png)
 
 :::
 ::::::::::::::
@@ -247,7 +247,7 @@ plt.show()
 :::
 ::: {.column width="50%"}
 
-![](https://jupyter.org/assets/share.png){height=100px}
+![](images/800px-Jupyter_logo.svg.png){height=100px}
 
 - Open source web application
 - Create and share documents that contain live code
