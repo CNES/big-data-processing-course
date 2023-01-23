@@ -376,6 +376,31 @@ Which tools allows manipulating tabular data?
 
 # Distributed and scientific computing
 
+## Parallel computing
+
+ - Thead vs processus
+ - Race conditions, mutual exclusion, synchronization, and parallel slowdown
+ - Fine-grained, coarse-grained, and embarrassing parallelism
+
+## Classes of parallel computers
+
+ - Multi-core computing
+ - Symmetric multiprocessing
+ - Distributed computing
+  - Cluster computing
+  - Cloud computing
+  - Grid computing
+ - Specialized parallel computers
+  - General-purpose computing on graphics processing units (GPGPU)
+  - Reconfigurable computing with field-programmable gate arrays (FPGA)
+  - Application-specific integrated circuits
+  - Vector processors
+
+## Parallel computing with Python
+
+ - Python packages including parallelization in their processings/methods
+ - Python package dedicated to parallelization
+
 ## Built-in mutliprocessing
 
 - Python core package
@@ -488,21 +513,46 @@ What Dask does better than Spark (multiple choices)?
 
 ## Plotly
 
+:::::::::::::: {.columns}
+::: {.column width="35%"}
+
 ![](images/Plotly-logo-01-square.png){height=100px}
 
 - Interactive, publication-quality graphs
 - Make dashboard with Dash
 
+:::
+::: {.column width="65%"}
+
 ![](https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/anim.gif)
+
+:::
+::::::::::::::
+
+## Bokeh
+
+:::::::::::::: {.columns}
+::: {.column width="35%"}
+
+![](http://static.bokeh.org/og/logotype-on-hex.png){height=100px}
+
+- Interactive, publication-quality graphs
+- Make dashboard with Dash
+
+:::
+::: {.column width="65%"}
+
+![](images/bokeh_plot.png)
+
+:::
+::::::::::::::
 
 ## Pyviz
 
-![](https://miro.medium.com/max/518/1*Tw1LzNLwcmpJPVI0v1ZsVA.png)
-![](https://miro.medium.com/max/2400/1*I-xXZpedIymi1cP3RRrhHw.png)
+![](https://pyviz.org/_static/logo.png){height=100px}
 
 - **HoloViews**: Declarative objects for instantly visualizable data, building Bokeh plots from convenient high-level specifications
 - **GeoViews**: Visualizable geographic data that that can be mixed and matched with HoloViews objects
-- **Bokeh**: Interactive plotting in web browsers, running JavaScript but controlled by Python
 - **Panel**: Assembling objects from many different libraries into a layout or app, whether in a Jupyter notebook or in a standalone serveable dashboard
 - **Datashader**: Rasterizing huge datasets quickly as fixed-size images
 - **hvPlot**: Quickly return interactive HoloViews or GeoViews objects from your Pandas, Xarray, or other data structures
@@ -541,18 +591,25 @@ y = [0, 1]  # classes of each sample
 clf.fit(X, y)
 ```
 
-## TensorFlow, Keras, Pytorch
+## TensorFlow, Keras
 
 ![](https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67){height=100px}
 ![](https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67){height=100px}
-![](images/Pytorch_logo.png){height=100px}
 
 - Deep Learning on GPU with no previous knowledge
 - Keras on top of Tensorflow
 - Tensorflow complete platform, with TensorBoard and other tools
-- Always trolls about Keras/TF vs PyTorch
 
 ![](https://www.tensorflow.org/tensorboard/images/tensorboard.gif){width=50%}
+
+## Pytorch
+
+![](images/Pytorch_logo.png){height=100px}
+
+- Deep Learning on GPU with no previous knowledge
+- Always trolls about Keras/TF vs PyTorch
+- pytorch-lightning
+- pytorch3d
 
 ## Gradient boosting algorithms
 
