@@ -1,7 +1,7 @@
 ---
 title: The rise of the Python ecosystem for Data Processing 
-author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-17
+author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d'Etudes Spatiales - French Space Agency)
+date: 2022-03
 ---
 
 # Data Science programming languages
@@ -45,23 +45,43 @@ date: 2020-11-17
   - Visualisation and plotting
   - Data science and machine learning
 
+
 :::
 ::::::::::::::
 
+## C/C++
+
+- Static languages
+- Not much visualization
+- For under layers of use libraries
+- Easy to interface with Python (Cython, pybind11)
+
+
+## Java
+
+- Static languages
+- Not much visualization
+- Not completely compatible with IEEE Standard 754 Floating Points Numbers
+
 ## Matlab and others
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](https://fr.mathworks.com/help/matlab/learn_matlab/desktop.png)
+
+:::
+::: {.column width="50%"}
 
 Matlab (and equivalent Scilab)
 
 - Interactive
 - With IDE and plotting
 - Closed, not reproducible
-- For some searchers
+- For some researchers
 
-C/C++, Java
-
-- Static languages
-- Not much visualization
-- For under layers of use libraries.
+:::
+::::::::::::::
 
 ## Python
 
@@ -76,7 +96,7 @@ C/C++, Java
 - Ecosystem
   - Scientific and parallel computing
   - Visualisation and plotting
-  - ML, DL
+  - Machine Learning, Deep Learning
   - Web developement
 
 :::
@@ -89,11 +109,16 @@ C/C++, Java
 
 ## Python the most used language?
 
-![](images/PythonTrends.png)
+[comment]: # (https://insights.stackoverflow.com/trends)
+![](images/stackoverflow_trends.svg)
+
+## Kaggle Languages Popularity
+
+![](images/kaggle_survey_2022_languages.png)
 
 ## Kaggle IDE Popularity
 
-![](images/KaggleIDEPop.png)
+![](images/kaggle_survey_2022_ide.png)
 
 ## Quizz
 
@@ -110,50 +135,29 @@ What is the most used language (in Data Science)?
 
 # Python scientific ecosystem{background-image=https://jupytearth.org/_images/python-stack.png}
 
-# Core (SciPy, PyData ...)
+# Core (Numpy, SciPy, Pandas ...)
 
-## Pandas
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](https://pandas.pydata.org/static/img/pandas.svg){height=100px}
-
-- Deal with Dataframes, e.g. tables
-- Data manipulation and analysis
-- Numerical tables and time series
-- Statistics, transformations, joins...
-
-```python
-import pandas as pd
-pd.read_csv('Myflie.csv')
-pd.describe()
-```
-
-:::
-::: {.column width="50%"}
-
-![](images/PandasTrends.png)
-
-:::
-::::::::::::::
- 
 ## Numpy
 
 :::::::::::::: {.columns}
 ::: {.column width="60%"}
 
-![](https://numpy.org/doc/stable/_static/numpylogo.svg){height=100px}
-
 - Manipulate N-dimensionnal arrays
-- Numerical computing tools (math functions, linear algebra, Fourier transform, ...)
-- Performant: core is well-optimized C code
+- Numerical computing tools :
+    - math functions
+    - linear algebra
+    - Fourier transform
+    - random number capabilities
+    - etc
+- Performant: core is well-optimized C/C++ and Fortran code
 - Easy and de facto standard syntax
 
-> Nearly every scientist working in Python draws on the power of NumPy. 
+> [Nearly every scientist working in Python draws on the power of NumPy](https://medium.com/@RRamya02/nearly-every-scientist-working-in-python-draws-on-the-power-of-numpy-6bdb2ce45c15)
 
 :::
 ::: {.column width="40%"}
+
+![](https://numpy.org/doc/stable/_static/numpylogo.svg){height=100px}
 
 ```Python
 # The standard way to import NumPy:
@@ -179,6 +183,75 @@ samples = rng.normal(size=2500)
 :::
 ::::::::::::::
 
+## Scipy
+
+:::::::::::::: {.columns}
+::: {.column width="40%"}
+
+![](https://docs.scipy.org/doc/scipy/_static/logo.svg){height=100px}
+
+- Use Numpy arrays as basic data structure
+- Offer scientific functions :
+  - Optimization
+  - Interpolation
+  - Signal processing
+  - Linear algebra
+  - Statistics
+  - Image processing
+
+:::
+::: {.column width="60%"}
+
+```python
+import numpy as np
+from scipy import linalg
+import matplotlib.pyplot as plt
+rng = np.random.default_rng()
+xi = 0.1*np.arange(1,11)
+yi = 5.0*np.exp(-xi) + 2.0*xi
+zi = yi + 0.05 * np.max(yi) * rng.standard_normal(len(yi))
+A = np.concatenate((np.exp(-xi)[:, np.newaxis], xi[:, np.newaxis]),axis=1)
+c, resid, rank, sigma = linalg.lstsq(A, zi)
+xi2 = np.arange(0.1,1.01,0.01)
+yi2 = c[0]*np.exp(-xi2) + c[1]*xi2
+```
+
+![](images/scipy_curve.png)
+
+:::
+::::::::::::::
+
+## Pandas
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+- Deal with Dataseries and Dataframes (e.g. tables)
+- Data manipulation and analysis
+   - Selection
+   - Grouping
+   - Merge
+   - Statistics
+   - Transformation
+- Numerical tables and time series
+- Extension to geospatial data with geopandas
+
+:::
+::: {.column width="50%"}
+
+![](https://pandas.pydata.org/static/img/pandas.svg){height=100px}
+
+![](images/pandas_io.svg)
+
+```python
+import pandas as pd
+pd.read_csv('Myfile.csv')
+pd.describe()
+```
+
+:::
+::::::::::::::
+ 
 ## Xarray
 
 :::::::::::::: {.columns}
@@ -198,12 +271,34 @@ samples = rng.normal(size=2500)
 :::
 ::::::::::::::
 
-## Matplotlib
+## Sympy
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-![](https://matplotlib.org/stable/_static/logo2_compressed.svg){height=100px}
+![](https://www.sympy.org/static/images/logo.png){height=100px}
+
+- Library for symbolic mathematics
+- Simplification, Calculus, Solvers
+
+```python
+from sympy import symbols
+x, y = symbols('x y')
+expr = x + 2*y
+```
+
+:::
+::: {.column width="50%"}
+
+![](images/sympy.png){height=500px}
+
+:::
+::::::::::::::
+
+## Matplotlib
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 
 - Base/Reference plotting library
 - For Python and Numpy
@@ -232,6 +327,8 @@ plt.show()
 :::
 ::: {.column width="50%"}
 
+![](https://matplotlib.org/stable/_static/logo2_compressed.svg){height=100px}
+
 ![](https://matplotlib.org/stable/_images/sphx_glr_surface3d_001.png)
 
 :::
@@ -242,12 +339,12 @@ plt.show()
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
+![](https://jupyter.org/assets/share.png){height=100px}
+
 ![](https://jupyterlab.readthedocs.io/en/1.2.x/_images/jupyterlab.png)
 
 :::
 ::: {.column width="50%"}
-
-![](https://jupyter.org/assets/share.png){height=100px}
 
 - Open source web application
 - Create and share documents that contain live code
@@ -291,9 +388,8 @@ from multiprocessing import Pool
 def f(x):
     return x*x
 
-if __name__ == '__main__':
-    with Pool(5) as p:
-        print(p.map(f, [1, 2, 3]))
+with Pool(5) as p:
+    print(p.map(f, [1, 2, 3]))
 ```
 
 ## Dask
