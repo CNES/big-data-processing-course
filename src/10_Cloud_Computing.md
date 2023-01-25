@@ -184,7 +184,7 @@ And that infrastructure is often there to answer peak load...
 
 ## Public, hybrid, private
 
-![From Padok](https://lh5.googleusercontent.com/e-i1nyv49RP3F3ZCHSepEZ4k_qYhqqgk496wDcsOkHLBbaT7deOuXi3AxesN6LNbQMWXJreOzRqpRbUkNgpFMhX8oxQvbAzAsIi8DObI9xWwq0d5lUfZmAlSbJf5ry-Vmto7i2JL){width=50%}
+![](images/blog-cloud-comparison.jpg){width=80%}
 
 ## Different layers of abstractions
 
