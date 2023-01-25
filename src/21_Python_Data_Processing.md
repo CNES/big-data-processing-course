@@ -22,7 +22,7 @@ date: 2022-03
 :::
 ::: {.column width="50%"}
 
-![R Studio](https://www.rstudio.com/images/screenshots/rstudio-windows.png)
+![R Studio](https://www.rstudio.com/images/screenshots/rstudio-windows.png){width=80%}
 
 :::
 ::::::::::::::
@@ -110,7 +110,7 @@ Matlab (and equivalent Scilab)
 ## Python the most used language?
 
 [comment]: # (https://insights.stackoverflow.com/trends)
-![](images/stackoverflow_trends.svg)
+![](images/stackoverflow_trends.svg){width=120%}
 
 ## Kaggle Languages Popularity
 
@@ -157,7 +157,7 @@ What is the most used language (in Data Science)?
 :::
 ::: {.column width="40%"}
 
-![](https://numpy.org/doc/stable/_static/numpylogo.svg){height=100px}
+![](images/numpylogo.svg){height=100px}
 
 ```Python
 # The standard way to import NumPy:
@@ -387,14 +387,14 @@ Which tools allows manipulating tabular data?
  - Multi-core computing
  - Symmetric multiprocessing
  - Distributed computing
-  - Cluster computing
-  - Cloud computing
-  - Grid computing
+    * Cluster computing
+    * Cloud computing
+    * Grid computing
  - Specialized parallel computers
-  - General-purpose computing on graphics processing units (GPGPU)
-  - Reconfigurable computing with field-programmable gate arrays (FPGA)
-  - Application-specific integrated circuits
-  - Vector processors
+    * General-purpose computing on graphics processing units (GPGPU)
+    * Reconfigurable computing with field-programmable gate arrays (FPGA)
+    * Application-specific integrated circuits
+    * Vector processors
 
 ## Parallel computing with Python
 
@@ -420,7 +420,7 @@ with Pool(5) as p:
 ## Dask
 
 :::::::::::::: {.columns}
-::: {.column width="50%"}
+::: {.column width="65%"}
 
 ![](images/Dask-Logo-lockup-primary.png){height=100px}
 
@@ -431,16 +431,16 @@ with Pool(5) as p:
 - More low level APIs for distributing any algorithm
 - More this afternoon
 
+:::
+::: {.column width="35%"}
+
+![](https://docs.dask.org/en/latest/_images/dask-dataframe.svg){width=80%}
+
 ```python
 import dask.dataframe as dd
 df = dd.read_csv('2014-*.csv')
 df.describe().compute()
 ```
-
-:::
-::: {.column width="50%"}
-
-![](https://docs.dask.org/en/latest/_images/dask-dataframe.svg){width=80%}
 
 :::
 ::::::::::::::
@@ -462,7 +462,7 @@ df.describe().compute()
 
 ### [Ray](https://www.ray.io)
 
-![](https://docs.ray.io/en/latest/_static/ray_logo.png){height=100px}
+![](images/ray_header_logo.png){height=100px}
 
 - Scale general Python apps
 - And a lot of high-level libs oriented towards Machine and Deep Learning
@@ -499,7 +499,7 @@ What Dask does better than Spark (multiple choices)?
 
 ## Landscape
 
-![Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier](images/Python-viz-landscape-colors.png)
+![Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier](images/Python-viz-landscape-colors.png){width=80%}
 
 ## Seaborn
 
@@ -534,7 +534,7 @@ What Dask does better than Spark (multiple choices)?
 :::::::::::::: {.columns}
 ::: {.column width="35%"}
 
-![](http://static.bokeh.org/og/logotype-on-hex.png){height=100px}
+![](http://static.bokeh.org/og/logotype-on-hex.png){height=80px}
 
 - Interactive, publication-quality graphs
 - Make dashboard with Dash
@@ -542,7 +542,7 @@ What Dask does better than Spark (multiple choices)?
 :::
 ::: {.column width="65%"}
 
-![](images/bokeh_plot.png)
+![](images/bokeh_plot.png){width=60%}
 
 :::
 ::::::::::::::
@@ -591,7 +591,14 @@ y = [0, 1]  # classes of each sample
 clf.fit(X, y)
 ```
 
+## Sickit Learn
+
+![](https://scikit-learn.org/stable/_static/ml_map.png){width=70%}
+
 ## TensorFlow, Keras
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 
 ![](https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67){height=100px}
 ![](https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67){height=100px}
@@ -600,7 +607,13 @@ clf.fit(X, y)
 - Keras on top of Tensorflow
 - Tensorflow complete platform, with TensorBoard and other tools
 
-![](https://www.tensorflow.org/tensorboard/images/tensorboard.gif){width=50%}
+:::
+::: {.column width="50%"}
+
+![](https://www.tensorflow.org/tensorboard/images/tensorboard.gif){width=60%}
+
+:::
+::::::::::::::
 
 ## Pytorch
 
@@ -608,8 +621,9 @@ clf.fit(X, y)
 
 - Deep Learning on GPU with no previous knowledge
 - Always trolls about Keras/TF vs PyTorch
-- pytorch-lightning
-- pytorch3d
+- Additional librairies:
+    * pytorch-lightning
+    * pytorch3d
 
 ## Gradient boosting algorithms
 
@@ -641,6 +655,38 @@ clf.fit(X, y)
 :::
 ::::::::::::::
 
+## Data Version Control
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](images/dvclogo.png){height=100px}
+
+:::
+::: {.column width="50%"}
+
+![](images/dvcgraphic.png){width=80%}
+
+:::
+::::::::::::::
+
+ - Version your data and models: Store them in your cloud storage but keep their version info in your Git repo.
+ - Track experiments in your local Git repo (no servers needed).
+ - Share experiments and automatically reproduce anyone's experiment.
+
+## MLFlow
+
+![](images/MLflow-logo-final-black.png){height=100px}
+
+- Tracking experiments to record and compare parameters and results (MLflow Tracking).
+- Packaging ML code in a reusable, reproducible form in order to share with other data scientists or transfer to production (MLflow Projects).
+- Managing and deploying models from a variety of ML libraries to a variety of model serving and inference platforms (MLflow Models).
+- Providing a central model store to collaboratively manage the full lifecycle of an MLflow Model, including model versioning, stage transitions, and annotations (MLflow Model Registry).
+
+## MLFlow
+
+![](images/mlflow_tracking.jpeg)
+
 ## Quizz
 
 Which is the best Deep Learning library in Python?
@@ -666,6 +712,13 @@ Which is the best Deep Learning library in Python?
 - Make them available on repositories
 - Build environments automatically
 
+## Packaging: Pip / Conda
+
+![](https://pypi.org/static/images/logo-large.6bdbb439.svg){height=100px}
+![](https://docs.conda.io/en/latest/_images/conda_logo.svg){height=100px}
+
+Difference between Conda and Pip according to Anaconda.
+
 |     | conda | pip |
 |-----|-------|-----|
 | manages | binaries | wheel or source |
@@ -674,9 +727,10 @@ Which is the best Deep Learning library in Python?
 | create environment | yes, built-in | no, requires virtualenv or venv |
 | dependency checks | yes | no |
 
-Difference between Conda and Pip according to Anaconda.
-
 ## Numba
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 
 ![](https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg){height=100px}
 
@@ -686,6 +740,9 @@ Difference between Conda and Pip according to Anaconda.
 - Use LLVM compiler library
 - Python can approach the speeds of C or FORTRAN
 - Just apply one of the Numba decorators
+
+:::
+::: {.column width="50%"}
 
 ```python
 from numba import jit
@@ -701,6 +758,9 @@ def monte_carlo_pi(nsamples):
             acc += 1
     return 4.0 * acc / nsamples
 ```
+
+:::
+:::::::::::::: 
 
 ## Binder
 
