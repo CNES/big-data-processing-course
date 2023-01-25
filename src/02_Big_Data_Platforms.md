@@ -252,7 +252,7 @@ What is the magical hidden step of distributed Map Reduce?
 - Important data only
 - Multiple copies
 
-![](images/ProcessCentric.png){height=30%}
+![](images/ProcessCentric.png){height=25%}
 
 :::
 ::: {.column width="50%"}
@@ -264,7 +264,7 @@ What is the magical hidden step of distributed Map Reduce?
 - Everything
 - One copy
 
-![](images/DataCentric.png){height=30%}
+![](images/DataCentric.png){height=25%}
 
 :::
 ::::::::::::::
@@ -275,7 +275,7 @@ What is the magical hidden step of distributed Map Reduce?
 
 ## Typical Architecture
 
-![Oreilly's Datalake](https://www.oreilly.com/library/view/architecting-data-lakes/9781492042518/assets/ardl_0201.png){width=80%}
+![Enterprise data lake reference architecture](){width=80%}
 
 ## CNES Datalake infrastructure example
 
@@ -332,7 +332,7 @@ It is usually represented by Direct Acyclic Graphs (DAGs).
 
 ## Some tools
 
-![Airflow](https://airflow.apache.org/docs/apache-airflow/stable/_images/airflow.gif)
+![Airflow](images/demo_graph_view.png)
 
 Plenty others from Apache or in Python ecosystem.
 
@@ -482,7 +482,7 @@ python /data/training/SLURM/plot_template.py
 :::
 ::: {.column width="50%"}
 
-![HAL GPFS](images/GPFSHALArchitecture.png){width=70%}
+![HAL GPFS](images/GPFSHALArchitecture.png){height=50%}
 
 :::
 ::::::::::::::
