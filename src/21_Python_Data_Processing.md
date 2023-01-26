@@ -705,8 +705,8 @@ Which is the best Deep Learning library in Python?
 
 ## Packaging: Pip / Conda
 
-![](https://pypi.org/static/images/logo-large.6bdbb439.svg){height=100px}
-![](https://docs.conda.io/en/latest/_images/conda_logo.svg){height=100px}
+![](images/pypilogo.svg){height=100px}
+![](images/conda_logo.svg){height=100px}
 
 - Package libraries
 - Make them available on repositories
@@ -714,8 +714,8 @@ Which is the best Deep Learning library in Python?
 
 ## Packaging: Pip / Conda
 
-![](https://pypi.org/static/images/logo-large.6bdbb439.svg){height=100px}
-![](https://docs.conda.io/en/latest/_images/conda_logo.svg){height=100px}
+![](images/pypilogo.svg){height=100px}
+![](images/conda_logo.svg){height=100px}
 
 Difference between Conda and Pip according to Anaconda.
 
