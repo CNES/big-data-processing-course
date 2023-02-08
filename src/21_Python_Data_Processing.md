@@ -102,7 +102,7 @@ Matlab (and equivalent Scilab)
 :::
 ::: {.column width="50%"}
 
-![](https://ipython.org/_static/ipy_0.13.png)
+![](images/Python.png)
 
 :::
 ::::::::::::::
