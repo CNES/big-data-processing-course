@@ -17,10 +17,17 @@
     }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -59,7 +66,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -72,7 +79,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -84,7 +91,6 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
 </head>
@@ -143,11 +149,6 @@ data-src="https://supaerodatascience.github.io/OBD/slides/static/img/fb_datacent
 data-src="https://www.datacenterknowledge.com/sites/datacenterknowledge.com/files/wp-content/uploads/2013/06/lulea-rows.jpg"
 style="width:35.0%" /> <img
 data-src="https://www.datacenterknowledge.com/sites/datacenterknowledge.com/files/wp-content/uploads/2013/06/fb-lulea-external-fans.jpg"
-style="width:35.0%" /></p>
-<p><img
-data-src="https://cdn.arstechnica.net/wp-content/uploads/2013/02/openrack2-640x426.jpg"
-style="width:35.0%" /> <img
-data-src="https://engineering.fb.com/wp-content/uploads/2015/05/GM23qAAlFJW8xm4BABnMiwAAAAAAbj0JAAAD.png"
 style="width:35.0%" /></p>
 <p>(Facebook’s data center &amp; server racks)</p>
 </div>
@@ -251,7 +252,8 @@ data-src="images/illustration-of-the-concept-of-Virtualization-7.png" /></p>
 <section id="virtualization-evolution" class="slide level2">
 <h2>Virtualization evolution</h2>
 <p><img
-data-src="https://miro.medium.com/max/10698/1*wE7TrQmFyRTDwh6VpbkbMQ.png" /></p>
+data-src="https://miro.medium.com/max/10698/1*wE7TrQmFyRTDwh6VpbkbMQ.png"
+style="width:90.0%" /></p>
 </section>
 <section id="definitions" class="slide level2">
 <h2>Definitions</h2>
@@ -351,12 +353,8 @@ class="title-slide slide level1">
 </section>
 <section id="public-hybrid-private" class="slide level2">
 <h2>Public, hybrid, private</h2>
-<figure>
-<img
-data-src="https://lh5.googleusercontent.com/e-i1nyv49RP3F3ZCHSepEZ4k_qYhqqgk496wDcsOkHLBbaT7deOuXi3AxesN6LNbQMWXJreOzRqpRbUkNgpFMhX8oxQvbAzAsIi8DObI9xWwq0d5lUfZmAlSbJf5ry-Vmto7i2JL"
-style="width:50.0%" alt="From Padok" />
-<figcaption aria-hidden="true">From Padok</figcaption>
-</figure>
+<p><img data-src="images/blog-cloud-comparison.jpg"
+style="width:80.0%" /></p>
 </section>
 <section id="different-layers-of-abstractions" class="slide level2">
 <h2>Different layers of abstractions</h2>
@@ -418,8 +416,7 @@ alt="Cloud Vendors" />
 data-src="https://www.comptoir-hardware.com/images/stories/_logos/ovhcloud.png"
 style="width:20.0%" /> <img
 data-src="https://cloud.orange.com/ui/app/static/assets/brand/logo_header_login.png"
-style="width:20.0%" /> <img
-data-src="https://open-telekom-cloud.com/resource/blob/data/594220/5aa8c4c54f7a8b90fe1256f26948fbe7/open-telekom-cloud-tsystems-logo.png"
+style="width:20.0%" /> <img data-src="images/open_telekom_cloud.png"
 style="width:20.0%" /></p>
 <p>Academic, public founded:</p>
 <p><img
@@ -437,12 +434,7 @@ data-src="http://1.bp.blogspot.com/-1BuI8MUh498/Uc4BOPBpChI/AAAAAAAAGjk/XWA0iYO5
 <h2>Leaders</h2>
 <p><img
 data-src="https://cdn.statcdn.com/Infographic/images/normal/18819.jpeg"
-style="width:50.0%" /></p>
-</section>
-<section id="in-france" class="slide level2">
-<h2>In France</h2>
-<p><img
-data-src="https://i2.wp.com/datacenter-magazine.fr/contenus/uploads/2020/03/CORE_MARKESS_PRG_OPE_19-20_COMPETITIVE_ENVIRONMENT_PRESSE_MARS-2020.png?resize=600%2C340&amp;ssl=1" /></p>
+style="width:45.0%" /></p>
 </section></section>
 <section>
 <section id="cloud-computing-usage-revolution"
@@ -514,10 +506,17 @@ manager…)</li>
 </section>
 <section id="pet-vs-cattle" class="slide level2">
 <h2>Pet vs Cattle</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p><img
-data-src="https://blog.octo.com/wp-content/uploads/2016/12/image01-e1482225268205-1024x827.png" />
-<img
-data-src="https://blog.octo.com/wp-content/uploads/2019/07/pet_vs-cattle-1024x636.png" /></p>
+data-src="https://blog.octo.com/wp-content/uploads/2016/12/image01-e1482225268205-1024x827.png"
+style="width:50.0%" /></p>
+</div><div class="column" style="width:50%;">
+<p><img
+data-src="https://blog.octo.com/wp-content/uploads/2019/07/pet_vs-cattle-1024x636.png"
+style="width:50.0%" /></p>
+</div>
+</div>
 </section>
 <section id="quizz-3" class="slide level2">
 <h2>Quizz</h2>

@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Guillaume Eynard-Bontemps, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
-  <meta name="dcterms.date" content="2020-11-17">
+  <meta name="author" content="Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
   <title>The rise of the Python ecosystem for Data Processing</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,10 +16,17 @@
     }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -59,7 +65,7 @@
     code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
     code span.at { color: #7d9029; } /* Attribute */
     code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
+    code span.bu { color: #008000; } /* BuiltIn */
     code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #4070a0; } /* Char */
     code span.cn { color: #880000; } /* Constant */
@@ -72,7 +78,7 @@
     code span.ex { } /* Extension */
     code span.fl { color: #40a070; } /* Float */
     code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
     code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
     code span.kw { color: #007020; font-weight: bold; } /* Keyword */
     code span.op { color: #666666; } /* Operator */
@@ -84,7 +90,6 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
 </head>
@@ -95,9 +100,9 @@
 <section id="title-slide">
   <h1 class="title">The rise of the Python ecosystem for Data
 Processing</h1>
-  <p class="author">Guillaume Eynard-Bontemps, CNES (Centre National
-d’Etudes Spatiales - French Space Agency)</p>
-  <p class="date">2020-11-17</p>
+  <p class="author">Guillaume Eynard-Bontemps and Emmanuelle Sarrazin,
+CNES (Centre National d’Etudes Spatiales - French Space Agency)</p>
+  <p class="date">2022-03</p>
 </section>
 
 <section>
@@ -125,7 +130,7 @@ class="title-slide slide level1">
 <figure>
 <img
 data-src="https://www.rstudio.com/images/screenshots/rstudio-windows.png"
-alt="R Studio" />
+style="width:80.0%" alt="R Studio" />
 <figcaption aria-hidden="true">R Studio</figcaption>
 </figure>
 </div>
@@ -151,21 +156,40 @@ alt="R Studio" />
 </div>
 </div>
 </section>
+<section id="cc" class="slide level2">
+<h2>C/C++</h2>
+<ul>
+<li>Static languages</li>
+<li>Not much visualization</li>
+<li>For under layers of use libraries</li>
+<li>Easy to interface with Python (Cython, pybind11)</li>
+</ul>
+</section>
+<section id="java" class="slide level2">
+<h2>Java</h2>
+<ul>
+<li>Static languages</li>
+<li>Not much visualization</li>
+<li>Not completely compatible with IEEE Standard 754 Floating Points
+Numbers</li>
+</ul>
+</section>
 <section id="matlab-and-others" class="slide level2">
 <h2>Matlab and others</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img
+data-src="https://fr.mathworks.com/help/matlab/learn_matlab/desktop.png" /></p>
+</div><div class="column" style="width:50%;">
 <p>Matlab (and equivalent Scilab)</p>
 <ul>
 <li>Interactive</li>
 <li>With IDE and plotting</li>
 <li>Closed, not reproducible</li>
-<li>For some searchers</li>
+<li>For some researchers</li>
 </ul>
-<p>C/C++, Java</p>
-<ul>
-<li>Static languages</li>
-<li>Not much visualization tooling</li>
-<li>For under layers of other high level libraries.</li>
-</ul>
+</div>
+</div>
 </section>
 <section id="python" class="slide level2">
 <h2>Python</h2>
@@ -183,7 +207,7 @@ alt="R Studio" />
 <ul>
 <li>Scientific and parallel computing</li>
 <li>Visualisation and plotting</li>
-<li>ML, DL</li>
+<li>Machine Learning, Deep Learning</li>
 <li>Web developement</li>
 </ul></li>
 </ul>
@@ -194,11 +218,16 @@ alt="R Studio" />
 </section>
 <section id="python-the-most-used-language" class="slide level2">
 <h2>Python the most used language?</h2>
-<p><img data-src="images/PythonTrends.png" /></p>
+<p><img data-src="images/stackoverflow_trends.svg"
+style="width:120.0%" /></p>
+</section>
+<section id="kaggle-languages-popularity" class="slide level2">
+<h2>Kaggle Languages Popularity</h2>
+<p><img data-src="images/kaggle_survey_2022_languages.png" /></p>
 </section>
 <section id="kaggle-ide-popularity" class="slide level2">
 <h2>Kaggle IDE Popularity</h2>
-<p><img data-src="images/KaggleIDEPop.png" /></p>
+<p><img data-src="images/kaggle_survey_2022_ide.png" /></p>
 </section>
 <section id="quizz" class="slide level2">
 <h2>Quizz</h2>
@@ -228,68 +257,116 @@ scientific ecosystem</h1>
 </section>
 
 <section>
-<section id="core-scipy-pydata" class="title-slide slide level1">
-<h1>Core (SciPy, PyData …)</h1>
+<section id="core-numpy-scipy-pandas" class="title-slide slide level1">
+<h1>Core (Numpy, SciPy, Pandas …)</h1>
 
-</section>
-<section id="pandas" class="slide level2">
-<h2>Pandas</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="https://pandas.pydata.org/static/img/pandas.svg"
-height="100" /></p>
-<ul>
-<li>Deal with Dataframes, e.g. tables</li>
-<li>Data manipulation and analysis</li>
-<li>Numerical tables and time series</li>
-<li>Statistics, transformations, joins…</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pd.read_csv(<span class="st">&#39;Myflie.csv&#39;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pd.describe()</span></code></pre></div>
-</div><div class="column" style="width:50%;">
-<p><img data-src="images/PandasTrends.png" /></p>
-</div>
-</div>
 </section>
 <section id="numpy" class="slide level2">
 <h2>Numpy</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><img data-src="https://numpy.org/doc/stable/_static/numpylogo.svg"
-height="100" /></p>
 <ul>
 <li>Manipulate N-dimensionnal arrays</li>
-<li>Numerical computing tools (math functions, linear algebra, Fourier
-transform, …)</li>
-<li>Performant: core is well-optimized C code</li>
+<li>Numerical computing tools :
+<ul>
+<li>math functions</li>
+<li>linear algebra</li>
+<li>Fourier transform</li>
+<li>random number capabilities</li>
+<li>etc</li>
+</ul></li>
+<li>Performant: core is well-optimized C/C++ and Fortran code</li>
 <li>Easy and de facto standard syntax</li>
 </ul>
 <blockquote>
-<p>Nearly every scientist working in Python draws on the power of
-NumPy.</p>
+<p><a
+href="https://medium.com/@RRamya02/nearly-every-scientist-working-in-python-draws-on-the-power-of-numpy-6bdb2ce45c15">Nearly
+every scientist working in Python draws on the power of NumPy</a></p>
 </blockquote>
 </div><div class="column" style="width:40%;">
+<p><img data-src="images/numpylogo.svg" height="100" /></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The standard way to import NumPy:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2-D array, set every second element in</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># some rows and find max per row:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">15</span>, dtype<span class="op">=</span>np.int64).reshape(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span>:, ::<span class="dv">2</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">99</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>array([[  <span class="dv">0</span>,   <span class="dv">1</span>,   <span class="dv">2</span>,   <span class="dv">3</span>,   <span class="dv">4</span>],</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="dv">99</span>,   <span class="dv">6</span>, <span class="op">-</span><span class="dv">99</span>,   <span class="dv">8</span>, <span class="op">-</span><span class="dv">99</span>],</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="dv">99</span>,  <span class="dv">11</span>, <span class="op">-</span><span class="dv">99</span>,  <span class="dv">13</span>, <span class="op">-</span><span class="dv">99</span>]])</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>x.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>array([ <span class="dv">4</span>,  <span class="dv">8</span>, <span class="dv">13</span>])</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate normally distributed random numbers:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> rng.normal(size<span class="op">=</span><span class="dv">2500</span>)</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="scipy" class="slide level2">
+<h2>Scipy</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="https://docs.scipy.org/doc/scipy/_static/logo.svg"
+height="100" /></p>
+<ul>
+<li>Use Numpy arrays as basic data structure</li>
+<li>Offer scientific functions :
+<ul>
+<li>Optimization</li>
+<li>Interpolation</li>
+<li>Signal processing</li>
+<li>Linear algebra</li>
+<li>Statistics</li>
+<li>Image processing</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:60%;">
 <div class="sourceCode" id="cb2"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The standard way to import NumPy:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a 2-D array, set every second element in</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># some rows and find max per row:</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">15</span>, dtype<span class="op">=</span>np.int64).reshape(<span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span>:, ::<span class="dv">2</span>] <span class="op">=</span> <span class="op">-</span><span class="dv">99</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>x</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>array([[  <span class="dv">0</span>,   <span class="dv">1</span>,   <span class="dv">2</span>,   <span class="dv">3</span>,   <span class="dv">4</span>],</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="dv">99</span>,   <span class="dv">6</span>, <span class="op">-</span><span class="dv">99</span>,   <span class="dv">8</span>, <span class="op">-</span><span class="dv">99</span>],</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>       [<span class="op">-</span><span class="dv">99</span>,  <span class="dv">11</span>, <span class="op">-</span><span class="dv">99</span>,  <span class="dv">13</span>, <span class="op">-</span><span class="dv">99</span>]])</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>x.<span class="bu">max</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>array([ <span class="dv">4</span>,  <span class="dv">8</span>, <span class="dv">13</span>])</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate normally distributed random numbers:</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>samples <span class="op">=</span> rng.normal(size<span class="op">=</span><span class="dv">2500</span>)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> linalg</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>xi <span class="op">=</span> <span class="fl">0.1</span><span class="op">*</span>np.arange(<span class="dv">1</span>,<span class="dv">11</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>yi <span class="op">=</span> <span class="fl">5.0</span><span class="op">*</span>np.exp(<span class="op">-</span>xi) <span class="op">+</span> <span class="fl">2.0</span><span class="op">*</span>xi</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>zi <span class="op">=</span> yi <span class="op">+</span> <span class="fl">0.05</span> <span class="op">*</span> np.<span class="bu">max</span>(yi) <span class="op">*</span> rng.standard_normal(<span class="bu">len</span>(yi))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.concatenate((np.exp(<span class="op">-</span>xi)[:, np.newaxis], xi[:, np.newaxis]),axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>c, resid, rank, sigma <span class="op">=</span> linalg.lstsq(A, zi)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>xi2 <span class="op">=</span> np.arange(<span class="fl">0.1</span>,<span class="fl">1.01</span>,<span class="fl">0.01</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>yi2 <span class="op">=</span> c[<span class="dv">0</span>]<span class="op">*</span>np.exp(<span class="op">-</span>xi2) <span class="op">+</span> c[<span class="dv">1</span>]<span class="op">*</span>xi2</span></code></pre></div>
+<p><img data-src="images/scipy_curve.png" /></p>
+</div>
+</div>
+</section>
+<section id="pandas" class="slide level2">
+<h2>Pandas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Deal with Dataseries and Dataframes (e.g. tables)</li>
+<li>Data manipulation and analysis
+<ul>
+<li>Selection</li>
+<li>Grouping</li>
+<li>Merge</li>
+<li>Statistics</li>
+<li>Transformation</li>
+</ul></li>
+<li>Numerical tables and time series</li>
+<li>Extension to geospatial data with geopandas</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://pandas.pydata.org/static/img/pandas.svg"
+height="100" /></p>
+<p><img data-src="images/pandas_io.svg" /></p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pd.read_csv(<span class="st">&#39;Myfile.csv&#39;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>pd.describe()</span></code></pre></div>
 </div>
 </div>
 </section>
@@ -313,37 +390,56 @@ data-src="https://gdfa.ugr.es/python/climate_data/img/xarray2.png" /></p>
 </div>
 </div>
 </section>
+<section id="sympy" class="slide level2">
+<h2>Sympy</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://www.sympy.org/static/images/logo.png"
+height="100" /></p>
+<ul>
+<li>Library for symbolic mathematics</li>
+<li>Simplification, Calculus, Solvers</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sympy <span class="im">import</span> symbols</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> symbols(<span class="st">&#39;x y&#39;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>y</span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/sympy.png" height="500" /></p>
+</div>
+</div>
+</section>
 <section id="matplotlib" class="slide level2">
 <h2>Matplotlib</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img
-data-src="https://matplotlib.org/stable/_static/logo2_compressed.svg"
-height="100" /></p>
 <ul>
 <li>Base/Reference plotting library</li>
 <li>For Python and Numpy</li>
 <li>Static, animated, and interactive visualizations</li>
 <li>Designed to be as usable as MATLAB</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">&quot;projection&quot;</span>: <span class="st">&quot;3d&quot;</span>})</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the surface.</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>surf <span class="op">=</span> ax.plot_surface(X, Y, Z, cmap<span class="op">=</span>cm.coolwarm,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                       linewidth<span class="op">=</span><span class="dv">0</span>, antialiased<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Customize the z axis.</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>ax.set_zlim(<span class="op">-</span><span class="fl">1.01</span>, <span class="fl">1.01</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>ax.zaxis.set_major_locator(LinearLocator(<span class="dv">10</span>))</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># A StrMethodFormatter is used automatically</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>ax.zaxis.set_major_formatter(<span class="st">&#39;</span><span class="sc">{x:.02f}</span><span class="st">&#39;</span>)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a color bar which maps values to colors.</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>fig.colorbar(surf, shrink<span class="op">=</span><span class="fl">0.5</span>, aspect<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">&quot;projection&quot;</span>: <span class="st">&quot;3d&quot;</span>})</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the surface.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>surf <span class="op">=</span> ax.plot_surface(X, Y, Z, cmap<span class="op">=</span>cm.coolwarm,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                       linewidth<span class="op">=</span><span class="dv">0</span>, antialiased<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Customize the z axis.</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ax.set_zlim(<span class="op">-</span><span class="fl">1.01</span>, <span class="fl">1.01</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.zaxis.set_major_locator(LinearLocator(<span class="dv">10</span>))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># A StrMethodFormatter is used automatically</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.zaxis.set_major_formatter(<span class="st">&#39;</span><span class="sc">{x:.02f}</span><span class="st">&#39;</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a color bar which maps values to colors.</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>fig.colorbar(surf, shrink<span class="op">=</span><span class="fl">0.5</span>, aspect<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
 </div><div class="column" style="width:50%;">
+<p><img
+data-src="https://matplotlib.org/stable/_static/logo2_compressed.svg"
+height="100" /></p>
 <p><img
 data-src="https://matplotlib.org/stable/_images/sphx_glr_surface3d_001.png" /></p>
 </div>
@@ -353,10 +449,11 @@ data-src="https://matplotlib.org/stable/_images/sphx_glr_surface3d_001.png" /></
 <h2>Jupyter (Lab and Notebook)</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p><img data-src="https://jupyter.org/assets/share.png"
+height="100" /></p>
 <p><img
 data-src="https://jupyterlab.readthedocs.io/en/1.2.x/_images/jupyterlab.png" /></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="images/800px-Jupyter_logo.svg.png" height="100" /></p>
 <ul>
 <li>Open source web application</li>
 <li>Create and share documents that contain live code</li>
@@ -399,6 +496,44 @@ class="title-slide slide level1">
 <h1>Distributed and scientific computing</h1>
 
 </section>
+<section id="parallel-computing" class="slide level2">
+<h2>Parallel computing</h2>
+<ul>
+<li>Thead vs processus</li>
+<li>Race conditions, mutual exclusion, synchronization, and parallel
+slowdown</li>
+<li>Fine-grained, coarse-grained, and embarrassing parallelism</li>
+</ul>
+</section>
+<section id="classes-of-parallel-computers" class="slide level2">
+<h2>Classes of parallel computers</h2>
+<ul>
+<li>Multi-core computing</li>
+<li>Symmetric multiprocessing</li>
+<li>Distributed computing
+<ul>
+<li>Cluster computing</li>
+<li>Cloud computing</li>
+<li>Grid computing</li>
+</ul></li>
+<li>Specialized parallel computers
+<ul>
+<li>General-purpose computing on graphics processing units (GPGPU)</li>
+<li>Reconfigurable computing with field-programmable gate arrays
+(FPGA)</li>
+<li>Application-specific integrated circuits</li>
+<li>Vector processors</li>
+</ul></li>
+</ul>
+</section>
+<section id="parallel-computing-with-python" class="slide level2">
+<h2>Parallel computing with Python</h2>
+<ul>
+<li>Python packages including parallelization in their
+processings/methods</li>
+<li>Python package dedicated to parallelization</li>
+</ul>
+</section>
 <section id="built-in-mutliprocessing" class="slide level2">
 <h2>Built-in mutliprocessing</h2>
 <ul>
@@ -407,20 +542,19 @@ class="title-slide slide level1">
 <li>Effectively side-steps the <strong>Global Interpreter Lock</strong>
 by using subprocesses instead of threads</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> multiprocessing <span class="im">import</span> Pool</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">*</span>x</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> Pool(<span class="dv">5</span>) <span class="im">as</span> p:</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(p.<span class="bu">map</span>(f, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> multiprocessing <span class="im">import</span> Pool</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">*</span>x</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> Pool(<span class="dv">5</span>) <span class="im">as</span> p:</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(p.<span class="bu">map</span>(f, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span></code></pre></div>
 </section>
 <section id="dask" class="slide level2">
 <h2>Dask</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:65%;">
 <p><img data-src="images/Dask-Logo-lockup-primary.png"
 height="100" /></p>
 <ul>
@@ -432,14 +566,14 @@ memory</li>
 <li>More low level APIs for distributing any algorithm</li>
 <li>More this afternoon</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> dask.dataframe <span class="im">as</span> dd</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> dd.read_csv(<span class="st">&#39;2014-*.csv&#39;</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df.describe().compute()</span></code></pre></div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:35%;">
 <p><img
 data-src="https://docs.dask.org/en/latest/_images/dask-dataframe.svg"
 style="width:80.0%" /></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> dask.dataframe <span class="im">as</span> dd</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> dd.read_csv(<span class="st">&#39;2014-*.csv&#39;</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df.describe().compute()</span></code></pre></div>
 </div>
 </div>
 </section>
@@ -460,8 +594,7 @@ and R interface</li>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="ray"><a href="https://www.ray.io">Ray</a></h3>
-<p><img data-src="https://docs.ray.io/en/latest/_static/ray_logo.png"
-height="100" /></p>
+<p><img data-src="images/ray_header_logo.png" height="100" /></p>
 <ul>
 <li>Scale general Python apps</li>
 <li>And a lot of high-level libs oriented towards Machine and Deep
@@ -509,6 +642,7 @@ class="title-slide slide level1">
 <h2>Landscape</h2>
 <figure>
 <img data-src="images/Python-viz-landscape-colors.png"
+style="width:80.0%"
 alt="Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier" />
 <figcaption aria-hidden="true">Adaptation of Jake VanderPlas graphic
 about the Python visualization landscape, by Nicolas P.
@@ -530,28 +664,44 @@ data-src="https://seaborn.pydata.org/_images/faceted_lineplot.png" /></p>
 </section>
 <section id="plotly" class="slide level2">
 <h2>Plotly</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
 <p><img data-src="images/Plotly-logo-01-square.png" height="100" /></p>
 <ul>
 <li>Interactive, publication-quality graphs</li>
 <li>Make dashboard with Dash</li>
 </ul>
+</div><div class="column" style="width:65%;">
 <p><img
 data-src="https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/anim.gif" /></p>
+</div>
+</div>
+</section>
+<section id="bokeh" class="slide level2">
+<h2>Bokeh</h2>
+<div class="columns">
+<div class="column" style="width:35%;">
+<p><img data-src="http://static.bokeh.org/og/logotype-on-hex.png"
+height="80" /></p>
+<ul>
+<li>Interactive, publication-quality graphs</li>
+<li>Make dashboard with Dash</li>
+</ul>
+</div><div class="column" style="width:65%;">
+<p><img data-src="images/bokeh_plot.png" style="width:60.0%" /></p>
+</div>
+</div>
 </section>
 <section id="pyviz" class="slide level2">
 <h2>Pyviz</h2>
-<p><img
-data-src="https://miro.medium.com/max/518/1*Tw1LzNLwcmpJPVI0v1ZsVA.png" />
-<img
-data-src="https://miro.medium.com/max/2400/1*I-xXZpedIymi1cP3RRrhHw.png" /></p>
+<p><img data-src="https://pyviz.org/_static/logo.png"
+height="100" /></p>
 <ul>
 <li><strong>HoloViews</strong>: Declarative objects for instantly
 visualizable data, building Bokeh plots from convenient high-level
 specifications</li>
 <li><strong>GeoViews</strong>: Visualizable geographic data that that
 can be mixed and matched with HoloViews objects</li>
-<li><strong>Bokeh</strong>: Interactive plotting in web browsers,
-running JavaScript but controlled by Python</li>
 <li><strong>Panel</strong>: Assembling objects from many different
 libraries into a layout or app, whether in a Jupyter notebook or in a
 standalone serveable dashboard</li>
@@ -603,31 +753,52 @@ height="100" /></p>
 <li>Standard interface with Pipelines, estimators, transformers</li>
 <li>No GPU support (so not good for Deep Learning)</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> [[ <span class="dv">1</span>,  <span class="dv">2</span>,  <span class="dv">3</span>],  <span class="co"># 2 samples, 3 features</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>]]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]  <span class="co"># classes of each sample</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>clf.fit(X, y)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> [[ <span class="dv">1</span>,  <span class="dv">2</span>,  <span class="dv">3</span>],  <span class="co"># 2 samples, 3 features</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>     [<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>]]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]  <span class="co"># classes of each sample</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>clf.fit(X, y)</span></code></pre></div>
 </section>
-<section id="tensorflow-keras-pytorch" class="slide level2">
-<h2>TensorFlow, Keras, Pytorch</h2>
+<section id="sickit-learn-1" class="slide level2">
+<h2>Sickit Learn</h2>
+<p><img data-src="https://scikit-learn.org/stable/_static/ml_map.png"
+style="width:70.0%" /></p>
+</section>
+<section id="tensorflow-keras" class="slide level2">
+<h2>TensorFlow, Keras</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p><img
 data-src="https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67"
 height="100" /> <img
 data-src="https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67"
-height="100" /> <img data-src="images/Pytorch_logo.png"
 height="100" /></p>
 <ul>
 <li>Deep Learning on GPU with no previous knowledge</li>
 <li>Keras on top of Tensorflow</li>
 <li>Tensorflow complete platform, with TensorBoard and other tools</li>
-<li>Always trolls about Keras/TF vs PyTorch</li>
 </ul>
+</div><div class="column" style="width:50%;">
 <p><img
 data-src="https://www.tensorflow.org/tensorboard/images/tensorboard.gif"
-style="width:50.0%" /></p>
+style="width:60.0%" /></p>
+</div>
+</div>
+</section>
+<section id="pytorch" class="slide level2">
+<h2>Pytorch</h2>
+<p><img data-src="images/Pytorch_logo.png" height="100" /></p>
+<ul>
+<li>Deep Learning on GPU with no previous knowledge</li>
+<li>Always trolls about Keras/TF vs PyTorch</li>
+<li>Additional librairies:
+<ul>
+<li>pytorch-lightning</li>
+<li>pytorch3d</li>
+</ul></li>
+</ul>
 </section>
 <section id="gradient-boosting-algorithms" class="slide level2">
 <h2>Gradient boosting algorithms</h2>
@@ -660,6 +831,44 @@ height="100" /></p>
 </div>
 </div>
 </section>
+<section id="data-version-control" class="slide level2">
+<h2>Data Version Control</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/dvclogo.png" height="100" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/dvcgraphic.png" style="width:80.0%" /></p>
+</div>
+</div>
+<ul>
+<li>Version your data and models: Store them in your cloud storage but
+keep their version info in your Git repo.</li>
+<li>Track experiments in your local Git repo (no servers needed).</li>
+<li>Share experiments and automatically reproduce anyone’s
+experiment.</li>
+</ul>
+</section>
+<section id="mlflow" class="slide level2">
+<h2>MLFlow</h2>
+<p><img data-src="images/MLflow-logo-final-black.png"
+height="100" /></p>
+<ul>
+<li>Tracking experiments to record and compare parameters and results
+(MLflow Tracking).</li>
+<li>Packaging ML code in a reusable, reproducible form in order to share
+with other data scientists or transfer to production (MLflow
+Projects).</li>
+<li>Managing and deploying models from a variety of ML libraries to a
+variety of model serving and inference platforms (MLflow Models).</li>
+<li>Providing a central model store to collaboratively manage the full
+lifecycle of an MLflow Model, including model versioning, stage
+transitions, and annotations (MLflow Model Registry).</li>
+</ul>
+</section>
+<section id="mlflow-1" class="slide level2">
+<h2>MLFlow</h2>
+<p><img data-src="images/mlflow_tracking.jpeg" /></p>
+</section>
 <section id="quizz-4" class="slide level2">
 <h2>Quizz</h2>
 <p>Which is the best Deep Learning library in Python?</p>
@@ -686,16 +895,19 @@ alt="Answer" />
 </section>
 <section id="packaging-pip-conda" class="slide level2">
 <h2>Packaging: Pip / Conda</h2>
-<p><img
-data-src="https://pypi.org/static/images/logo-large.6bdbb439.svg"
-height="100" /> <img
-data-src="https://docs.conda.io/en/latest/_images/conda_logo.svg"
-height="100" /></p>
+<p><img data-src="images/pypilogo.svg" height="100" /> <img
+data-src="images/conda_logo.svg" height="100" /></p>
 <ul>
 <li>Package libraries</li>
 <li>Make them available on repositories</li>
 <li>Build environments automatically</li>
 </ul>
+</section>
+<section id="packaging-pip-conda-1" class="slide level2">
+<h2>Packaging: Pip / Conda</h2>
+<p><img data-src="images/pypilogo.svg" height="100" /> <img
+data-src="images/conda_logo.svg" height="100" /></p>
+<p>Difference between Conda and Pip according to Anaconda.</p>
 <table>
 <thead>
 <tr class="header">
@@ -732,10 +944,11 @@ height="100" /></p>
 </tr>
 </tbody>
 </table>
-<p>Difference between Conda and Pip according to Anaconda.</p>
 </section>
 <section id="numba" class="slide level2">
 <h2>Numba</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <p><img
 data-src="https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg"
 height="100" /></p>
@@ -749,19 +962,22 @@ runtime</li>
 <li>Python can approach the speeds of C or FORTRAN</li>
 <li>Just apply one of the Numba decorators</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
+</div>
+</div>
 </section>
 <section id="binder" class="slide level2">
 <h2>Binder</h2>
