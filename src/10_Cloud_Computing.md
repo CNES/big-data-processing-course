@@ -38,9 +38,6 @@ I took most of the content from theirs:
 ![](https://www.datacenterknowledge.com/sites/datacenterknowledge.com/files/wp-content/uploads/2013/06/lulea-rows.jpg){width="35%"}
 ![](https://www.datacenterknowledge.com/sites/datacenterknowledge.com/files/wp-content/uploads/2013/06/fb-lulea-external-fans.jpg){width="35%"}
 
-![](https://cdn.arstechnica.net/wp-content/uploads/2013/02/openrack2-640x426.jpg){width="35%"}
-![](https://engineering.fb.com/wp-content/uploads/2015/05/GM23qAAlFJW8xm4BABnMiwAAAAAAbj0JAAAD.png){width="35%"}
-
 (Facebook's data center & server racks)
 
 :::
@@ -109,7 +106,7 @@ Wikipedia
 
 ## Virtualization evolution
 
-![](https://miro.medium.com/max/10698/1*wE7TrQmFyRTDwh6VpbkbMQ.png)
+![](https://miro.medium.com/max/10698/1*wE7TrQmFyRTDwh6VpbkbMQ.png){width=90%}
 
 ## Definitions
 
@@ -187,7 +184,7 @@ And that infrastructure is often there to answer peak load...
 
 ## Public, hybrid, private
 
-![From Padok](https://lh5.googleusercontent.com/e-i1nyv49RP3F3ZCHSepEZ4k_qYhqqgk496wDcsOkHLBbaT7deOuXi3AxesN6LNbQMWXJreOzRqpRbUkNgpFMhX8oxQvbAzAsIi8DObI9xWwq0d5lUfZmAlSbJf5ry-Vmto7i2JL){width=50%}
+![](images/blog-cloud-comparison.jpg){width=80%}
 
 ## Different layers of abstractions
 
@@ -230,7 +227,7 @@ What means IaaS?
 
 ![](https://www.comptoir-hardware.com/images/stories/_logos/ovhcloud.png){width=20%}
 ![](https://cloud.orange.com/ui/app/static/assets/brand/logo_header_login.png){width=20%}
-![](https://open-telekom-cloud.com/resource/blob/data/594220/5aa8c4c54f7a8b90fe1256f26948fbe7/open-telekom-cloud-tsystems-logo.png){width=20%}
+![](images/open_telekom_cloud.png){width=20%}
 
 Academic, public founded:
 
@@ -243,11 +240,7 @@ Academic, public founded:
 
 ## Leaders
 
-![](https://cdn.statcdn.com/Infographic/images/normal/18819.jpeg){width=50%}
-
-## In France
-
-![](https://i2.wp.com/datacenter-magazine.fr/contenus/uploads/2020/03/CORE_MARKESS_PRG_OPE_19-20_COMPETITIVE_ENVIRONMENT_PRESSE_MARS-2020.png?resize=600%2C340&ssl=1)
+![](https://cdn.statcdn.com/Infographic/images/normal/18819.jpeg){width=45%}
 
 # Cloud computing: usage revolution
 
@@ -301,8 +294,18 @@ gcloud compute --project=deeplearningsps instances create ${INSTANCE_NAME} \
 
 ## Pet vs Cattle
 
-![](https://blog.octo.com/wp-content/uploads/2016/12/image01-e1482225268205-1024x827.png)
-![](https://blog.octo.com/wp-content/uploads/2019/07/pet_vs-cattle-1024x636.png)
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](https://blog.octo.com/wp-content/uploads/2016/12/image01-e1482225268205-1024x827.png){width=50%}
+
+:::
+::: {.column width="50%"}
+
+![](https://blog.octo.com/wp-content/uploads/2019/07/pet_vs-cattle-1024x636.png){width=50%}
+
+:::
+::::::::::::::
 
 ## Quizz
 

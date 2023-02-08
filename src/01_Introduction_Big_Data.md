@@ -161,7 +161,7 @@ Cite some V's of Big Data (multiple choices):
 
 ## Data Science and Machine Learning
 
-![Machine Learning tools (Azure)](https://i1.wp.com/neptune.ai/wp-content/uploads/MLOps-platforms-azure-2.png?resize=1024%2C578&ssl=1)
+![Machine Learning tools (Azure)](images/ml_azure.png)
 
 ## Quizz
 

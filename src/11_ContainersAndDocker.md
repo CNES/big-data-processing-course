@@ -117,7 +117,7 @@ Docker is **a** solution that **standardizes** packaging and execution of softwa
 
 > Build, Share, and Run Any App, Anywhere
 
-![](https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png)
+![](https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png){width=50%}
 
 ## History
 
@@ -156,7 +156,7 @@ Docker is some fancy tech over linux kernel capabilities (containers)
 
 ## Layers, Container, Image
 
-![layers](images/servlet.ImageServer.jpg){width=50%}
+![layers](images/servlet.ImageServer.jpg){width=45%}
 
 ## Layer / Image Analogy
 

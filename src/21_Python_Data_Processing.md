@@ -1,7 +1,7 @@
 ---
 title: The rise of the Python ecosystem for Data Processing 
-author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-17
+author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d'Etudes Spatiales - French Space Agency)
+date: 2022-03
 ---
 
 # Data Science programming languages
@@ -22,7 +22,7 @@ date: 2020-11-17
 :::
 ::: {.column width="50%"}
 
-![R Studio](https://www.rstudio.com/images/screenshots/rstudio-windows.png)
+![R Studio](https://www.rstudio.com/images/screenshots/rstudio-windows.png){width=80%}
 
 :::
 ::::::::::::::
@@ -45,23 +45,43 @@ date: 2020-11-17
   - Visualisation and plotting
   - Data science and machine learning
 
+
 :::
 ::::::::::::::
 
+## C/C++
+
+- Static languages
+- Not much visualization
+- For under layers of use libraries
+- Easy to interface with Python (Cython, pybind11)
+
+
+## Java
+
+- Static languages
+- Not much visualization
+- Not completely compatible with IEEE Standard 754 Floating Points Numbers
+
 ## Matlab and others
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](https://fr.mathworks.com/help/matlab/learn_matlab/desktop.png)
+
+:::
+::: {.column width="50%"}
 
 Matlab (and equivalent Scilab)
 
 - Interactive
 - With IDE and plotting
 - Closed, not reproducible
-- For some searchers
+- For some researchers
 
-C/C++, Java
-
-- Static languages
-- Not much visualization tooling
-- For under layers of other high level libraries.
+:::
+::::::::::::::
 
 ## Python
 
@@ -76,7 +96,7 @@ C/C++, Java
 - Ecosystem
   - Scientific and parallel computing
   - Visualisation and plotting
-  - ML, DL
+  - Machine Learning, Deep Learning
   - Web developement
 
 :::
@@ -89,11 +109,16 @@ C/C++, Java
 
 ## Python the most used language?
 
-![](images/PythonTrends.png)
+[comment]: # (https://insights.stackoverflow.com/trends)
+![](images/stackoverflow_trends.svg){width=120%}
+
+## Kaggle Languages Popularity
+
+![](images/kaggle_survey_2022_languages.png)
 
 ## Kaggle IDE Popularity
 
-![](images/KaggleIDEPop.png)
+![](images/kaggle_survey_2022_ide.png)
 
 ## Quizz
 
@@ -110,50 +135,29 @@ What is the most used language (in Data Science)?
 
 # Python scientific ecosystem{background-image=https://jupytearth.org/_images/python-stack.png}
 
-# Core (SciPy, PyData ...)
+# Core (Numpy, SciPy, Pandas ...)
 
-## Pandas
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](https://pandas.pydata.org/static/img/pandas.svg){height=100px}
-
-- Deal with Dataframes, e.g. tables
-- Data manipulation and analysis
-- Numerical tables and time series
-- Statistics, transformations, joins...
-
-```python
-import pandas as pd
-pd.read_csv('Myflie.csv')
-pd.describe()
-```
-
-:::
-::: {.column width="50%"}
-
-![](images/PandasTrends.png)
-
-:::
-::::::::::::::
- 
 ## Numpy
 
 :::::::::::::: {.columns}
 ::: {.column width="60%"}
 
-![](https://numpy.org/doc/stable/_static/numpylogo.svg){height=100px}
-
 - Manipulate N-dimensionnal arrays
-- Numerical computing tools (math functions, linear algebra, Fourier transform, ...)
-- Performant: core is well-optimized C code
+- Numerical computing tools :
+    - math functions
+    - linear algebra
+    - Fourier transform
+    - random number capabilities
+    - etc
+- Performant: core is well-optimized C/C++ and Fortran code
 - Easy and de facto standard syntax
 
-> Nearly every scientist working in Python draws on the power of NumPy. 
+> [Nearly every scientist working in Python draws on the power of NumPy](https://medium.com/@RRamya02/nearly-every-scientist-working-in-python-draws-on-the-power-of-numpy-6bdb2ce45c15)
 
 :::
 ::: {.column width="40%"}
+
+![](images/numpylogo.svg){height=100px}
 
 ```Python
 # The standard way to import NumPy:
@@ -179,6 +183,75 @@ samples = rng.normal(size=2500)
 :::
 ::::::::::::::
 
+## Scipy
+
+:::::::::::::: {.columns}
+::: {.column width="40%"}
+
+![](https://docs.scipy.org/doc/scipy/_static/logo.svg){height=100px}
+
+- Use Numpy arrays as basic data structure
+- Offer scientific functions :
+  - Optimization
+  - Interpolation
+  - Signal processing
+  - Linear algebra
+  - Statistics
+  - Image processing
+
+:::
+::: {.column width="60%"}
+
+```python
+import numpy as np
+from scipy import linalg
+import matplotlib.pyplot as plt
+rng = np.random.default_rng()
+xi = 0.1*np.arange(1,11)
+yi = 5.0*np.exp(-xi) + 2.0*xi
+zi = yi + 0.05 * np.max(yi) * rng.standard_normal(len(yi))
+A = np.concatenate((np.exp(-xi)[:, np.newaxis], xi[:, np.newaxis]),axis=1)
+c, resid, rank, sigma = linalg.lstsq(A, zi)
+xi2 = np.arange(0.1,1.01,0.01)
+yi2 = c[0]*np.exp(-xi2) + c[1]*xi2
+```
+
+![](images/scipy_curve.png)
+
+:::
+::::::::::::::
+
+## Pandas
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+- Deal with Dataseries and Dataframes (e.g. tables)
+- Data manipulation and analysis
+   - Selection
+   - Grouping
+   - Merge
+   - Statistics
+   - Transformation
+- Numerical tables and time series
+- Extension to geospatial data with geopandas
+
+:::
+::: {.column width="50%"}
+
+![](https://pandas.pydata.org/static/img/pandas.svg){height=100px}
+
+![](images/pandas_io.svg)
+
+```python
+import pandas as pd
+pd.read_csv('Myfile.csv')
+pd.describe()
+```
+
+:::
+::::::::::::::
+ 
 ## Xarray
 
 :::::::::::::: {.columns}
@@ -198,12 +271,34 @@ samples = rng.normal(size=2500)
 :::
 ::::::::::::::
 
-## Matplotlib
+## Sympy
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-![](https://matplotlib.org/stable/_static/logo2_compressed.svg){height=100px}
+![](https://www.sympy.org/static/images/logo.png){height=100px}
+
+- Library for symbolic mathematics
+- Simplification, Calculus, Solvers
+
+```python
+from sympy import symbols
+x, y = symbols('x y')
+expr = x + 2*y
+```
+
+:::
+::: {.column width="50%"}
+
+![](images/sympy.png){height=500px}
+
+:::
+::::::::::::::
+
+## Matplotlib
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 
 - Base/Reference plotting library
 - For Python and Numpy
@@ -232,6 +327,8 @@ plt.show()
 :::
 ::: {.column width="50%"}
 
+![](https://matplotlib.org/stable/_static/logo2_compressed.svg){height=100px}
+
 ![](https://matplotlib.org/stable/_images/sphx_glr_surface3d_001.png)
 
 :::
@@ -242,12 +339,12 @@ plt.show()
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
+![](https://jupyter.org/assets/share.png){height=100px}
+
 ![](https://jupyterlab.readthedocs.io/en/1.2.x/_images/jupyterlab.png)
 
 :::
 ::: {.column width="50%"}
-
-![](images/800px-Jupyter_logo.svg.png){height=100px}
 
 - Open source web application
 - Create and share documents that contain live code
@@ -279,6 +376,31 @@ Which tools allows manipulating tabular data?
 
 # Distributed and scientific computing
 
+## Parallel computing
+
+ - Thead vs processus
+ - Race conditions, mutual exclusion, synchronization, and parallel slowdown
+ - Fine-grained, coarse-grained, and embarrassing parallelism
+
+## Classes of parallel computers
+
+ - Multi-core computing
+ - Symmetric multiprocessing
+ - Distributed computing
+    * Cluster computing
+    * Cloud computing
+    * Grid computing
+ - Specialized parallel computers
+    * General-purpose computing on graphics processing units (GPGPU)
+    * Reconfigurable computing with field-programmable gate arrays (FPGA)
+    * Application-specific integrated circuits
+    * Vector processors
+
+## Parallel computing with Python
+
+ - Python packages including parallelization in their processings/methods
+ - Python package dedicated to parallelization
+
 ## Built-in mutliprocessing
 
 - Python core package
@@ -291,15 +413,14 @@ from multiprocessing import Pool
 def f(x):
     return x*x
 
-if __name__ == '__main__':
-    with Pool(5) as p:
-        print(p.map(f, [1, 2, 3]))
+with Pool(5) as p:
+    print(p.map(f, [1, 2, 3]))
 ```
 
 ## Dask
 
 :::::::::::::: {.columns}
-::: {.column width="50%"}
+::: {.column width="65%"}
 
 ![](images/Dask-Logo-lockup-primary.png){height=100px}
 
@@ -310,16 +431,16 @@ if __name__ == '__main__':
 - More low level APIs for distributing any algorithm
 - More this afternoon
 
+:::
+::: {.column width="35%"}
+
+![](https://docs.dask.org/en/latest/_images/dask-dataframe.svg){width=80%}
+
 ```python
 import dask.dataframe as dd
 df = dd.read_csv('2014-*.csv')
 df.describe().compute()
 ```
-
-:::
-::: {.column width="50%"}
-
-![](https://docs.dask.org/en/latest/_images/dask-dataframe.svg){width=80%}
 
 :::
 ::::::::::::::
@@ -341,7 +462,7 @@ df.describe().compute()
 
 ### [Ray](https://www.ray.io)
 
-![](https://docs.ray.io/en/latest/_static/ray_logo.png){height=100px}
+![](images/ray_header_logo.png){height=100px}
 
 - Scale general Python apps
 - And a lot of high-level libs oriented towards Machine and Deep Learning
@@ -378,7 +499,7 @@ What Dask does better than Spark (multiple choices)?
 
 ## Landscape
 
-![Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier](images/Python-viz-landscape-colors.png)
+![Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier](images/Python-viz-landscape-colors.png){width=80%}
 
 ## Seaborn
 
@@ -392,21 +513,46 @@ What Dask does better than Spark (multiple choices)?
 
 ## Plotly
 
+:::::::::::::: {.columns}
+::: {.column width="35%"}
+
 ![](images/Plotly-logo-01-square.png){height=100px}
 
 - Interactive, publication-quality graphs
 - Make dashboard with Dash
 
+:::
+::: {.column width="65%"}
+
 ![](https://raw.githubusercontent.com/cldougl/plot_images/add_r_img/anim.gif)
+
+:::
+::::::::::::::
+
+## Bokeh
+
+:::::::::::::: {.columns}
+::: {.column width="35%"}
+
+![](http://static.bokeh.org/og/logotype-on-hex.png){height=80px}
+
+- Interactive, publication-quality graphs
+- Make dashboard with Dash
+
+:::
+::: {.column width="65%"}
+
+![](images/bokeh_plot.png){width=60%}
+
+:::
+::::::::::::::
 
 ## Pyviz
 
-![](https://miro.medium.com/max/518/1*Tw1LzNLwcmpJPVI0v1ZsVA.png)
-![](https://miro.medium.com/max/2400/1*I-xXZpedIymi1cP3RRrhHw.png)
+![](https://pyviz.org/_static/logo.png){height=100px}
 
 - **HoloViews**: Declarative objects for instantly visualizable data, building Bokeh plots from convenient high-level specifications
 - **GeoViews**: Visualizable geographic data that that can be mixed and matched with HoloViews objects
-- **Bokeh**: Interactive plotting in web browsers, running JavaScript but controlled by Python
 - **Panel**: Assembling objects from many different libraries into a layout or app, whether in a Jupyter notebook or in a standalone serveable dashboard
 - **Datashader**: Rasterizing huge datasets quickly as fixed-size images
 - **hvPlot**: Quickly return interactive HoloViews or GeoViews objects from your Pandas, Xarray, or other data structures
@@ -445,18 +591,39 @@ y = [0, 1]  # classes of each sample
 clf.fit(X, y)
 ```
 
-## TensorFlow, Keras, Pytorch
+## Sickit Learn
+
+![](https://scikit-learn.org/stable/_static/ml_map.png){width=70%}
+
+## TensorFlow, Keras
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 
 ![](https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67){height=100px}
 ![](https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67){height=100px}
-![](images/Pytorch_logo.png){height=100px}
 
 - Deep Learning on GPU with no previous knowledge
 - Keras on top of Tensorflow
 - Tensorflow complete platform, with TensorBoard and other tools
-- Always trolls about Keras/TF vs PyTorch
 
-![](https://www.tensorflow.org/tensorboard/images/tensorboard.gif){width=50%}
+:::
+::: {.column width="50%"}
+
+![](https://www.tensorflow.org/tensorboard/images/tensorboard.gif){width=60%}
+
+:::
+::::::::::::::
+
+## Pytorch
+
+![](images/Pytorch_logo.png){height=100px}
+
+- Deep Learning on GPU with no previous knowledge
+- Always trolls about Keras/TF vs PyTorch
+- Additional librairies:
+    * pytorch-lightning
+    * pytorch3d
 
 ## Gradient boosting algorithms
 
@@ -488,6 +655,38 @@ clf.fit(X, y)
 :::
 ::::::::::::::
 
+## Data Version Control
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](images/dvclogo.png){height=100px}
+
+:::
+::: {.column width="50%"}
+
+![](images/dvcgraphic.png){width=80%}
+
+:::
+::::::::::::::
+
+ - Version your data and models: Store them in your cloud storage but keep their version info in your Git repo.
+ - Track experiments in your local Git repo (no servers needed).
+ - Share experiments and automatically reproduce anyone's experiment.
+
+## MLFlow
+
+![](images/MLflow-logo-final-black.png){height=100px}
+
+- Tracking experiments to record and compare parameters and results (MLflow Tracking).
+- Packaging ML code in a reusable, reproducible form in order to share with other data scientists or transfer to production (MLflow Projects).
+- Managing and deploying models from a variety of ML libraries to a variety of model serving and inference platforms (MLflow Models).
+- Providing a central model store to collaboratively manage the full lifecycle of an MLflow Model, including model versioning, stage transitions, and annotations (MLflow Model Registry).
+
+## MLFlow
+
+![](images/mlflow_tracking.jpeg)
+
 ## Quizz
 
 Which is the best Deep Learning library in Python?
@@ -506,12 +705,19 @@ Which is the best Deep Learning library in Python?
 
 ## Packaging: Pip / Conda
 
-![](https://pypi.org/static/images/logo-large.6bdbb439.svg){height=100px}
-![](https://docs.conda.io/en/latest/_images/conda_logo.svg){height=100px}
+![](images/pypilogo.svg){height=100px}
+![](images/conda_logo.svg){height=100px}
 
 - Package libraries
 - Make them available on repositories
 - Build environments automatically
+
+## Packaging: Pip / Conda
+
+![](images/pypilogo.svg){height=100px}
+![](images/conda_logo.svg){height=100px}
+
+Difference between Conda and Pip according to Anaconda.
 
 |     | conda | pip |
 |-----|-------|-----|
@@ -521,9 +727,10 @@ Which is the best Deep Learning library in Python?
 | create environment | yes, built-in | no, requires virtualenv or venv |
 | dependency checks | yes | no |
 
-Difference between Conda and Pip according to Anaconda.
-
 ## Numba
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
 
 ![](https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg){height=100px}
 
@@ -533,6 +740,9 @@ Difference between Conda and Pip according to Anaconda.
 - Use LLVM compiler library
 - Python can approach the speeds of C or FORTRAN
 - Just apply one of the Numba decorators
+
+:::
+::: {.column width="50%"}
 
 ```python
 from numba import jit
@@ -548,6 +758,9 @@ def monte_carlo_pi(nsamples):
             acc += 1
     return 4.0 * acc / nsamples
 ```
+
+:::
+:::::::::::::: 
 
 ## Binder
 
