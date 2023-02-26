@@ -1,7 +1,7 @@
 ---
 title: Dask presentation and tutorials
 author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-17
+date: 2023-03
 ---
 
 # Dask Presentation
@@ -24,7 +24,7 @@ What produces all dask API in the end?
 
 # Dask Tutorial
 
-[ Just use the Dask tutorial](https://github.com/dask/dask-tutorial)
+[Just use the Dask tutorial in Binder](https://mybinder.org/v2/gh/dask/dask-tutorial/main?urlpath=lab)
 
 Try to follow by order of importance:
 
