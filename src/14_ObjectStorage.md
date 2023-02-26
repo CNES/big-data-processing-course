@@ -20,7 +20,7 @@ But Why?
 
 ## POSIX vs Object Storage
 
-![](https://blog.scaleway.com/content/images/2019/12/schema_storage.svg)
+![](images/posix_vs_storage.png)
 
 ## Object store Architecture
 
