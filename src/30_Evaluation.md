@@ -1,7 +1,7 @@
 ---
 title: Final Evaluation
 author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-18
+date: 2023-03
 ---
 
 # Context
@@ -19,7 +19,7 @@ Dataset: New York Taxi cab statistics simplified.
 
 # Evaluation link
 
-[Let's go](https://github.com/guillaumeeb/isae-supaero-aibt103-bigdata/blob/main/notebooks/EvaluationDaskMLTaxyCabEmpty.ipynb)
+[Let's go](https://github.com/CNES/big-data-processing-course/blob/main/notebooks/EvaluationDaskMLTaxyCabEmpty.ipynb)
 
 - Just git clone this repository from your Juptyerlab to start
 - At the end (end periodically) make sure to save your notebook with outputs by downloading it on your laptop

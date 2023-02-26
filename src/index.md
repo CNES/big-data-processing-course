@@ -42,7 +42,7 @@ Includes Kubernetes exercices.
 
 [The rise of the Python ecosystem for Data Processing](21_Python_Data_Processing.html)
 
-Includes [Pandas library tutorial](https://github.com/jvns/pandas-cookbook).
+Includes [Pandas library tutorial](https://github.com/jvns/pandas-cookbook), [Scikit-learn mooc](https://github.com/INRIA/scikit-learn-mooc/)
 
 [Dask processing framework](22_Dask_Pangeo.html)
 

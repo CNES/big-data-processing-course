@@ -1,7 +1,7 @@
 ---
 title: The rise of the Python ecosystem for Data Processing 
 author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2022-03
+date: 2023-03
 ---
 
 # Data Science programming languages
@@ -110,7 +110,7 @@ Matlab (and equivalent Scilab)
 ## Python the most used language?
 
 [comment]: # (https://insights.stackoverflow.com/trends)
-![](images/stackoverflow_trends.svg){width=120%}
+![](images/stackoverflow_trends.svg){width=70%}
 
 ## Kaggle Languages Popularity
 
@@ -322,6 +322,7 @@ ax.zaxis.set_major_formatter('{x:.02f}')
 fig.colorbar(surf, shrink=0.5, aspect=5)
 
 plt.show()
+
 ```
 
 :::
@@ -774,10 +775,10 @@ def monte_carlo_pi(nsamples):
 
 ## Pandas tutorial
 
-[Let's try Pandas in Binder](https://github.com/jvns/pandas-cookbook)
+[Let's try Pandas in Binder](https://mybinder.org/v2/gh/esarrazin/pandas-cookbook/update_2023)
 
-Follow this first tutorial at least till chapter 6. Use the binder button!
+Follow this first tutorial at least till chapter 6. 
 
-[Pandas & Scikit-learn](https://github.com/INRIA/scikit-learn-mooc/)
+[Pandas & Scikit-learn in Binder](https://mybinder.org/v2/gh/INRIA/scikit-learn-mooc/main)
 
-If you have time, go through part "The predictive modeling pipeline". Notebook 01 to 03. With Binder too.
+If you have time, go through part "The predictive modeling pipeline" with notebooks 01 to 03. You can use the [online book](https://inria.github.io/scikit-learn-mooc) 
