@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Guillaume Eynard-Bontemps, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
-  <meta name="dcterms.date" content="2020-11-16">
+  <meta name="author" content="Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
+  <meta name="dcterms.date" content="2024-01-08">
   <title>Deploy Data processing platform on the Cloud</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -36,20 +36,66 @@
 
 <section id="title-slide">
   <h1 class="title">Deploy Data processing platform on the Cloud</h1>
-  <p class="author">Guillaume Eynard-Bontemps, CNES (Centre National
-d’Etudes Spatiales - French Space Agency)</p>
-  <p class="date">2020-11-16</p>
+  <p class="author">Guillaume Eynard-Bontemps, Hugues Larat, CNES
+(Centre National d’Etudes Spatiales - French Space Agency)</p>
+  <p class="date">2024-01-08</p>
 </section>
 
-<section id="context" class="slide level1">
-<h1>Context</h1>
-<p>Dask</p>
+<section>
+<section id="zero-to-jupyterhub" class="title-slide slide level1">
+<h1>Zero to Jupyterhub</h1>
+
+</section>
+<section id="jupyterhub" class="slide level2">
+<h2>Jupyterhub</h2>
+<figure>
+<img
+data-src="https://zero-to-jupyterhub.readthedocs.io/en/latest/_static/logo.png"
+alt="Jupyterhub for Kubernetes" />
+<figcaption aria-hidden="true">Jupyterhub for Kubernetes</figcaption>
+</figure>
+<blockquote>
+<p>JupyterHub brings the power of notebooks to groups of users. It gives
+users access to computational environments and resources without
+burdening the users with installation and maintenance tasks. Users -
+including students, researchers, and data scientists - can get their
+work done in their own workspaces on shared resources which can be
+managed efficiently by system administrators.</p>
+</blockquote>
+<blockquote>
+<p>JupyterHub allows users to interact with a computing environment
+through a webpage. As most devices have access to a web browser,
+JupyterHub makes it is easy to provide and standardize the computing
+environment of a group of people (e.g., for a class of students or an
+analytics team).</p>
+</blockquote>
+</section>
+<section id="hands-on" class="slide level2">
+<h2>Hands on</h2>
+<p>Open your Google console, and let’s deploy a Jupyterhub!</p>
+<ul>
+<li><a href="https://zero-to-jupyterhub.readthedocs.io/en/latest/">Zero
+to Jupyterhub documentation</a></li>
+<li><a
+href="https://zero-to-jupyterhub.readthedocs.io/en/latest/google/step-zero-gcp.html">Google
+Kubernetes Engine Instruction</a></li>
+</ul>
+</section></section>
+<section>
+<section id="dask-hub" class="title-slide slide level1">
+<h1>Dask Hub</h1>
+
+</section>
+<section id="dask" class="slide level2">
+<h2>Dask</h2>
 <ul>
 <li>#1 Distributed processing tool in Python</li>
 <li>Distributed Dataframe and Arrays</li>
-<li>We’ll see more of it tomorrow</li>
+<li>We’ll see more of it in another class</li>
 </ul>
-<p>Pangeo</p>
+</section>
+<section id="pangeo" class="slide level2">
+<h2>Pangeo</h2>
 <ul>
 <li>Community of (geo)scientists and developers</li>
 <li>Tackling big data problems: analysing simulations or sensor
@@ -63,8 +109,8 @@ data</li>
 </ul></li>
 </ul>
 </section>
-<section id="exercise" class="slide level1">
-<h1>Exercise</h1>
+<section id="hands-on-1" class="slide level2">
+<h2>Hands on</h2>
 <p>We will focus on getting a data processing platform on the Cloud:</p>
 <ul>
 <li>Dask cluster running in Kubernetes,</li>
@@ -75,7 +121,7 @@ data</li>
 href="https://github.com/guillaumeeb/OBD/blob/master/notebooks/Kubernetes_Daskhub.ipynb">Documentation
 notebook</a></p>
 <p>This is the first part of you evaluation!</p>
-</section>
+</section></section>
     </div>
   </div>
 
