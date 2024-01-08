@@ -13,7 +13,7 @@ date: 2020-11-15
 1,000,000,000,000 GB  
 1,000,000,000,000,000,000,000 B  
 
-![Evolution of the global datasphere size (IDC)](https://supaerodatascience.github.io/OBD/slides/static/img/datasphere.png)
+![Evolution of the global datasphere size (IDC)](https://supaerodatascience.github.io/DE/slides/static/img/datasphere.png)
 
 ## Some figures
 
@@ -113,7 +113,7 @@ Cite some V's of Big Data (multiple choices):
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-![SQL vs NoSQL databases model (altitudetvm)](https://altitudetvm.com/images/komputer/apa-itu-nosql-berikut-ini-pengertian-nosql-beserta-kelebihannya_2.png){width=50%}
+![SQL vs NoSQL databases model (altitudetvm)](images/sql-vs-nosql.png){width=50%}
 
 :::
 ::: {.column width="50%"}

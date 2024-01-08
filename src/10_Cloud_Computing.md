@@ -1,7 +1,7 @@
 ---
 title: Introduction to Cloud Computing
-author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-16
+author: Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d'Etudes Spatiales - French Space Agency)
+date: 2024-08-01
 ---
 
 # Credits and thanks
@@ -14,10 +14,10 @@ for their work on this subject.
 
 I took most of the content from theirs: 
 
-- [https://supaerodatascience.github.io/OBD/1_1_overview.html](https://supaerodatascience.github.io/OBD/1_1_overview.html)
-- [https://supaerodatascience.github.io/OBD/slides/1_1_cloud_computing.html](https://supaerodatascience.github.io/OBD/slides/1_1_cloud_computing.html)
-- [https://supaerodatascience.github.io/OBD/slides/1_2_cloud_usage.html](https://supaerodatascience.github.io/OBD/slides/1_2_cloud_usage.html)
-- [https://supaerodatascience.github.io/OBD/slides/1_3_gcp.html](https://supaerodatascience.github.io/OBD/slides/1_3_gcp.html)
+- [https://supaerodatascience.github.io/DE/1_1_overview.html](https://supaerodatascience.github.io/DE/1_1_overview.html)
+- [https://supaerodatascience.github.io/DE/slides/1_1_cloud_computing.html](https://supaerodatascience.github.io/DE/slides/1_1_cloud_computing.html)
+- [https://supaerodatascience.github.io/DE/slides/1_2_cloud_usage.html](https://supaerodatascience.github.io/DE/slides/1_2_cloud_usage.html)
+- [https://supaerodatascience.github.io/DE/slides/1_3_gcp.html](https://supaerodatascience.github.io/DE/slides/1_3_gcp.html)
 
 # What is the Cloud?
 
@@ -30,7 +30,7 @@ I took most of the content from theirs:
 :::::::::::::: {.columns}
 ::: {.column width="30%"}
 
-![](https://supaerodatascience.github.io/OBD/slides/static/img/fb_datacenter.jpg)
+![](https://supaerodatascience.github.io/DE/slides/static/img/fb_datacenter.jpg)
 
 :::
 ::: {.column width="70%"}
@@ -231,7 +231,7 @@ What means IaaS?
 
 Academic, public founded:
 
-![gaiax](https://www.data-infrastructure.eu/GAIAX/Redaktion/EN/Bilder/gaia-x.jpg?__blob=normal&v=1&size=834w){width=20%}
+![gaiax](https://gaia-x.eu/wp-content/uploads/2022/12/Gaia-X_Logo_Inverted_White_Transparent_210401-3-1000x687.png){width=20%}
 ![EOSC](https://eosc-portal.eu/sites/all/themes/theme1/logo.png){width=20%}
 
 ## Private/on premise
@@ -294,18 +294,7 @@ gcloud compute --project=deeplearningsps instances create ${INSTANCE_NAME} \
 
 ## Pet vs Cattle
 
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](https://blog.octo.com/wp-content/uploads/2016/12/image01-e1482225268205-1024x827.png){width=50%}
-
-:::
-::: {.column width="50%"}
-
-![](https://blog.octo.com/wp-content/uploads/2019/07/pet_vs-cattle-1024x636.png){width=50%}
-
-:::
-::::::::::::::
+![](images/petcattle.png){width=50%}
 
 ## Quizz
 

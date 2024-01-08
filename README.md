@@ -1,11 +1,15 @@
 ![Build course slides](https://github.com/CNES/big-data-processing-course/actions/workflows/slides.yml/badge.svg)
 
 # Main Subject
-Supaero Course on Big Data Processing support, for 4 days training.
 
-Built for CNES, ISAE-Supaero, AIBT specialized master, and SDD course (https://supaerodatascience.github.io/OBD/index.html#data-distribution).
+Supaero Course on Big Data Processing support, for up 4 days training.
+
+Built for CNES, ISAE-Supaero, AIBT specialized master, and the Data Engineering part of the Supaero Data Science course (https://supaerodatascience.github.io/DE/#data-distribution).
 
 # Output
+
+Several slides are generated through this project. The below index tries to list them all.
+
 https://CNES.github.io/big-data-processing-course
 
 # Run notebooks on binder

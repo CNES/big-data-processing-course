@@ -257,7 +257,7 @@ pd.describe()
 :::::::::::::: {.columns}
 ::: {.column width="40%"}
 
-![](http://xarray.pydata.org/en/stable/_static/dataset-diagram-logo.png){height=100px}
+![](https://docs.xarray.dev/en/stable/_static/Xarray_Logo_RGB_Final.svg){height=100px}
 
 - Manipulate N-dimensionnal **labelled** arrays and **datasets**
 - Introduce dimensions, coordinates and attributes on top of Numpy
@@ -328,7 +328,7 @@ plt.show()
 :::
 ::: {.column width="50%"}
 
-![](https://matplotlib.org/stable/_static/logo2_compressed.svg){height=100px}
+![](https://matplotlib.org/_static/logo_light.svg){height=100px}
 
 ![](https://matplotlib.org/stable/_images/sphx_glr_surface3d_001.png)
 
@@ -601,8 +601,8 @@ clf.fit(X, y)
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-![](https://camo.githubusercontent.com/906e661107a3bc03104ca5d88336d1f4b0e80fdcac65efaf7904041d371c747f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6b657261732e696f2f696d672f6b657261732d6c6f676f2d323031382d6c617267652d313230302e706e67){height=100px}
-![](https://camo.githubusercontent.com/aeb4f612bd9b40d81c62fcbebd6db44a5d4344b8b962be0138817e18c9c06963/68747470733a2f2f7777772e74656e736f72666c6f772e6f72672f696d616765732f74665f6c6f676f5f686f72697a6f6e74616c2e706e67){height=100px}
+![](images/TFLogo.png){height=100px}
+![](https://keras.io/img/logo.png){height=100px}
 
 - Deep Learning on GPU with no previous knowledge
 - Keras on top of Tensorflow

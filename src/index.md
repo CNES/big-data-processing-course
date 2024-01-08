@@ -36,6 +36,8 @@ Includes Docker exercises.
 
 Includes Kubernetes exercices.
 
+[Object Storage and Cloud Optimized datasets](14_ObjectStorage.html)
+
 [Deploy Data processing platform on the Cloud](13_Dask_On_Cloud.html)
 
 ### Day 3: Python ecosystem for data processing and Dask
@@ -54,9 +56,9 @@ Includes [Dask tutorial](https://github.com/dask/dask-tutorial).
 
 [Final Evaluation](30_Evaluation.html)
 
-# OBD Data Distribution course
+# SDD DE Data Distribution course
 
-[OBD Course Introduction](00_OBD_Course_Introduction.html)
+[SDD DE Course Introduction](00_SDD_DE_Course_Introduction.html)
 
 # CNES Big Data Processing & Distribution course
 
