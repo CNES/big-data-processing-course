@@ -1,7 +1,7 @@
 ---
 title: Containers and Docker
-author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-16
+author: Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d'Etudes Spatiales - French Space Agency)
+date: 2024-01-08
 ---
 
 # Credits and thanks
@@ -14,9 +14,9 @@ for their work on this subject.
 
 I took most of the content from theirs:
 
-- [https://supaerodatascience.github.io/OBD/slides/1_4_containers.html](https://supaerodatascience.github.io/OBD/slides/1_4_containers.html)
-- [https://supaerodatascience.github.io/OBD/slides/1_5_orchestration.html](https://supaerodatascience.github.io/OBD/slides/1_5_orchestration.html)
-- [https://supaerodatascience.github.io/OBD/slides/2_3_kubernetes.html#/](https://supaerodatascience.github.io/OBD/slides/2_3_kubernetes.html#/)
+- [https://supaerodatascience.github.io/DE/slides/1_4_containers.html](https://supaerodatascience.github.io/DE/slides/1_4_containers.html)
+- [https://supaerodatascience.github.io/DE/slides/1_5_orchestration.html](https://supaerodatascience.github.io/DE/slides/1_5_orchestration.html)
+- [https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/](https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/)
 
 # Containers
 
@@ -117,7 +117,7 @@ Docker is **a** solution that **standardizes** packaging and execution of softwa
 
 > Build, Share, and Run Any App, Anywhere
 
-![](https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png){width=50%}
+![](https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png){width=30%}
 
 ## History
 
@@ -139,7 +139,7 @@ Docker is some fancy tech over linux kernel capabilities (containers)
 
 ## Using Docker in practice
 
-![](https://supaerodatascience.github.io/OBD/slides/static/img/docker-jworkflow.jpg)
+![](https://supaerodatascience.github.io/DE/slides/static/img/docker-jworkflow.jpg)
 
 ## Vocabulary of Docker
 
@@ -213,7 +213,7 @@ docker run my-image
 
 ## Architecture
 
-![](https://docs.docker.com/engine/images/architecture.svg)
+![](images/DockerArchi.png)
 
 ## Registry
 
@@ -237,7 +237,7 @@ docker run my-image
 
 ## Alternatives: Podman
 
-![](https://podman.io/images/podman.svg){height=200px}
+![](https://raw.githubusercontent.com/containers/podman/main/logo/podman-logo.png){height=200px}
 
 "Rootless Docker for Redhat"
 
