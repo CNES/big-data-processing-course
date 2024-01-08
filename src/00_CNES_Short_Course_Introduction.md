@@ -73,7 +73,7 @@ What is this course module main subject?
   - Hadoop legacy: Spark, Dask, Object Storage ...
 - [Spark](03_Spark_Introduction.html)
   - Spark Introduction (30min)
-  - Exercise: Play with MapReudce through Spark (30min)
+  - Exercise: Play with MapReduce through Spark (30min)
 
 ## Cloud, Kubernetes & Object stores (3.5h)
 

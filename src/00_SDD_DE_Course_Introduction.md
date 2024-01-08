@@ -75,22 +75,24 @@ What is this course module main subject?
 ## Deployment & Intro to Kubernetes (3h)
 
 - MLOps: deploying your model as a Web App 
-- Introduction to Orchestration
-- Introduction to Kubernetes
+- [Introduction to Orchestration](https://supaerodatascience.github.io/DE/slides/2_2b_orchestration.html)
+- [Introduction to Kubernetes](12_OrchestrationKubernetes.html)
 
 ## Kubernetes hands on (3h)
 
 - Zero to Jupyterhub: deploy a Jupyterhub on Kubernetes
 - Deploy a Daskhub: a Dask enables Jupyterhub (for later use)
 
+[Slides](13_Dask_On_Cloud.html)
+
 ## Big Data & Distributed Computing (3h)
 
-- Introduction to Big Data and its ecosystem (1h)
+- [Introduction to Big Data and its ecosystem (1h)](01_Introduction_Big_Data.html)
   - What is Big Data?
   - Legacy “Big Data” ecosystem
   - Big Data use cases
   - Big Data to Machine Learning
-- Big Data platforms, Hadoop & Beyond (2h)
+- [Big Data platforms, Hadoop & Beyond (2h)](02_Big_Data_Platforms.html)
   - Hadoop, HDFS and MapReduce,
   - Datalakes, Data Pipelines
   - From HPC to Big Data to Cloud and High Performance Data Analytics 
@@ -99,14 +101,14 @@ What is this course module main subject?
 
 ## Spark & Dask hands on (4h)
 
-- Spark Introduction (30m)
+- [Spark Introduction (30m)](03_Spark_Introduction.html)
 - Play with MapReduce through Spark (Notebook on small datasets) (1.5h)
-- Dask Introduction (30m)
+- [Dask Introduction (30m)](22_Dask_Pangeo.html)
 - Dask tutorial (1.5h)
 
 ## Evaluation: DaskHub, Dask preprocess, ML training (6h)
 
-- Evaluation introduction (1h)
+- [Evaluation introduction (1h)](30_Evaluation.html)
   - Subject presentation
   - Everyone should have a Daskhub cloud platform setup
 - Notebook with cell codes to fill or answers to give
