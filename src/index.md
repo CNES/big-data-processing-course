@@ -54,9 +54,9 @@ Includes [Dask tutorial](https://github.com/dask/dask-tutorial).
 
 [Final Evaluation](30_Evaluation.html)
 
-# OBD Data Distribution course
+# SDD DE Data Distribution course
 
-[OBD Course Introduction](00_OBD_Course_Introduction.html)
+[SDD DE Course Introduction](00_SDD_DE_Course_Introduction.html)
 
 # CNES Big Data Processing & Distribution course
 

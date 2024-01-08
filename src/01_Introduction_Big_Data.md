@@ -13,7 +13,7 @@ date: 2020-11-15
 1,000,000,000,000 GB  
 1,000,000,000,000,000,000,000 B  
 
-![Evolution of the global datasphere size (IDC)](https://supaerodatascience.github.io/OBD/slides/static/img/datasphere.png)
+![Evolution of the global datasphere size (IDC)](https://supaerodatascience.github.io/DE/slides/static/img/datasphere.png)
 
 ## Some figures
 
