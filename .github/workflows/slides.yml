@@ -68,7 +68,7 @@ jobs:
         slides:
           - 00_Course_Introduction
           - 00_CNES_Short_Course_Introduction
-          - 00_OBD_Course_Introduction
+          - 00_SDD_DE_Course_Introduction
           - 01_Introduction_Big_Data
           - 02_Big_Data_Platforms
           - 03_Spark_Introduction
