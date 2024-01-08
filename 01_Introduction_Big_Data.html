@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Guillaume Eynard-Bontemps, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
+  <meta name="dcterms.date" content="2020-11-15">
+  <title>Introduction to Big Data and its Ecosystem</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Introduction to Big Data and its Ecosystem</h1>
+  <p class="author">Guillaume Eynard-Bontemps, CNES (Centre National
+d’Etudes Spatiales - French Space Agency)</p>
+  <p class="date">2020-11-15</p>
+</section>
+
+<section>
+<section id="what-is-big-data" class="title-slide slide level1">
+<h1>What is Big Data?</h1>
+
+</section>
+<section id="data-evolution" class="slide level2">
+<h2>Data evolution</h2>
+<p>1 ZB<br />
+1,000,000 PB<br />
+1,000,000,000,000 GB<br />
+1,000,000,000,000,000,000,000 B</p>
+<figure>
+<img
+data-src="https://supaerodatascience.github.io/OBD/slides/static/img/datasphere.png"
+alt="Evolution of the global datasphere size (IDC)" />
+<figcaption aria-hidden="true">Evolution of the global datasphere size
+(IDC)</figcaption>
+</figure>
+</section>
+<section id="some-figures" class="slide level2">
+<h2>Some figures</h2>
+<figure>
+<img
+data-src="https://www.visualcapitalist.com/wp-content/uploads/2019/04/a-day-in-data.jpg"
+style="width:50.0%"
+alt="Volume of data produced in a day in 2019 (source www.visualcapitalist.com)" />
+<figcaption aria-hidden="true">Volume of data produced in a day in 2019
+(source www.visualcapitalist.com)</figcaption>
+</figure>
+</section>
+<section id="some-figures-in-sciences" class="slide level2">
+<h2>Some figures in sciences</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="earth-observation-data">Earth Observation Data</h3>
+<figure>
+<img
+data-src="images/The-estimated-volumes-EOS-data-produced-by-the-Landsat-8-Sentinel-1-2-3-and.jpg"
+style="width:60.0%"
+alt="Volume of data per year (source The Australian Geoscience Data Cube — Foundations and lessons learned, A. Lewis)" />
+<figcaption aria-hidden="true">Volume of data per year (source The
+Australian Geoscience Data Cube — Foundations and lessons learned, A.
+Lewis)</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<h3 id="cern">CERN</h3>
+<ul>
+<li>The LHC experiments produce about 90 petabytes of data per year</li>
+<li>an additional 25 petabytes of data are produced per year for data
+from other (non-LHC) experiments at CERN</li>
+</ul>
+<figure>
+<img data-src="images/CERNVolumes.png"
+alt="CERN current data volumes" />
+<figcaption aria-hidden="true">CERN current data volumes</figcaption>
+</figure>
+<p><a
+href="https://monit-grafana-open.cern.ch/d/000000884/it-overview?orgId=16">You
+can have a look</a></p>
+</div>
+</div>
+</section>
+<section id="v-4v-5v" class="slide level2"
+data-background-image="https://www.lebigdata.fr/wp-content/uploads/2016/05/les-4-V-du-big-data-ibm.jpg">
+<h2
+data-background-image="https://www.lebigdata.fr/wp-content/uploads/2016/05/les-4-V-du-big-data-ibm.jpg">3V,
+4V, 5V</h2>
+</section>
+<section id="what-is-behind-big-data" class="slide level2">
+<h2>What is Behind Big Data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="data">Data</h3>
+<p>Volume, variety, multiple sources, internal, external…</p>
+<h3 id="tools-and-technology">Tools and technology</h3>
+<p>Store, Compute, Analyse: Calculators, Cloud, Hadoop, Spark, Dask</p>
+<p>Visualize, Use: Applications, Web interfaces</p>
+</div><div class="column" style="width:50%;">
+<h3 id="definition-wikipedia">Definition (Wikipedia)</h3>
+<blockquote>
+<p>Big data is a field that treats ways to analyze, systematically
+extract information from, or otherwise deal with data sets that are too
+large or complex to be dealt with by traditional data-processing
+application software.</p>
+</blockquote>
+<blockquote>
+<p>Big data is where parallel computing tools are needed to handle
+data.</p>
+</blockquote>
+<p>Not a technology.</p>
+</div>
+</div>
+</section>
+<section id="quizz" class="slide level2">
+<h2>Quizz</h2>
+<p>What is the estimated size of the global data sphere?</p>
+<ul>
+<li>Answer A: 175 Petabytes</li>
+<li>Answer B: 175 Exabytes</li>
+<li>Answer C: 175 Zetabytes</li>
+</ul>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_84">Answer link</a>
+<em>Key: yi</em></p>
+</section>
+<section id="quizz-1" class="slide level2">
+<h2>Quizz</h2>
+<p>Cite some V’s of Big Data (multiple choices):</p>
+<ul>
+<li>Answer A: Validation</li>
+<li>Answer B: Volume</li>
+<li>Answer C: Velocity</li>
+<li>Answer D: Voldemort</li>
+<li>Answer E: Variety</li>
+</ul>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_730">Answer link</a>
+<em>Key: rf</em></p>
+</section></section>
+<section>
+<section id="legacy-big-data-ecosystem"
+class="title-slide slide level1">
+<h1>Legacy “Big Data” ecosystem</h1>
+
+</section>
+<section id="blowing-ecosystem" class="slide level2"
+data-background-image="https://external-preview.redd.it/P6JcS17ECpmFF2si8KVnuoKpiabc5-pWTmgRt_YxTx4.png?auto=webp&amp;s=3cbdbbe95112b6d6f5fb0bb59f6421b8e8be999e">
+<h2
+data-background-image="https://external-preview.redd.it/P6JcS17ECpmFF2si8KVnuoKpiabc5-pWTmgRt_YxTx4.png?auto=webp&amp;s=3cbdbbe95112b6d6f5fb0bb59f6421b8e8be999e">Blowing
+ecosystem</h2>
+</section>
+<section id="hadoop-map-reduce" class="slide level2">
+<h2>Hadoop &amp; Map Reduce</h2>
+<figure>
+<img
+data-src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2016/10/HADOOP-ECOSYSTEM-Edureka.png"
+alt="Hadoop ecosystem" />
+<figcaption aria-hidden="true">Hadoop ecosystem</figcaption>
+</figure>
+</section>
+<section id="nosql-not-only-sql" class="slide level2">
+<h2>NoSQL (Not only SQL)</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<figure>
+<img
+data-src="https://altitudetvm.com/images/komputer/apa-itu-nosql-berikut-ini-pengertian-nosql-beserta-kelebihannya_2.png"
+style="width:50.0%" alt="SQL vs NoSQL databases model (altitudetvm)" />
+<figcaption aria-hidden="true">SQL vs NoSQL databases model
+(altitudetvm)</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure>
+<img
+data-src="https://miro.medium.com/max/800/1*Sz73n23vbZ_Gtsx2FU3Otg.jpeg"
+alt="Popular NoSQL Databases" />
+<figcaption aria-hidden="true">Popular NoSQL Databases</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="logs-etl-time-series" class="slide level2">
+<h2>Logs, ETL, Time series</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<figure>
+<img
+data-src="https://www.elastic.co/static-res/images/elk/elk-stack-elkb-diagram.svg"
+style="width:60.0%" alt="Elastic stack" />
+<figcaption aria-hidden="true">Elastic stack</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<figure>
+<img
+data-src="https://www.sqlpac.com/en/documents/images/influxdb-v2-getting-started-setup-preparing-migration-from-version-1.7-02.png"
+alt="Grafana/Prometheus/InfluxDB" />
+<figcaption aria-hidden="true">Grafana/Prometheus/InfluxDB</figcaption>
+</figure>
+<figure>
+<img
+data-src="https://grafana.com/static/img/screenshots/Modal_dashboards.png"
+style="width:60.0%" alt="Dahboards" />
+<figcaption aria-hidden="true">Dahboards</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="dataviz" class="slide level2">
+<h2>Dataviz</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="bi-softwares">BI (softwares)</h3>
+<figure>
+<img
+data-src="https://information4all.com/wp-content/uploads/2018/08/bi-logos.jpg"
+style="width:50.0%" alt="Classical BI tools" />
+<figcaption aria-hidden="true">Classical BI tools</figcaption>
+</figure>
+</div><div class="column" style="width:50%;">
+<h3 id="python-libraries">Python (libraries)</h3>
+<figure>
+<img
+data-src="https://rougier.github.io/python-visualization-landscape/landscape-colors.png"
+style="width:60.0%" alt="Python data vizualisation landscape" />
+<figcaption aria-hidden="true">Python data vizualisation
+landscape</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="data-science-and-machine-learning" class="slide level2">
+<h2>Data Science and Machine Learning</h2>
+<figure>
+<img data-src="images/mlops_azure.png"
+alt="Machine Learning tools (Azure)" />
+<figcaption aria-hidden="true">Machine Learning tools
+(Azure)</figcaption>
+</figure>
+</section>
+<section id="quizz-2" class="slide level2">
+<h2>Quizz</h2>
+<p>Which technology is the most representative of the Big Data
+world?</p>
+<ul>
+<li>Answer A: Spark</li>
+<li>Answer B: Elasticsearch</li>
+<li>Answer C: Hadoop</li>
+<li>Answer D: Tensorflow</li>
+<li>Answer E: MPI (Message Passing Interface)</li>
+</ul>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_514">Answer link</a>
+<em>Key: dy</em></p>
+</section></section>
+<section>
+<section id="big-data-use-cases" class="title-slide slide level1">
+<h1>Big Data use cases</h1>
+
+</section>
+<section id="typical-dataset-originally" class="slide level2">
+<h2>Typical Dataset (originally)</h2>
+<p>Huge amount of small objects:</p>
+<ul>
+<li>Billions of records</li>
+<li>KB to MB range</li>
+</ul>
+<p>Think of:</p>
+<ul>
+<li>Web pages, and words into it</li>
+<li>Tweets</li>
+<li>Text files, where each line is a record</li>
+<li>IoT and everyday life sensors: a record per second, minute or
+hour.</li>
+</ul>
+</section>
+<section id="cost-effective-storage-and-processing"
+class="slide level2">
+<h2>Cost effective storage and processing</h2>
+<ul>
+<li>Commodity hardware (standard servers, disks and network)</li>
+<li>Horizontal scalability</li>
+<li>Proximity of Storage and Compute</li>
+<li>Secure storage (redundancy or Erasure Coding)</li>
+</ul>
+<p>Use cases:</p>
+<ul>
+<li>Archiving</li>
+<li>Massive volume handling</li>
+<li>ETL (Extract Transform Load)</li>
+</ul>
+</section>
+<section id="data-mining-data-value-data-cross-processing"
+class="slide level2">
+<h2>Data mining, data value, data cross processing</h2>
+<p>Extract new knowledge and value from the data:</p>
+<ul>
+<li>Statistics,</li>
+<li>Find new Key Performance Indicators,</li>
+<li>Explain your data with no prior knowledge (Data Mining)</li>
+</ul>
+<p>Cross analysis of internal and external data, correlations:</p>
+<ul>
+<li>Trends with news or social network stream and correlation to
+sales</li>
+<li>Near real time updates with Stream processing</li>
+</ul>
+</section>
+<section id="scientific-data-processing" class="slide level2">
+<h2>Scientific data processing</h2>
+<p>Data production or scientific exploration:</p>
+<ul>
+<li>Stream processing, or near real time processing from sensor
+data</li>
+<li>Distributed processing of massive volume of incomming data on
+computing farm</li>
+<li>Data exploration and analysis</li>
+<li>Data Science</li>
+</ul>
+<p><img data-src="images/GaiaPlatform.png" style="width:40.0%"
+alt="Gaia: 150TB input, 6PB generated" /> <img
+data-src="images/Iota2.png" alt="Iota2: 20-40TB of input data" /></p>
+</section>
+<section id="other-main-use-cases" class="slide level2">
+<h2>Other main use cases</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Digital twins</li>
+<li>Predictive maintenance</li>
+<li>Smart City</li>
+<li>Real time processing</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<figure>
+<img
+data-src="https://www.prolim.com/wp-content/uploads/2019/08/digital-twin.jpg"
+alt="Airplane Digital Twin" />
+<figcaption aria-hidden="true">Airplane Digital Twin</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="quizz-3" class="slide level2">
+<h2>Quizz</h2>
+<p>What is the typical volumes of scientific Datasets (multiple
+choices)?</p>
+<ul>
+<li>Answer A: MBs</li>
+<li>Answer B: GBs</li>
+<li>Answer C: TBs</li>
+<li>Answer D: PBs</li>
+<li>Answer E: EBs</li>
+</ul>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_563">Answer link</a>
+<em>Key: ri</em></p>
+</section></section>
+<section>
+<section id="big-data-to-machine-learning"
+class="title-slide slide level1">
+<h1>Big Data to Machine Learning</h1>
+
+</section>
+<section
+id="big-data-ecosystem-allows-part-of-machine-learning-to-be-effective"
+class="slide level2">
+<h2>Big Data ecosystem allows (part of) machine learning to be
+effective</h2>
+<ul>
+<li>More data = more precise models</li>
+<li>Deep Learning difficult without large (possibly generated) input
+datasets</li>
+<li>Tools to collect, store, filter, index, structure data</li>
+<li>Tools to analyse and visualize data</li>
+<li>Real time model learning</li>
+</ul>
+<p><a
+href="https://blog.dataiku.com/when-and-when-not-to-use-deep-learning">https://blog.dataiku.com/when-and-when-not-to-use-deep-learning</a></p>
+</section>
+<section id="pre-processing-before-machine-learning"
+class="slide level2">
+<h2>Pre processing before machine learning</h2>
+<ul>
+<li>Data wrangling and exploration</li>
+<li>Feature engineering: unstructured data to input features</li>
+<li>Cross mutliple data sources</li>
+<li>Get insights on the data before processing it (statistics,
+vizualisation)</li>
+</ul>
+</section>
+<section id="distribute-datasets-and-algorithms" class="slide level2">
+<h2>Distribute datasets and algorithms</h2>
+<ul>
+<li>For preprocessing as seen above</li>
+<li>Means to load and learn on large volumes by distributing
+storage</li>
+<li>Distributed learning with data locality on big datasets</li>
+<li>Distributed hyper parameter search</li>
+</ul>
+<figure>
+<img
+data-src="https://docs.microsoft.com/fr-fr/azure/architecture/data-guide/big-data/images/big-data-pipeline.png"
+style="width:60.0%" alt="Lambda Architecture (Azure)" />
+<figcaption aria-hidden="true">Lambda Architecture (Azure)</figcaption>
+</figure>
+</section>
+<section id="quizz-4" class="slide level2">
+<h2>Quizz</h2>
+<p>Is Big Data and Machine Learning the same?</p>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_933">Answer link</a>
+<em>Key: fj</em></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+       // Parallax background image
+       parallaxBackgroundImage: 'images/background-logo.png', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1800,
+
+        height: 900,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
