@@ -1,7 +1,7 @@
 ---
 title: Containers Orchestration, Kubernetes
-author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-16
+author: Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d'Etudes Spatiales - French Space Agency)
+date: 2024-01-08
 ---
 
 # Credits and thanks
@@ -14,8 +14,8 @@ for their work on this subject.
 
 I took most of the content from theirs:
 
-- [https://supaerodatascience.github.io/OBD/slides/1_5_orchestration.html](https://supaerodatascience.github.io/OBD/slides/1_5_orchestration.html)
-- [https://supaerodatascience.github.io/OBD/slides/2_3_kubernetes.html#/](https://supaerodatascience.github.io/OBD/slides/2_3_kubernetes.html#/)
+- [https://supaerodatascience.github.io/DE/slides/1_5_orchestration.html](https://supaerodatascience.github.io/DE/slides/1_5_orchestration.html)
+- [https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/](https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/)
 
 # Kubernetes
 
@@ -59,7 +59,7 @@ It is open source now <https://github.com/kubernetes> and used... everywhere ?
 
 ## Thanks to Dennis for the next part
 
-[Slides](https://supaerodatascience.github.io/OBD/slides/2_3_kubernetes.html#/)
+[Slides](https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/)
 
 ## Quizz
 

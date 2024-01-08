@@ -117,7 +117,7 @@ Docker is **a** solution that **standardizes** packaging and execution of softwa
 
 > Build, Share, and Run Any App, Anywhere
 
-![](https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png){width=30%}
+![](images/01-primary-blue-docker-logo.png){width=50%}
 
 ## History
 
@@ -237,7 +237,7 @@ docker run my-image
 
 ## Alternatives: Podman
 
-![](https://raw.githubusercontent.com/containers/podman/main/logo/podman-logo.png){height=200px}
+![](images/podman-logo.png){height=200px}
 
 "Rootless Docker for Redhat"
 
