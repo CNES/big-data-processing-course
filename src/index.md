@@ -36,6 +36,8 @@ Includes Docker exercises.
 
 Includes Kubernetes exercices.
 
+[Object Storage and Cloud Optimized datasets](14_ObjectStorage.html)
+
 [Deploy Data processing platform on the Cloud](13_Dask_On_Cloud.html)
 
 ### Day 3: Python ecosystem for data processing and Dask

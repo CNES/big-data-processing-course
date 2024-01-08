@@ -1,7 +1,7 @@
 ---
 title: Object Storage and Cloud Optimized Datasets
-author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2022-04-26
+author: Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d'Etudes Spatiales - French Space Agency)
+date: 2024-08-01
 ---
 
 # Object Storage
@@ -20,7 +20,7 @@ But Why?
 
 ## POSIX vs Object Storage
 
-![](images/posix_vs_storage.png)
+![](images/posix_vs_object.png)
 
 ## Object store Architecture
 

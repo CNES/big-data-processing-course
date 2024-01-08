@@ -6,7 +6,7 @@ date: 2023-03
 
 # Dask Presentation
 
-![Dask logo](images/Dask-Logo-lockup-primary.png){height=100px}
+![](images/Dask-Logo-lockup-primary.png){height=100px}
 
 [Just use the Dask slidedeck](https://docs.google.com/presentation/d/e/2PACX-1vSTH2kAR0DCR0nw8pFBe5kuYbOk3inZ9cQfZbzOIRjyzQoVaOoMfI2JONGBz-qsvG_P6g050ddHxSXT/pub?start=false&loop=false&delayms=60000#slide=id.p)
 
