@@ -1,7 +1,7 @@
 ---
 title: The rise of the Python ecosystem for Data Processing 
 author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2023-03
+date: 2024-01
 ---
 
 # Data Science programming languages

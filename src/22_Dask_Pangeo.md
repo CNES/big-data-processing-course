@@ -1,7 +1,7 @@
 ---
 title: Dask presentation and tutorials
 author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2023-03
+date: 2024-01
 ---
 
 # Dask Presentation
