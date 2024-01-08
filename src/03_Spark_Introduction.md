@@ -254,15 +254,15 @@ What's the main API of Spark?
 - Pre-configured
 - Warm up on [Py computation](https://www.geeksforgeeks.org/estimating-value-pi-using-monte-carlo/)
 
-![](https://camo.githubusercontent.com/e95b477d89032e6f4a7c7bc8fadaf4c8d185c900/687474703a2f2f7777772e706879736963732e736d752e6564752f66617474617275732f70692e706e67){width=20%}
+![](https://github.com/SupaeroDataScience/DE/blob/main/notebooks/Pi_30K.gif?raw=true){width=20%}
 
 - RDDs
 - Dataframes
 
 ## Notebook
 
-[Notebook is here](https://github.com/guillaumeeb/isae-supaero-aibt103-bigdata/blob/main/notebooks/IntroductionToSpark.ipynb)
+[Notebook is here](https://github.com/CNES/big-data-processing-course/blob/main/notebooks/IntroductionToSpark.ipynb)
 
 Easiest:
 
-[Run it on Binder](https://mybinder.org/v2/gh/guillaumeeb/isae-supaero-aibt103-bigdata/main?urlpath=lab)
+[Run it on Binder](https://mybinder.org/v2/gh/CNES/big-data-processing-course/main?urlpath=lab)

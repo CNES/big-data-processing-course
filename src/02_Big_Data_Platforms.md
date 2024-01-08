@@ -275,7 +275,7 @@ What is the magical hidden step of distributed Map Reduce?
 
 ## Typical Architecture
 
-![Enterprise data lake reference architecture](){width=80%}
+![Enterprise data lake reference architecture](images/AzureDatalake.png){width=80%}
 
 ## CNES Datalake infrastructure example
 
@@ -507,7 +507,7 @@ python /data/training/SLURM/plot_template.py
 :::
 ::: {.column width="40%"}
 
-![MPI Code](https://cvw.cac.cornell.edu/hybrid/images/mpimultistampede70pct.png)
+![MPI Code](images/mpimultistampede70pct.png)
 
 :::
 ::::::::::::::
@@ -539,16 +539,16 @@ python /data/training/SLURM/plot_template.py
 
 ## TOP500
 
-| Rank | System | Cores | Rmax (TFlop/s) | Rpeak (TFlop/s) | Power (kW) |
+| Rank | System | Cores | Rmax (TFlop/s) | Rpeak (PFlop/s) | Power (kW) |
 |------| -------|-------|----------------|-----------------|------------|
-| 1 | Supercomputer Fugaku - Japan  | 7,630,848 | 442,010.0 | 537,212.0 | 29,899 |
-| 2 | Summit - United States | 2,414,592 | 148,600.0 | 200,794.9 | 10,096 |
-| 3 | Sierra - United States | 1,572,480 | 94,640.0 | 125,712.0 | 7,438 |
-| 8 | JUWELS Booster Module - Germany | 449,280 | 44,120.0 | 70,980.0 | 1,764 |
-| 21 | PANGEA III - France | 291,024 | 17,860.0 | 25,025.8 | 1,367 |
-| 92 | Jean Zay - France | 93,960 | 4,478.0 | 7,345.6 | |
+| 1 | Frontier - United States  | 8,699,904 | 1,194.00 | 1,679.82 | 22,703 |
+| 2 | Aurora - United States | 4,742,808 	 | 585.34 | 1,059.33 | 24,687 |
+| 4 | Supercomputer Fugaku - Japan | 7,630,848 | 442.01 | 537.21 | 29,899 |
+| 5 | LUMI - Finland | 2,752,704 | 2379.70 | 531.51 | 7,107 |
+| 17 | Adastra - France | 319,072 | 46.10 | 61.61 | 921 |
+| 167 | Jean Zay - France | 93,960 | 4.48 | 7.35 | |
 
-[Top 500 (june 2021)](https://top500.org/lists/top500/list/2021/06/)
+[Top 500 (november 2023)](https://top500.org/lists/top500/2023/11/)
 
 ## Big Data and Hadoop
 
