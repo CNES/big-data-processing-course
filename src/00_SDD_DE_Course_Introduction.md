@@ -49,7 +49,11 @@ By the end of this module, participants will be able to:
 - CNES (Centre National d'Etudes Spatiales - French Space Agency)
 - Since 2020: 
   - Cloud specialist
-- Before that: Cloud, Kubernetes
+  - Ground Segment Engineer
+- Before that:
+  - System Architect
+  - 8 years as Software Enginner and Tech Lead (a lot of Java)
+  - 5 years as System & Network Technician
 
 :::
 ::::::::::::::
