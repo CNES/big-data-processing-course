@@ -96,12 +96,13 @@ What is this course module main subject?
   - Legacy “Big Data” ecosystem
   - Big Data use cases
   - Big Data to Machine Learning
-- [Big Data platforms, Hadoop & Beyond (2h)](02_Big_Data_Platforms.html)
+- [Big Data platforms, Hadoop & Beyond (1h30)](02_Big_Data_Platforms.html)
   - Hadoop, HDFS and MapReduce,
   - Datalakes, Data Pipelines
   - From HPC to Big Data to Cloud and High Performance Data Analytics 
   - BI vs Big Data
   - Hadoop legacy: Spark, Dask, Object Storage ...
+- [Object Storage (30m)](14_ObjectStorage.html)
 
 ## Spark & Dask hands on (4h)
 

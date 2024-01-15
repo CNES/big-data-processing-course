@@ -59,7 +59,7 @@ From [Spark Research homepage](https://spark.apache.org/research.html):
 
 ## Quizz
 
-What's the main difference between Spark and Hadoop Map Reduce?
+What are the main differences between Spark and Hadoop Map Reduce?
 
 - Answer A: Spark uses another algorithm at the heart of its computing model
 - Answer B: Spark can work on memory and is much faster
