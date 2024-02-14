@@ -2,7 +2,7 @@
 
 ## About the course
 
-Guillaume Eynard-Bontemps for ISAE-Supaero
+Guillaume Eynard-Bontemps, Emmanuelle Sarrazin for ISAE-Supaero
 
 - ARTIFICIAL INTELLIGENCE & BUSINESS TRANSFORMATION
 - BLOC 1 : ARTIFICIAL INTELLIGENCE INTERNALS
@@ -40,19 +40,29 @@ Includes Kubernetes exercices.
 
 [Deploy Data processing platform on the Cloud](13_Dask_On_Cloud.html)
 
-### Day 3: Python ecosystem for data processing and Dask
+### Day 3: Python ecosystem for data processing
 
 [The rise of the Python ecosystem for Data Processing](21_Python_Data_Processing.html)
 
-Includes [Pandas library tutorial](https://github.com/jvns/pandas-cookbook), [Scikit-learn mooc](https://github.com/INRIA/scikit-learn-mooc/)
+Includes [Pandas library tutorial](https://github.com/esarrazin/pandas-cookbook), [Scikit-learn mooc](https://github.com/INRIA/scikit-learn-mooc/)
 
-[Dask processing framework](22_Dask_Pangeo.html)
+[Distributed processing](22_Distributed_Processing.html)
+
+Includes [TODO](todo)
+
+### Day 4: Python for distributed processing
+
+[Manage large datasets](22_Large_Datasets.html)
+
+Includes [TODO](todo)
+
+[Dask processing framework](24_Dask_Pangeo.html)
 
 Includes [Dask tutorial](https://github.com/dask/dask-tutorial).
 
 [If necessary, finish data processing platform deployment](13_Dask_On_Cloud.html)
 
-### Day 4: Evaluation
+### Day 5: Evaluation
 
 [Final Evaluation](30_Evaluation.html)
 
