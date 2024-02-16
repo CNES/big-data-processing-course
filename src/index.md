@@ -46,17 +46,13 @@ Includes Kubernetes exercices.
 
 Includes [Pandas library tutorial](https://github.com/esarrazin/pandas-cookbook), [Scikit-learn mooc](https://github.com/INRIA/scikit-learn-mooc/)
 
-[Distributed processing](22_Distributed_Processing.html)
-
-Includes [TODO](todo)
+[Distributed processing](23_Distributed_Processing.html)
 
 ### Day 4: Python for distributed processing
 
-[Manage large datasets](22_Large_Datasets.html)
+[Manage large datasets](24_Large_Datasets.html)
 
-Includes [TODO](todo)
-
-[Dask processing framework](24_Dask_Pangeo.html)
+[Dask processing framework](25_Dask.html)
 
 Includes [Dask tutorial](https://github.com/dask/dask-tutorial).
 
