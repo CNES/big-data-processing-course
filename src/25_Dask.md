@@ -219,13 +219,13 @@ for future in as_completed(futures):
 
 # How Dask works ?
 
-## First, produce a tasks graph
+## First, produce a task graph
 
 ![](images/dask_graph.png){width=70%}
 
 High level collections are used to generate task graphs
 
-## First, produce tasks graphs
+## First, produce a task graph
 
 Create an array of ones
 
@@ -236,7 +236,7 @@ x = da.ones(15, chunks=(5,))
 ```
 ![](images/dask_graph_1.png){height=50%}
 
-## First, produce a tasks graph
+## First, produce a task graph
 
 :::::::::::::: {.columns}
 ::: {.column width="40%"}
@@ -258,7 +258,7 @@ y = sum()
 ::::::::::::::
 
 
-## First, produce a tasks graph
+## First, produce a task graph
 
 Create an 2d-array of ones and sum it
 
@@ -270,7 +270,7 @@ y = x.sum()
 ```
 ![](images/dask_graph_3.png){width=30%}
 
-## First, produce a tasks graph
+## First, produce a task graph
 
 Add array to its transpose
 
@@ -282,7 +282,7 @@ y = x +x.T
 ```
 ![](images/dask_graph_4.png){width=40%}
 
-## First, produce a tasks graph
+## First, produce a task graph
 
 Matrix multiplication
 
