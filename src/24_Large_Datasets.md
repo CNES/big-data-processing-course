@@ -42,7 +42,7 @@ Process ever larger and more numerous datasets
 ### EUCLID
 
 - Mission: Explore the composition and evolution of the dark Universe
-- Launch in 2023
+- Launched in 2023
 - Data volume: 170 PB (6 years) i.e. 80 TB / day
 
 :::
