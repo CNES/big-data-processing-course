@@ -42,16 +42,11 @@ Process ever larger and more numerous datasets
 ### EUCLID
 
 - Mission: Explore the composition and evolution of the dark Universe
-- Launch in 2023
+- Launched in 2023
 - Data volume: 170 PB (6 years) i.e. 80 TB / day
 
 :::
 ::::::::::::::
-
-## Larger datasets
-
-- Training large deep neural networks required large datasets
-
 
 # How to store the large datasets ?
 
@@ -114,6 +109,7 @@ Process ever larger and more numerous datasets
 - File storage format for chunked, compressed, N-dimensional arrays
 - Same performances than HDF5
 - More flexible because chunking can be done along any dimension
+- Cloud optimized
 
 
 ## Comparison 
@@ -148,6 +144,7 @@ The optimum format depends on:
 
 ## Distributed data storage
 
+Object storage:
 - HDFS
 - Amazon S3
 - Azure storage
@@ -181,6 +178,7 @@ pd.read_parquet("timeseries_wide.parquet", columns=required_columns)
 - Text data column is not memory efficient
 - Use pandas.Categorical for categorical data
 - Use pandas.numeric() to downcast the numeric columns to their smallest types 
+- Use PyArrow data structure (available in Pandas 2)
 
 :::
 ::: {.column width="50%"}
@@ -219,6 +217,7 @@ for index_slice in index_slices:
 
 ## Good pratices: Dask
 
+- Use it only if needed, Pandas is often the best for dataset that fits in memory
 - Dask includes dask.dataframe, a pandas-like API for working with larger than memory datasets in parallel. 
 - Dask can use multiple threads or processes on a single machine, or a cluster of machines to process data in parallel.
 - More information in the next course
