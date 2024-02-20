@@ -38,9 +38,11 @@ Includes Kubernetes exercices.
 
 [Object Storage and Cloud Optimized datasets](14_ObjectStorage.html)
 
+### Day 3 (morning): Deploy your own processing platform on Kubernetes
+
 [Deploy Data processing platform on the Cloud](13_Dask_On_Cloud.html)
 
-### Day 3: Python ecosystem for data processing
+### Day 3 (afternoon): Python ecosystem for data processing
 
 [The rise of the Python ecosystem for Data Processing](21_Python_Data_Processing.html)
 
