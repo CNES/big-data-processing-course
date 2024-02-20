@@ -131,6 +131,7 @@ Process ever larger and more numerous datasets
   - Cloud Optimized GeoTIFF: Optimize satellite images in cloud storage
 
 
+
 ## Choice of the file format
 
 The optimum format depends on:  
