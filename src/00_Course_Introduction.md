@@ -1,7 +1,7 @@
 ---
 title: Big Data Processing Course Introduction
-author: Guillaume Eynard-Bontemps, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2020-11-15
+author: Guillaume Eynard-Bontemps, Emmanuelle Sarrazin, Hugues Larat, CNES (Centre National d'Etudes Spatiales - French Space Agency)
+date: 2024-02-24
 ---
 
 # Welcome
@@ -34,24 +34,53 @@ By the end of this module, participants will be able to:
 | 9:00-10:30 | Slides, tutorial or exercises |
 | 10:30-10:45 | Coffee Break |
 | 10:45-12:15 | Slides, tutorial or exercises |
-| 12:15-13:15 | Lunch (I know it's a bit short) |
-| 13:15-15:15 | Slides, tutorial or exercises (not nap) |
-| 15:15-15:45 | Coffee Break (we may also make two breaks of 15min) |
-| 15:45-17:15 | Slides, tutorial or exercises (last session, at last) |
+| 12:15-13:30 | Lunch (I know it's a bit short) |
+| 13:30-15:15 | Slides, tutorial or exercises (not nap) |
+| 15:15-15:30 | Coffee Break (we may also make two breaks) |
+| 15:30-17:15 | Slides, tutorial or exercises (last session, at last) |
 
 I'll try to propose some quizz to be sure you're following!
 
 ## About myself{background-image="images/HPC-blue.jpg" style="color:white"}
 
-- Guillaume Eynard-Bontemps
+- Guillaume
 - CNES (Centre National d'Etudes Spatiales - French Space Agency)
 - Since 2016: 
-  - 5 years on CNES Computing Center team
-  - Technical lead of the team
-  - 3 years of using Dask/Python on HPC and in the Cloud
+  - 6 years in CNES Computing Center team
+  - 1 year of holydays
+  - 1 year in developping image processing tools
+  - 6 years of using Dask/Python on HPC and in the Cloud
   - A bit of Kubernetes and Google Cloud
 - Before that: 5 years on Hadoop and Spark
 - Originally: Software developer (a lot of Java)
+
+## About others
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+- Hugues
+- CNES (Centre National d'Etudes Spatiales - French Space Agency)
+- Since 2020: 
+  - Cloud specialist
+  - Ground Segment Engineer
+- Before that:
+  - System Architect
+  - 8 years as Software Enginner and Tech Lead (a lot of Java)
+  - 5 years as System & Network Technician
+
+:::
+::: {.column width="50%"}
+
+- Emmanuelle
+- CNES (Centre National d'Etudes Spatiales - French Space Agency)
+- Since 2013: 
+  - 6 years, HPC Expert
+  - 5 years Image processing, 3D 
+
+:::
+::::::::::::::
+
 
 ## About yourselves
 
@@ -69,31 +98,31 @@ What is this course module main subject?
 - Answer B: Big Data Processing
 - Answer C: Machine Learning
 
-![Answer](data:image/png;base64,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)
+![Answer](data:image/png;base64,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)
 
-[Answer link](https://toreply.univ-lille.fr/reponse_852)
+[Answer link](https://toreply.univ-lille.fr/reponse_916) _Key: ah_
 
 # Program
 
 ## Day 1: Big Data, Distributed Computing and Spark
 
-- Introduction to Big Data and its ecosystem (1h)
+- [Introduction to Big Data and its ecosystem (1h)](01_Introduction_Big_Data.html)
   - What is Big Data?
   - Legacy “Big Data” ecosystem
   - Big Data use cases
   - Big Data to Machine Learning
-- Big Data platforms, Hadoop & Beyond (2h)
+- [Big Data platforms, Hadoop & Beyond (2h)](02_Big_Data_Platforms.html)
   - Hadoop, HDFS and MapReduce,
   - Datalakes, Data Pipelines
   - From HPC to Big Data to Cloud and High Performance Data Analytics 
   - BI vs Big Data
   - Hadoop legacy: Spark, Dask, Object Storage ...
-- Spark Introduction (1h)
+- [Spark Introduction (1h)](03_Spark_Introduction.html)
 - Play with MapReduce through Spark (Notebook on small datasets) (2h)
 
 ## Day 2: Cloud Computing and Kubernetes
 
-- Introduction to Cloud Computing (2h)
+- [Introduction to Cloud Computing (2h)](10_Cloud_Computing.html)
   - What's the Cloud, Virtualization
   - Cloud history, layers, Engines
   - Usage revolution and new Data processing standard
@@ -101,33 +130,45 @@ What is this course module main subject?
 - First interaction with Google Cloud, how to get a server? (1h)
   - Exercise through Google console or cloud CLI
 - Container & Kubernetes (2h) 
-  - Container & Docker
+  - [Containers and Docker](11_ContainersAndDocker)
   - Play with Docker
-  - Kubernetes & CaaS & PaaS (Databricks, Coiled)
+  - [Containers Orchestration, Kubernetes](12_OrchestrationKubernetes.html)
+    - Kubernetes & CaaS & PaaS (Databricks, Coiled)
+  - [Object Storage and Cloud Optimized datasets](14_ObjectStorage.html)
   - Play with Kubernetes (if we have time)
-- Deploy a Data processing platform on the Cloud based on Kubernetes and Dask (1.5h)
-  - Exercise: DaskHub or Dask Kubernetes or Pangeo
 
-## Day 3: Python ecosystem for data processing and Dask
+## Day 3 (morning): Deploy your own processing platform on Kubernetes
 
-- The rise of the Python ecosystem for Data Processing (1.5h)
+- Deploy a Jupyterhub on Kubernetes
+  - Exercise: Zero to Jupyterhub: deploy a Jupyterhub on Kubernetes
+- Deploy a Data processing platform on the Cloud based on Kubernetes and Dask (3h)
+  - Exercise: [Deploy Data processing platform on the Cloud](13_Dask_On_Cloud.html)
+
+## Day 3 (afternoon): Python ecosystem for data processing
+
+- [The rise of the Python ecosystem for Data Processing (1,5h)](21_Python_Data_Processing.html)
   - Data Science programming languages
   - Pydata stack (Pandas, Numpy, Matlplotlib, Jupyter)
   - Distributed and sctientific processing (Dask, PySpark)
   - Data vizualisation (Seaborn, Plotly, Pyviz)
   - Machine and Deep Learning (Sickit Learn, TensorFlow, Pytorch)
   - Jupyter notebooks, Binder, Google Colab
-- Pandas tutorial (1h)
-- Dask Presentation (1h)
-- Dask Tutorial (2h)
-- Pangeo tutorial or finish deploying your computing platform (1h)
+- Includes [Pandas library tutorial](https://github.com/esarrazin/pandas-cookbook), [Scikit-learn mooc](https://github.com/INRIA/scikit-learn-mooc/)
+- [Distributed processing](23_Distributed_Processing.html)
+
+## Day 4: Python for distributed processing
+
+- [Manage large datasets](24_Large_Datasets.html)
+- [Dask processing framework](25_Dask.html)
+- Includes [Dask tutorial](https://github.com/dask/dask-tutorial).
 
 ## Day 4: Evaluation
 
-- Prerequisite: Pangeo platform deployed before (on day 2 and 3)
-- Clean big amounts of data using Dask in the cloud (3h)
-- Train machine learning models in parallel (hyper parameter search) (3h)
-- Notebook with cell codes to fill or answers to give
+- [Final Evaluation](30_Evaluation.html)
+  - Prerequisite: Pangeo platform deployed before (on day 2 and 3)
+  - Clean big amounts of data using Dask in the cloud (3h)
+  - Train machine learning models in parallel (hyper parameter search) (3h)
+  - Notebook with cell codes to fill or answers to give
 
 ## Quizz
 
@@ -139,7 +180,7 @@ What will we do today (multiple choices)?
 - Answer D: Take a nap
 - Answer E: Some Spark
 
-![Answer](data:image/png;base64,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)
+![Answer](data:image/png;base64,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)
 
-[Answer link](https://toreply.univ-lille.fr/reponse_81)
+[Answer link](https://toreply.univ-lille.fr/reponse_252) _Key: mv_
 
