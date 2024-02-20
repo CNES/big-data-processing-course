@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
+  <title>Manage large datasets</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Manage large datasets</h1>
+  <p class="author">Guillaume Eynard-Bontemps and Emmanuelle Sarrazin,
+CNES (Centre National d’Etudes Spatiales - French Space Agency)</p>
+  <p class="date">2024-01</p>
+</section>
+
+<section>
+<section id="introduction" class="title-slide slide level1">
+<h1>Introduction</h1>
+
+</section>
+<section id="more-and-more-data" class="slide level2">
+<h2>More and more data</h2>
+<p>Process ever larger and more numerous datasets</p>
+<p><img data-src="images/big_data_2.png" style="width:50.0%" /></p>
+<p><sub><sup>https://towardsdatascience.com/machine-learning-with-big-data-86bcb39f2f0b</sup></sub></p>
+</section>
+<section id="more-and-more-data-1" class="slide level2">
+<h2>More and more data</h2>
+<ul>
+<li>More than 16 million text messages are sent every minute</li>
+<li>More than 100 million spam emails are sent every minute</li>
+<li>Every minute, there are more than a million tinder swipes</li>
+<li>Every day, more than a billion photos are uploaded to Google
+Photos</li>
+</ul>
+</section>
+<section id="larger-science-catalogues" class="slide level2">
+<h2>Larger science catalogues</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="gaia">GAIA</h3>
+<ul>
+<li>Mission: create a 3D map of astronomical objects throughout the
+milky way</li>
+<li>Data volume: 60TB (5 years)</li>
+<li>Launched in 2013</li>
+<li>Number of objects in Gaia catalogues:
+<ul>
+<li>Version 1: 1,142,679,769</li>
+<li>Version 2: 1,692,919,135</li>
+<li>Version 3: 1,811,709,771</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="euclid">EUCLID</h3>
+<ul>
+<li>Mission: Explore the composition and evolution of the dark
+Universe</li>
+<li>Launched in 2023</li>
+<li>Data volume: 170 PB (6 years) i.e. 80 TB / day</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="how-to-store-the-large-datasets"
+class="title-slide slide level1">
+<h1>How to store the large datasets ?</h1>
+
+</section>
+<section id="file-formats" class="slide level2">
+<h2>File formats</h2>
+<ul>
+<li>Column oriented formats</li>
+<li>Record oriented formats</li>
+<li>Array oriented formats</li>
+</ul>
+</section>
+<section id="advantages-of-column-oriented-format" class="slide level2">
+<h2>Advantages of column oriented format</h2>
+<ul>
+<li>Stores values of each column in contiguous memory locations</li>
+<li>Facilitates efficient data analytics since queries can be made on
+subsets of columns without needing to load entire data records</li>
+<li>Improves compression because it is performed column by column, which
+enables different encoding schemes to be used for text and integer
+data.</li>
+</ul>
+</section>
+<section id="historical-file-format" class="slide level2">
+<h2>Historical file format</h2>
+<ul>
+<li>CSV:
+<ul>
+<li>easy to use</li>
+<li>human readable</li>
+<li>plain text</li>
+</ul></li>
+<li>HDF5:
+<ul>
+<li>designed to store and organize large amounts of data.</li>
+<li>composed of groups of datasets, which are typed multidimensional
+arrays</li>
+</ul></li>
+</ul>
+</section>
+<section id="apache-parquet" class="slide level2">
+<h2>Apache parquet</h2>
+<p><img data-src="images/parquet_logo.png" /></p>
+<ul>
+<li>Free and open-source column-oriented data storage format</li>
+<li>Provides efficient data compression and encoding schemes</li>
+<li>Designed for long-term storage</li>
+<li>Can be use on distributed data storage</li>
+<li>Supported by an extensive software ecosystem with multiple
+frameworks and tools</li>
+</ul>
+</section>
+<section id="feather" class="slide level2">
+<h2>Feather</h2>
+<p><img data-src="images/feather_logo.png" /></p>
+<ul>
+<li>Free and open-source column-oriented data storage format</li>
+<li>More intended for short term or ephemeral storage</li>
+<li>Support two fast compression libraries, LZ4 and ZSTD</li>
+<li>Can be use on distributed data storage</li>
+<li>Less popular than parquet so the number of supporting frameworks is
+much more limited</li>
+</ul>
+</section>
+<section id="avro" class="slide level2">
+<h2>AVRO</h2>
+<p><img data-src="images/avro_logo.png" /></p>
+<ul>
+<li>Free and open-source raw-oriented data storage format</li>
+<li>Not supported natively by pandas</li>
+<li>Relies on schemas</li>
+</ul>
+</section>
+<section id="zarr" class="slide level2">
+<h2>Zarr</h2>
+<p><img data-src="images/zarr_logo.png" /></p>
+<ul>
+<li>Free and open-source</li>
+<li>Array oriented file format</li>
+<li>File storage format for chunked, compressed, N-dimensional
+arrays</li>
+<li>Same performances than HDF5</li>
+<li>More flexible because chunking can be done along any dimension</li>
+<li>Cloud optimized</li>
+</ul>
+</section>
+<section id="comparison" class="slide level2">
+<h2>Comparison</h2>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>CSV</th>
+<th>HDF5</th>
+<th>Parquet</th>
+<th>Feather</th>
+<th>Avro</th>
+<th>Zarr</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Format</td>
+<td>Row</td>
+<td>Array</td>
+<td>Column</td>
+<td>Column</td>
+<td>Row</td>
+<td>Array</td>
+</tr>
+<tr class="even">
+<td>Writing</td>
+<td>- - -</td>
+<td>- -</td>
+<td>+</td>
+<td>+++</td>
+<td>++</td>
+<td>+</td>
+</tr>
+<tr class="odd">
+<td>File size</td>
+<td>- -</td>
+<td>- - -</td>
+<td>++</td>
+<td>+</td>
+<td>++</td>
+<td>++</td>
+</tr>
+<tr class="even">
+<td>Compression</td>
+<td>no</td>
+<td>no</td>
+<td>+++</td>
+<td>+</td>
+<td>+</td>
+<td>+++</td>
+</tr>
+<tr class="odd">
+<td>Reading</td>
+<td>- -</td>
+<td>- - -</td>
+<td>++</td>
+<td>+++</td>
+<td>+</td>
+<td>++</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dedicated-format" class="slide level2">
+<h2>Dedicated format</h2>
+<ul>
+<li>Best performances</li>
+<li>Optimized for one specific application or purpose</li>
+<li>For instance:
+<ul>
+<li>TFRecord format</li>
+<li>Cloud Optimized GeoTIFF: Optimze satellite images in cloud
+storage</li>
+</ul></li>
+</ul>
+</section>
+<section id="choice-of-the-file-format" class="slide level2">
+<h2>Choice of the file format</h2>
+<p>The optimum format depends on:</p>
+<ul>
+<li>the type of data stored: same types or not</li>
+<li>the type of access: partial access or global access</li>
+<li>the usage: compatibility with the library or the application
+used</li>
+</ul>
+</section></section>
+<section>
+<section id="where-to-store-large-datasets"
+class="title-slide slide level1">
+<h1>Where to store large datasets ?</h1>
+
+</section>
+<section id="distributed-data-storage" class="slide level2">
+<h2>Distributed data storage</h2>
+<p>Object storage: - HDFS - Amazon S3 - Azure storage - Google Cloud
+Storage</p>
+</section></section>
+<section>
+<section id="pandas-and-large-datasets"
+class="title-slide slide level1">
+<h1>Pandas and large datasets</h1>
+
+</section>
+<section id="good-pratices-load-less-data" class="slide level2">
+<h2>Good pratices: Load less data</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Load only required columns for our processing</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pd.read_parquet(<span class="st">&quot;timeseries_wide.parquet&quot;</span>, columns<span class="op">=</span>required_columns)</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="good-pratices-use-efficient-datatypes"
+class="slide level2">
+<h2>Good pratices: Use efficient datatypes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Objective: Reduce memory foot-print</li>
+<li>Text data column is not memory efficient</li>
+<li>Use pandas.Categorical for categorical data</li>
+<li>Use pandas.numeric() to downcast the numeric columns to their
+smallest types</li>
+<li>Use PyArrow data structure (available in Pandas 2)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ts2[<span class="st">&quot;name&quot;</span>] <span class="op">=</span> ts2[<span class="st">&quot;name&quot;</span>].astype(<span class="st">&quot;category&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ts2[<span class="st">&quot;id&quot;</span>] <span class="op">=</span> pd.to_numeric(ts2[<span class="st">&quot;id&quot;</span>], downcast<span class="op">=</span><span class="st">&quot;unsigned&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="good-pratices-use-chunking" class="slide level2">
+<h2>Good pratices: Use chunking</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Split a large problem into a bunch of small problems.</li>
+<li>Each chunk must fits in memory</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> more_itertools <span class="im">import</span> sliced</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>CHUNK_SIZE <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>index_slices <span class="op">=</span> sliced(<span class="bu">range</span>(<span class="bu">len</span>(df)), CHUNK_SIZE)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index_slice <span class="kw">in</span> index_slices:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    chunk <span class="op">=</span> df.iloc[index_slice] <span class="co"># your dataframe chunk ready for use</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="good-pratices-dask" class="slide level2">
+<h2>Good pratices: Dask</h2>
+<ul>
+<li>Use it only if needed, Pandas is often the best for dataset that
+fits in memory</li>
+<li>Dask includes dask.dataframe, a pandas-like API for working with
+larger than memory datasets in parallel.</li>
+<li>Dask can use multiple threads or processes on a single machine, or a
+cluster of machines to process data in parallel.</li>
+<li>More information in the next course</li>
+</ul>
+</section></section>
+<section>
+<section id="xarray-and-large-datasets"
+class="title-slide slide level1">
+<h1>Xarray and large datasets</h1>
+
+</section>
+<section id="parallel-commputing-with-dask" class="slide level2">
+<h2>Parallel commputing with Dask</h2>
+<ul>
+<li>Xarray integrates with Dask to support parallel computations and
+streaming computation on datasets that don’t fit into memory</li>
+<li>Almost all of xarray’s built-in operations work on Dask arrays.</li>
+<li>If you want to use a function that isn’t wrapped by xarray, and have
+it applied in parallel on each block of your xarray object</li>
+<li>More information in the next course</li>
+</ul>
+</section></section>
+<section>
+<section id="large-datasets-and-machine-learning"
+class="title-slide slide level1">
+<h1>Large datasets and machine learning</h1>
+
+</section>
+<section id="good-practices" class="slide level2">
+<h2>Good practices</h2>
+<ul>
+<li>Stream data or use progressive loading: Read dataset in chunks with
+Pandas</li>
+<li>Optimize the datatype constraints</li>
+<li>Use parallelization for preprocessing the data : Vectorization or
+Multiprocessing</li>
+<li>Use incremental learning</li>
+<li>Use warm start</li>
+<li>Use distributed libraries</li>
+<li>Be careful with data shuffling: required random access, so comes at
+the expense of performance</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+       // Parallax background image
+       parallaxBackgroundImage: 'images/background-logo.png', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1800,
+
+        height: 900,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

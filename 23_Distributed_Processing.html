@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
+  <title>Python for Distributed Processing</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/solarized.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Python for Distributed Processing</h1>
+  <p class="author">Guillaume Eynard-Bontemps and Emmanuelle Sarrazin,
+CNES (Centre National d’Etudes Spatiales - French Space Agency)</p>
+  <p class="date">2024-01</p>
+</section>
+
+<section>
+<section id="parallel-algorithm-concepts"
+class="title-slide slide level1">
+<h1>Parallel algorithm concepts</h1>
+
+</section>
+<section id="why-parallelize-an-algorithm" class="slide level2">
+<h2>Why parallelize an algorithm ?</h2>
+<ul>
+<li>To speed-up the execution (execute several fragments of code at the
+same time/ reduce latcency) and/or to distribute the requested
+ressources or tasks on several cpu/machines</li>
+<li>You have to analyze our algorithm in order to know how
+parallelizable it is.</li>
+<li>Given problem, there may be different algorithms, which may be more
+or less parallelizable.</li>
+</ul>
+</section>
+<section id="why-parallelize-an-algorithm-1" class="slide level2">
+<h2>Why parallelize an algorithm ?</h2>
+<p>3 kinds of bottlenecks in an algorithm:</p>
+<ul>
+<li><strong>CPU bound</strong>: the time for executing a task is
+determined principally by the speed of the CPU</li>
+<li><strong>I/O bound</strong>: the time for executing a task is
+determined principally by the period spent waiting for input/output
+operations to be completed</li>
+<li><strong>Memeory bound</strong>: the time for executing a task is
+determined principally by the data access in memeory</li>
+</ul>
+</section>
+<section id="several-kind-of-problems" class="slide level2">
+<h2>Several kind of problems</h2>
+<ul>
+<li><strong>Embarrassingly parallel problems</strong>: easy to divide up
+into pieces</li>
+<li><strong>Inherently serial problems</strong>: problems that cannot be
+split up into parallel portions, as they require the results from a
+preceding step to effectively carry on with the next step</li>
+<li>the rest of the problems fall in between…</li>
+</ul>
+</section>
+<section id="additional-challenge-of-parallelization"
+class="slide level2">
+<h2>Additional challenge of parallelization</h2>
+<p>In addition to paying attention to the resources consumed in terms of
+memory and computing time, it is also necessary to take into
+account:</p>
+<ul>
+<li>Latency / Communication between different processors: shared
+memeory, message passing</li>
+<li>Load balance</li>
+</ul>
+</section>
+<section id="granularity" class="slide level2">
+<h2>Granularity</h2>
+<p><strong>Granularity</strong> of a task measures the amount of work
+(or computation) which is performed by that task</p>
+</section>
+<section id="granularity-1" class="slide level2">
+<h2>Granularity</h2>
+<ul>
+<li><strong>Fine-grained parallelism</strong>: program is broken down to
+a large number of small tasks.</li>
+<li><strong>Coarse-grained parallelism</strong>: program is split into
+large tasks.</li>
+<li><strong>Medium-grained parallelism</strong>: compromise between
+fine-grained and coarse-grained parallelism</li>
+</ul>
+</section>
+<section id="granularity-2" class="slide level2">
+<h2>Granularity</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 41%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Fine-grained</th>
+<th>Coarse-grained</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pros</td>
+<td>Possibility to use a lot of ressources</td>
+<td>Low communication and synchronization overhead</td>
+</tr>
+<tr class="even">
+<td>Cons</td>
+<td>Increases the communication and synchronization overhead</td>
+<td>Risks of load imbalance</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scalability" class="slide level2">
+<h2>Scalability</h2>
+<p>A system is scalable is adding a resource reduces the computation
+time. You want to be abe to reduce the runtime by a factor <em>N</em>
+when using <em>N</em> nodes.</p>
+</section>
+<section id="data-parallelism-vs-task-parallelism" class="slide level2">
+<h2>Data parallelism vs Task parallelism</h2>
+<ul>
+<li><strong>Data parallelism</strong>: focuses on distributing the data
+and process part of the data in parallel. Example process an array or a
+matrices by working on each element in parallel.</li>
+<li><strong>Task parallelism</strong>: focuses on distributing different
+tasks. Example process user requests on a database.</li>
+</ul>
+</section>
+<section id="data-parallelism" class="slide level2">
+<h2>Data parallelism</h2>
+<ul>
+<li>Split data</li>
+<li>Distribute workload over the available CPU</li>
+<li>Coordinate workers</li>
+<li>Synchronize access to share resources</li>
+<li>Merge results</li>
+</ul>
+</section></section>
+<section>
+<section id="how-to-parallelize" class="title-slide slide level1">
+<h1>How to parallelize ?</h1>
+
+</section>
+<section id="on-a-single-computer" class="slide level2">
+<h2>On a single computer</h2>
+<ul>
+<li>Use several CPU cores</li>
+<li>Solutions:
+<ul>
+<li>Multi-threading</li>
+<li>Multi-processing</li>
+</ul></li>
+</ul>
+</section>
+<section id="processes-vs-threads" class="slide level2">
+<h2>Processes vs Threads</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="processes">Processes</h3>
+<ul>
+<li>A process is an executing instance of a program</li>
+<li>A process has a self-contained execution environment.</li>
+<li>A process generally has a complete, private set of basic run-time
+resources; in particular, each process has its own memory space.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="threads">Threads</h3>
+<ul>
+<li>A thread is a subset of the process.</li>
+<li>A Thread exists within a process — every process has at least
+one.</li>
+<li>Threads share the process’s resources, including memory and open
+files. This makes for efficient, but potentially problematic,
+communication.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="processes-vs-threads-1" class="slide level2">
+<h2>Processes vs Threads</h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 41%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Processes</th>
+<th>Threads</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pros</td>
+<td>Little coordination or synchronization</td>
+<td>Lighter, cheaper</td>
+</tr>
+<tr class="even">
+<td>Cons</td>
+<td>High cost creation</td>
+<td>Race condition, data corruption because of shared memory access</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="on-several-machines" class="slide level2">
+<h2>On several machines</h2>
+<p>Distributed computing</p>
+<ul>
+<li>Cluster computing</li>
+<li>Cloud computing</li>
+<li>Grid computing</li>
+</ul>
+</section>
+<section id="on-several-machines-1" class="slide level2">
+<h2>On several machines</h2>
+<ul>
+<li>Each processor has its own private memory (distributed memory).</li>
+<li>Information is exchanged by passing messages between the
+processors.</li>
+</ul>
+</section></section>
+<section>
+<section id="distributed-and-parallel-computing-in-python"
+class="title-slide slide level1">
+<h1>Distributed and parallel computing in Python</h1>
+
+</section>
+<section id="parallel-computing-with-python" class="slide level2">
+<h2>Parallel computing with Python</h2>
+<ul>
+<li>Python packages including parallelization in their
+processings/methods</li>
+<li>Python package dedicated to parallelization</li>
+</ul>
+</section>
+<section id="a-word-on-python-global-interpreter-lock"
+class="slide level2">
+<h2>A word on Python Global Interpreter Lock</h2>
+<ul>
+<li>The GIL can be seen as a mutex (or a lock) that allows only one
+thread to hold at a time the control of the Python interpreter.</li>
+<li>This means that only one thread can be in a state of execution at
+any point in time.</li>
+<li>The GIL can be a performance bottleneck in CPU-bound and
+multi-threaded code.</li>
+<li>The GIL turns a multi-threaded program to a single threaded one</li>
+</ul>
+</section>
+<section id="built-in-threading" class="slide level2">
+<h2>Built-in threading</h2>
+<ul>
+<li>Python core package</li>
+<li>To be avoided in CPython implementation due to Global Interpreter
+Lock</li>
+<li>To be used only for dealing with I/O bound tasks</li>
+</ul>
+</section>
+<section id="built-in-mutliprocessing" class="slide level2">
+<h2>Built-in mutliprocessing</h2>
+<ul>
+<li>Python core package</li>
+<li>Spawning processes using an API similar to the threading module</li>
+<li>Effectively side-steps the <strong>Global Interpreter Lock</strong>
+by using subprocesses instead of threads</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> multiprocessing <span class="im">import</span> Pool</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">*</span>x</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> Pool(<span class="dv">5</span>) <span class="im">as</span> p:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(p.<span class="bu">map</span>(f, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span></code></pre></div>
+</section>
+<section id="built-in-multiprocessing" class="slide level2">
+<h2>Built-in multiprocessing</h2>
+<p>Exchanging objects between processes: Data serialization</p>
+<ul>
+<li>Performed with pickle module:</li>
+<li>Called by default to handle data transfer, when multiprocessing
+spawns a process</li>
+<li>Implied a time overhead which might offset the benefits of the
+parallelization</li>
+<li>Limited to types handled by pickle module</li>
+</ul>
+</section>
+<section id="built-in-multiprocessing-1" class="slide level2">
+<h2>Built-in multiprocessing</h2>
+<p>Exchanging objects between processes:</p>
+<ul>
+<li>Shared-memory: implies to deal with race condition and data
+corruption</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> SharedMemoryManager() <span class="im">as</span> smm:</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    sl <span class="op">=</span> smm.ShareableList(<span class="bu">range</span>(<span class="dv">2000</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Divide the work among two processes, storing partial results in sl</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    p1 <span class="op">=</span> Process(target<span class="op">=</span>do_work, args<span class="op">=</span>(sl, <span class="dv">0</span>, <span class="dv">1000</span>))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    p2 <span class="op">=</span> Process(target<span class="op">=</span>do_work, args<span class="op">=</span>(sl, <span class="dv">1000</span>, <span class="dv">2000</span>))</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    p1.start()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    p2.start()  <span class="co"># A multiprocessing.Pool might be more efficient</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    p1.join()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    p2.join()   <span class="co"># Wait for all work to complete in both processes</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    total_result <span class="op">=</span> <span class="bu">sum</span>(sl)  <span class="co"># Consolidate the partial results now in sl</span></span></code></pre></div>
+</section>
+<section id="built-in-multiprocessing-2" class="slide level2">
+<h2>Built-in multiprocessing</h2>
+<p>Synchronization between processes using Lock</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> multiprocessing <span class="im">import</span> Process, Lock</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(l, i):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    l.acquire()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;hello world&#39;</span>, i)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">finally</span>:</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        l.release()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&#39;__main__&#39;</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    lock <span class="op">=</span> Lock()</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> num <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        Process(target<span class="op">=</span>f, args<span class="op">=</span>(lock, num)).start()</span></code></pre></div>
+</section>
+<section id="built-in-concurrent.futures" class="slide level2">
+<h2>Built-in concurrent.futures</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>High-level interface for running concurrent tasks</li>
+<li>Abstraction for managing pool of threads or processes</li>
+<li>More limited interface than usung directly multiprocessing
+module</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ProcessPoolExecutor <span class="im">as</span> PoolExecutor</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> partial</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> do_work(sleep_secs: <span class="bu">float</span>, i: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(sleep_secs)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f&quot;foo-</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    start_time <span class="op">=</span> time.time()</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> PoolExecutor() <span class="im">as</span> executor:</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        results_gen <span class="op">=</span> executor.<span class="bu">map</span>(partial(do_work, <span class="fl">3.0</span>), <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>))</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="numpy-threading" class="slide level2">
+<h2>Numpy threading</h2>
+<ul>
+<li>To use threads in Python, you must use GIL immune library like
+numpy</li>
+<li>Numpy delegates thread execution to outside libraries like BLAS or
+Lapack</li>
+<li>NumPy functions run in parallel and use multiple threads, by
+default.</li>
+</ul>
+</section>
+<section id="numba" class="slide level2">
+<h2>Numba</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img
+data-src="https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg"
+height="100" /></p>
+<blockquote>
+<p>Numba makes Python code fast</p>
+</blockquote>
+<ul>
+<li>Translates Python functions to optimized machine code at runtime
+(Just In Time compilation)</li>
+<li>Use LLVM compiler library</li>
+<li>Python can approach the speeds of compiled languages like C or
+FORTRAN</li>
+<li>Just apply one of the Numba decorators</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> monte_carlo_pi(nsamples):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    acc <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(nsamples):</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> random.random()</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> random.random()</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (x <span class="op">**</span> <span class="dv">2</span> <span class="op">+</span> y <span class="op">**</span> <span class="dv">2</span>) <span class="op">&lt;</span> <span class="fl">1.0</span>:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            acc <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="fl">4.0</span> <span class="op">*</span> acc <span class="op">/</span> nsamples</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="numba-1" class="slide level2">
+<h2>Numba</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Just-in-time compilation implies that the code is compiled during
+the first call of the function</li>
+<li>JIT compilation takes time</li>
+<li>Numba caches the machine code version of the function for the
+particular types of arguments presented</li>
+<li>Usefull if the function is called several times</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numba <span class="im">import</span> jit</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.arange(<span class="dv">100</span>).reshape(<span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">@jit</span>(nopython<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> go_fast(a): <span class="co"># Function is compiled and runs in machine code</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    trace <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(a.shape[<span class="dv">0</span>]):</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        trace <span class="op">+=</span> np.tanh(a[i, i])</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> trace</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Elapsed (<span class="cf">with</span> compilation) <span class="op">=</span> <span class="fl">0.33030009269714355</span><span class="er">s</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> Elapsed (after compilation) <span class="op">=</span> <span class="fl">6.67572021484375e-06</span><span class="er">s</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="numba-2" class="slide level2">
+<h2>Numba</h2>
+<ul>
+<li>Most use decorators:
+<ul>
+<li><strong><span class="citation"
+data-cites="jit">@jit</span></strong></li>
+<li><strong><span class="citation"
+data-cites="njit">@njit</span></strong>:this is an alias for <span
+class="citation" data-cites="jit">@jit</span>(nopython=True) as it is so
+commonly used!</li>
+<li><strong><span class="citation"
+data-cites="vectorize">@vectorize</span></strong>: produces NumPy
+universal functions (which operates on scalar)</li>
+<li><strong><span class="citation"
+data-cites="guvectorize">@guvectorize</span></strong>: produces NumPy
+generalized universal functions (which operates on on higher dimensional
+arrays and scalars)</li>
+</ul></li>
+<li>Extra options available in some decorators:
+<ul>
+<li><code>parallel = True</code>: enable the automatic parallelization
+of the function.</li>
+<li><code>fastmath = True</code>: enable fast-math behaviour for the
+function.</li>
+</ul></li>
+</ul>
+</section>
+<section id="joblib" class="slide level2">
+<h2>Joblib</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><img data-src="images/joblib_logo.svg" height="100" /></p>
+<ul>
+<li>Set of tools to provide lightweight pipelining in Python
+<ul>
+<li>transparent disk-caching of functions and lazy re-evaluation
+(memoize pattern)</li>
+<li>easy simple parallel computing</li>
+</ul></li>
+<li>Optimized to be fast and robust on large data</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> joblib <span class="im">import</span> Parallel, delayed</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>Parallel(n_jobs<span class="op">=</span><span class="dv">2</span>)(delayed(sqrt)(i <span class="op">**</span> <span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>[<span class="fl">0.0</span>, <span class="fl">1.0</span>, <span class="fl">2.0</span>, <span class="fl">3.0</span>, <span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">6.0</span>, <span class="fl">7.0</span>, <span class="fl">8.0</span>, <span class="fl">9.0</span>]</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="dask" class="slide level2">
+<h2>Dask</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
+<p><img data-src="images/Dask-Logo-lockup-primary.png"
+height="100" /></p>
+<ul>
+<li>Provides advanced parallelism for analytics</li>
+<li>First designed as allowing to process datasets bigger than
+memory</li>
+<li>Now from local computer to clusters, to HPC or Cloud computing</li>
+<li>Scales Numpy and Pandas with same interfaces</li>
+<li>More low level APIs for distributing any algorithm</li>
+<li>More tomorrow</li>
+</ul>
+</div><div class="column" style="width:35%;">
+<p><img
+data-src="https://docs.dask.org/en/latest/_images/dask-dataframe.svg"
+style="width:80.0%" /></p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> dask.dataframe <span class="im">as</span> dd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> dd.read_csv(<span class="st">&#39;2014-*.csv&#39;</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df.describe().compute()</span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="pyspark" class="slide level2">
+<h2>PySpark</h2>
+<p><img
+data-src="https://databricks.com/wp-content/uploads/2018/12/PySpark-1024x164.png"
+height="100" /></p>
+<ul>
+<li>Spark is Scala (JVM based), but for data scientists, provides Python
+and R interface</li>
+<li>This means some complexity and translation between languages</li>
+</ul>
+<p><img data-src="images/PySpark.jpg" /></p>
+</section>
+<section id="others" class="slide level2">
+<h2>Others</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="ray"><a href="https://www.ray.io">Ray</a></h3>
+<p><img data-src="images/ray_header_logo.png" height="100" /></p>
+<ul>
+<li>Scale general Python apps</li>
+<li>And a lot of high-level libs oriented towards Machine and Deep
+Learning</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="vaex"><a href="https://vaex.io/docs/index.html">Vaex</a></h3>
+<p><img
+data-src="https://user-images.githubusercontent.com/18574951/90343540-a1181f80-e011-11ea-8ff5-bb21e5fdc71c.png"
+height="100" /></p>
+<ul>
+<li>Lazy out-of-core Dataframes (similar to Pandas)</li>
+<li>Performance oriented on tabular datasets</li>
+<li>Vizualisation</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="quizz" class="slide level2">
+<h2>Quizz</h2>
+<p>What Dask does better than Spark (multiple choices)?</p>
+<ul>
+<li>Answer A: Dataframes manipulation</li>
+<li>Answer B: N-dimensionnal Arrays manipulation</li>
+<li>Answer C: Low level parallelization</li>
+<li>Answer D: Scaling to Petabytes dataset</li>
+<li>Answer E: Reliability</li>
+</ul>
+<figure>
+<img
+data-src="data:image/png;base64,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"
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_558">Answer link</a>
+<em>Key: dt</em></p>
+</section></section>
+<section>
+<section id="parallel-and-distributed-machine-learning"
+class="title-slide slide level1">
+<h1>Parallel and distributed machine learning</h1>
+
+</section>
+<section id="how-to-use-parallelization-for-machine-learning-tasks"
+class="slide level2">
+<h2>How to use parallelization for machine learning tasks ?</h2>
+<ul>
+<li>Distributed hyper-parameter optimization</li>
+<li>Distributed training of ensemble models</li>
+<li>Data-parallel training of deep learning models</li>
+</ul>
+</section>
+<section id="parallelization-with-scikit-learn" class="slide level2">
+<h2>Parallelization with Scikit-learn</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Higher-level parallelism with joblib or Dask for hyper-parameter
+optimization</li>
+<li>Lower-level parallelism with OpenMP or NumPy and SciPy routines</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> joblib <span class="im">import</span> parallel_backend</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> parallel_backend(<span class="st">&#39;threading&#39;</span>, n_jobs<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Your scikit-learn code here</span></span></code></pre></div>
+</div>
+</div>
+</section>
+<section id="parallelization-with-deep-learning-framework"
+class="slide level2">
+<h2>Parallelization with deep learning framework</h2>
+<ul>
+<li>Data parallel training performed via processing multiple data
+batches across multiple devices simultaneously to achieve better
+performance.</li>
+<li>Functionality available in PyTorch or TensorFlow: ensures each
+device gets a non-overlapping input batch, calculates gradients and
+simultaneously synchronizes with the others</li>
+</ul>
+</section>
+<section id="parallelization-with-deep-learning-framework-1"
+class="slide level2">
+<h2>Parallelization with deep learning framework</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Parallelization for hyper-parameter optimization with Ray Tune</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/raytune.png" /></p>
+<p>Population based training of neural networks (Deepmind)</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+       // Parallax background image
+       parallaxBackgroundImage: 'images/background-logo.png', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1800,
+
+        height: 900,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.1,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
