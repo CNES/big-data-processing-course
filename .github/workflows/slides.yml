@@ -41,6 +41,9 @@ jobs:
           - 14_ObjectStorage
           - 21_Python_Data_Processing
           - 22_Dask_Pangeo
+          - 23_Distributed_Processing
+          - 24_Large_Datasets
+          - 25_Dask
           - 30_Evaluation
     runs-on: ubuntu-latest
     needs: [build_index]
@@ -79,6 +82,9 @@ jobs:
           - 14_ObjectStorage
           - 21_Python_Data_Processing
           - 22_Dask_Pangeo
+          - 23_Distributed_Processing
+          - 24_Large_Datasets
+          - 25_Dask
           - 30_Evaluation
     runs-on: ubuntu-latest
     steps:

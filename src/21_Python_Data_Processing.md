@@ -56,6 +56,13 @@ date: 2024-01
 - For under layers of use libraries
 - Easy to interface with Python (Cython, pybind11)
 
+## Lua
+
+- Lightweight, high-level, multi-paradigm programming language 
+- Designed primarily for embedded use in applications
+- Cross-platform
+- For under layers of use libraries
+- C API
 
 ## Java
 
@@ -88,9 +95,29 @@ Matlab (and equivalent Scilab)
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
+- Created in 1991
 - Interpreted and so interactive language
 - Really simple syntax (Code readability)
-- General-purpose programming language
+- Dynamically typed and garbage-collected
+- Supports multiple programming paradigms: 
+  - structured (particularly procedural), 
+  - object-oriented and 
+  - functional programming
+
+:::
+::: {.column width="50%"}
+
+![](images/python_logo.png){width=200px}
+
+:::
+::::::::::::::
+
+## Python
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+- High-level and general-purpose programming language
 - Many, many (many) libraries
   - A lot of scientific ones!
 - Ecosystem
@@ -110,7 +137,7 @@ Matlab (and equivalent Scilab)
 ## Python the most used language?
 
 [comment]: # (https://insights.stackoverflow.com/trends)
-![](images/stackoverflow_trends.svg){width=70%}
+![](images/stackoverflow_trends.svg){width=65%}
 
 ## Kaggle Languages Popularity
 
@@ -271,29 +298,25 @@ pd.describe()
 :::
 ::::::::::::::
 
-## Sympy
+## Quizz
 
-:::::::::::::: {.columns}
-::: {.column width="50%"}
+Which tools allows manipulating tabular data?
 
-![](https://www.sympy.org/static/images/logo.png){height=100px}
+- Answer A: Numpy
+- Answer B: Xarray
+- Answer C: Pandas
+- Answer D: Scipy
 
-- Library for symbolic mathematics
-- Simplification, Calculus, Solvers
+![Answer](data:image/png;base64,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)
 
-```python
-from sympy import symbols
-x, y = symbols('x y')
-expr = x + 2*y
-```
+[Answer link](https://toreply.univ-lille.fr/reponse_446) _Key: fp_
 
-:::
-::: {.column width="50%"}
+# Visualization
 
-![](images/sympy.png){height=500px}
+## Landscape
 
-:::
-::::::::::::::
+![Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier](images/Python-viz-landscape-colors.png){width=80%}
+
 
 ## Matplotlib
 
@@ -335,172 +358,6 @@ plt.show()
 :::
 ::::::::::::::
 
-## Jupyter (Lab and Notebook)
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](https://jupyter.org/assets/share.png){height=100px}
-
-![](https://jupyterlab.readthedocs.io/en/1.2.x/_images/jupyterlab.png)
-
-:::
-::: {.column width="50%"}
-
-- Open source web application
-- Create and share documents that contain live code
-- Equations, visualizations and narrative text
-- Interactive programming and visualizing
-- Usage: 
-  - data cleaning and transformation, 
-  - numerical simulation, 
-  - statistical modeling, 
-  - data visualization, 
-  - machine learning
-- Used by Google Colab or Kaggle
-
-:::
-::::::::::::::
-
-## Quizz
-
-Which tools allows manipulating tabular data?
-
-- Answer A: Numpy
-- Answer B: Xarray
-- Answer C: Pandas
-- Answer D: Jupyter
-
-![Answer](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAAHAUlEQVR42u3d3ZKjKhQG0PFU3v+V+1ykKmXlx6C4N5u41tXUdCcS9AsILSx/f3//gHH+UwUw1u3rbyzL8vi3ZhNOt7ym6566+/98+ve+Yxx94dvvgt/7IjilfsaW8/VHvrt3d0fXVVbT1CdyWZb6NdzeIfr6o0cm11/ffL8nfFtTj0qc5dt6Ro+L9ccSqBk87Z7wWCVu9B5P76g8XQeN77ku4eO6+dStevzPp8K/XouvjcDbL7K9FfVU1L11eODL9PWILT/6mV5MXkt4brdh3Rt5es/TOyrrN2x/z40SNr5qfaCnMjzdQq/bhNfL8dMFul1Ry7IcqMOnAp9+H/i2E64vuqM7GnT7vtGqnJLDA325Y/2lXYXv7GF+PdaxOuz8yHsT6J5wd3f03iYk1Ne5h0g+wZ/unF+rrmYf7PDg9lO6vv5o/Y975eiUNt0T7uqbZV4H7V/V0eX/VPjXO70fuOze3r7e/3PjR4zvjr69X9oYqzgxNrt6ZS0lbCz8rk/R8suf7jlPqaKc76mIwv+q5eudW2ceXoccOwcz/21OCrcXvqWE7YX/NDq6Xf7tV22Pjh44X53j0ibro0Kogi71ba1dqn5PyM8TPy0hED8wAwghCCEghCCEgBCCEAJCCEIICCEIISCEIISAEIIQAkIIQggIIVSStMZMwTWYN1YNG3X0sTXfXqSx7zn2CtESgu4oIIQghIAQghACZxm5DH7BYfqxhS9Yzk/7Mea8fOorREsIuqOAEIIQAkIIQghsK7dTb+dgccSgdvvzFp2/GfFgR+ckQed7FpzIKbgrrpYQhBCEEBBCEEJACOGabqpgLW024q2IBZTadX7MiLkQLSEghCCEgBCCEAJCCD/MFMV3aQsTRcwHpK3UZN5CSwhCCAghCCEghCCEwC7lpijGjl+PHdDvnAvpPHpELc2yC4iWEHRHASEEIQSEEIQQyDdyimLsHsURhU9bJ6rgb7pCtIQghIAQghACQghCCOySNEVxkbV9IobUx84xpO1NfeXVn7SEIIQghIAQghACQgjXtFQbGo4YE097PiBtF+vOz95Z+FkWeip4NrWEoDsKCCEIISCEIITAQ9IUxdhHAdLG7vNOW9bg+9gDRZQzYmsQLSHojgJCCEIICCEIIXBAub0oOseFC05mpG3B3f7yiPocW/NjrzotIeiOAkIIQggIIQghcMDIvSjSNkMuuAJSZ+HTjj71Qy2z7LatJQQhBCEEhBCEEBBCuKaRT1Gk/el6xDJT7Z9olv2uCz6/EnGBFZy30BKCEIIQAkIIQggIIVzT7QofsuBcSHs5p94N4iIv1xKC7igghCCEgBCCEAIHJE1RpG3nkPY38p0HKrhJQ3s53xap88SlLYcV8XItIeiOAkIIQggIIQghcMAydnC2tZT1tjgeW86xj1Z0vmdE1aVViJYQdEcBIQQhBIQQhBA4y8RTFG8V3Mk54omHsQeKOEdpF4OWEBBCEEJACEEIASGEIsrtRRGxptPYoeqIEflZ1omK2A2i/ROlbZOuJQTdUUAIQQgBIQQhBA5Ieoqi4MJEEUfvrJCCo+dTz4XMMomlJQTdURBCQAhBCAEhhGsq9xRFwZWFOrWXc5b9GNLqM+2ze4oCdEcBIQQhBIQQhBDIlzRFMcskQXvhIwa1Cw79d372sQ+gRFwMWkLQHQWEEIQQEEIQQuAs5RZ6KjiZkfZgR8Q+HJ1Hj3h5ZznTTpynKEB3FBBCEEJACEEIgVAjpygink5ImyTIO0P1HhqYejGugqdYSwi6oyCEgBCCEAJCCNd0m6KUY1cW6ixSxJj42Kco0g40y+bnWkLQHQWEEIQQEEIQQuCA2xU+ZOcMxyxzDJ0ilkVKm42Y+sEOLSHojoIQAkIIQggIIVxTue2yCw6+zyJtkauIrSw6P2bB5Zu0hKA7CgghCCEghCCEwLakKYqCQ/8Rg+8RRWofke88HWMncjqL1DkbYS8K0B0FhBCEEBBCEEIgX7ntsmc5+iyTLmk1P/YpillqSUsIuqOAEIIQAkIIQgg8lNuLYuwmDWlrJUU8x9C58UPE8k0Rj4B0nveCc0taQhBCEEJACEEIASGEa7qpgq86lxuKmI2Y+kGEtGWmImZitISgOwoIIQghIIQghMBZTFF8F7GEUdp2Dp3lHFv4zv1Cxm7SriUE3VFACEEIASEEIQS2lZuiGDtY3Pkn9mlPJ0Ssv1TwdHRW8tgdJrSEoDsKCCEIISCEIITAtpFTFAV3BWg3dk2nsUsYjd1MovPlBecttISgOwpCCAghCCEghHBNS8E/KgctISCEIISAEIIQAkIIQggIIQghIIQghIAQghACQghCCAghCCEghCCEgBCCEAJCCEIICCEIISCEIISAEIIQAkIIQggIIQghIIQwjf8Betq7jXdWGq0AAAAASUVORK5CYII=)
-
-[Answer link](https://toreply.univ-lille.fr/reponse_446) _Key: fp_
-
-# Distributed and scientific computing
-
-## Parallel computing
-
- - Thead vs processus
- - Race conditions, mutual exclusion, synchronization, and parallel slowdown
- - Fine-grained, coarse-grained, and embarrassing parallelism
-
-## Classes of parallel computers
-
- - Multi-core computing
- - Symmetric multiprocessing
- - Distributed computing
-    * Cluster computing
-    * Cloud computing
-    * Grid computing
- - Specialized parallel computers
-    * General-purpose computing on graphics processing units (GPGPU)
-    * Reconfigurable computing with field-programmable gate arrays (FPGA)
-    * Application-specific integrated circuits
-    * Vector processors
-
-## Parallel computing with Python
-
- - Python packages including parallelization in their processings/methods
- - Python package dedicated to parallelization
-
-## Built-in mutliprocessing
-
-- Python core package
-- Spawning processes using an API similar to the threading module
-- Effectively side-steps the **Global Interpreter Lock** by using subprocesses instead of threads
-
-```python
-from multiprocessing import Pool
-
-def f(x):
-    return x*x
-
-with Pool(5) as p:
-    print(p.map(f, [1, 2, 3]))
-```
-
-## Dask
-
-:::::::::::::: {.columns}
-::: {.column width="65%"}
-
-![](images/Dask-Logo-lockup-primary.png){height=100px}
-
-- Provides advanced parallelism for analytics
-- First designed as allowing to process datasets bigger than memory
-- Now from local computer to clusters, to HPC or Cloud computing
-- Scales Numpy and Pandas with same interfaces
-- More low level APIs for distributing any algorithm
-- More this afternoon
-
-:::
-::: {.column width="35%"}
-
-![](https://docs.dask.org/en/latest/_images/dask-dataframe.svg){width=80%}
-
-```python
-import dask.dataframe as dd
-df = dd.read_csv('2014-*.csv')
-df.describe().compute()
-```
-
-:::
-::::::::::::::
-
-## PySpark
-
-![](https://databricks.com/wp-content/uploads/2018/12/PySpark-1024x164.png){height=100px}
-
-- Spark is Scala (JVM based), but for data scientists, provides Python and R interface
-- This means some complexity and translation between languages
-
-![](images/PySpark.jpg)
-
-
-## Others
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-### [Ray](https://www.ray.io)
-
-![](images/ray_header_logo.png){height=100px}
-
-- Scale general Python apps
-- And a lot of high-level libs oriented towards Machine and Deep Learning
-
-:::
-::: {.column width="50%"}
-
-### [Vaex](https://vaex.io/docs/index.html)
-
-![](https://user-images.githubusercontent.com/18574951/90343540-a1181f80-e011-11ea-8ff5-bb21e5fdc71c.png){height=100px}
-
-- Lazy out-of-core Dataframes (similar to Pandas)
-- Performance oriented on tabular datasets
-- Vizualisation
-
-:::
-::::::::::::::
-
-## Quizz
-
-What Dask does better than Spark (multiple choices)?
-
-- Answer A: Dataframes manipulation
-- Answer B: N-dimensionnal Arrays manipulation
-- Answer C: Low level parallelization
-- Answer D: Scaling to Petabytes dataset
-- Answer E: Reliability
-
-![Answer](data:image/png;base64,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)
-
-[Answer link](https://toreply.univ-lille.fr/reponse_558) _Key: dt_
-
-# Vizualisation (other than Matplotlib)
-
-## Landscape
-
-![Adaptation of Jake VanderPlas graphic about the Python visualization landscape, by Nicolas P. Rougier](images/Python-viz-landscape-colors.png){width=80%}
 
 ## Seaborn
 
@@ -594,7 +451,7 @@ clf.fit(X, y)
 
 ## Sickit Learn
 
-![](https://scikit-learn.org/stable/_static/ml_map.png){width=70%}
+![](https://scikit-learn.org/stable/_static/ml_map.png){width=60%}
 
 ## TensorFlow, Keras
 
@@ -611,7 +468,7 @@ clf.fit(X, y)
 :::
 ::: {.column width="50%"}
 
-![](https://www.tensorflow.org/tensorboard/images/tensorboard.gif){width=60%}
+![](https://www.tensorflow.org/tensorboard/images/tensorboard.gif){width=70%}
 
 :::
 ::::::::::::::
@@ -702,9 +559,166 @@ Which is the best Deep Learning library in Python?
 
 [Answer link](https://toreply.univ-lille.fr/reponse_491) _Key: hy_
 
-# Others
+# Others scientific libraries
 
-## Packaging: Pip / Conda
+## Sympy
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](https://www.sympy.org/static/images/logo.png){height=100px}
+
+- Library for symbolic mathematics
+- Simplification, Calculus, Solvers
+
+```python
+from sympy import symbols
+x, y = symbols('x y')
+expr = x + 2*y
+```
+
+:::
+::: {.column width="50%"}
+
+![](images/sympy.png){height=500px}
+
+:::
+::::::::::::::
+
+
+## Shapely
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+- Library for manipulation and analysis of planar geometric objects
+
+```python
+import shapely
+import numpy as np
+
+geoms = np.array([Point(0, 0), Point(1, 1), Point(2, 2)])
+polygon = shapely.box(0, 0, 2, 2)
+
+shapely.contains(polygon, geoms)
+```
+
+:::
+::: {.column width="50%"}
+
+![](images/shapely.jpg){height=500px}
+
+:::
+::::::::::::::
+
+
+## Pandas Extension
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+### [GeoPandas](https://geopandas.org/en/stable/index.html)
+
+- For manipulating geospatial data in python easier
+- Provide geospatial operations in pandas:
+  - Measure areas and distances
+  - Compute intersections/unions
+  - Make maps and plots
+
+![](images/geopandas.svg){height=300px}
+
+:::
+::: {.column width="50%"}
+
+### [Text Extensions for Pandas](https://text-extensions-for-pandas.readthedocs.io/en/latest/)
+
+- Add NLP-specific data types, operations, and library integrations to Pandas
+- Make it easier to manipulate and analyze NLP-related data with Pandas
+
+:::
+::::::::::::::
+
+# Development Tools
+
+## Jupyter (Lab and Notebook)
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](https://jupyter.org/assets/share.png){height=100px}
+
+![](https://jupyterlab.readthedocs.io/en/1.2.x/_images/jupyterlab.png)
+
+:::
+::: {.column width="50%"}
+
+- Open source web application
+- Create and share documents that contain live code
+- Equations, visualizations and narrative text
+- Interactive programming and visualizing
+- Usage: 
+  - data cleaning and transformation, 
+  - numerical simulation, 
+  - statistical modeling, 
+  - data visualization, 
+  - machine learning
+- Used by Google Colab or Kaggle
+
+:::
+::::::::::::::
+
+## VSCode
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](images/vscode_logo.png){height=100px}
+
+- Source-code editor developed by Microsoft for Windows, Linux and macOS.
+- Features include support for 
+  - debugging, 
+  - syntax highlighting, 
+  - intelligent code completion, 
+  - snippets, 
+  - code refactoring, 
+  - testing and 
+  - embedded Git. 
+- Lots of extensions that add functionality. 
+
+:::
+::: {.column width="50%"}
+
+![](images/vscode_ihm.png)
+
+:::
+::::::::::::::
+
+## PyCharm
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](images/pycharm_logo.png){height=100px}
+
+- IDE used for programming in Python
+- Cross-platform, working on Microsoft Windows, macOS and Linux
+- Features include support for 
+  - Code analysis, 
+  - Graphical debugger, 
+  - Integrated unit tester, 
+  - Integration with version control systems
+
+:::
+::: {.column width="50%"}
+
+![](images/pycharm_ihm.png)
+
+:::
+::::::::::::::
+
+# Packaging
+
+## Pip / Conda
 
 ![](images/pypilogo.svg){height=100px}
 ![](images/conda_logo.svg){height=100px}
@@ -728,40 +742,7 @@ Difference between Conda and Pip according to Anaconda.
 | create environment | yes, built-in | no, requires virtualenv or venv |
 | dependency checks | yes | no |
 
-## Numba
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg){height=100px}
-
-> Numba makes Python code fast
-
-- Translates Python functions to optimized machine code at runtime
-- Use LLVM compiler library
-- Python can approach the speeds of C or FORTRAN
-- Just apply one of the Numba decorators
-
-:::
-::: {.column width="50%"}
-
-```python
-from numba import jit
-import random
-
-@jit(nopython=True)
-def monte_carlo_pi(nsamples):
-    acc = 0
-    for i in range(nsamples):
-        x = random.random()
-        y = random.random()
-        if (x ** 2 + y ** 2) < 1.0:
-            acc += 1
-    return 4.0 * acc / nsamples
-```
-
-:::
-:::::::::::::: 
+# Others
 
 ## Binder
 
@@ -771,7 +752,7 @@ def monte_carlo_pi(nsamples):
 
 ![](https://binderhub.readthedocs.io/en/latest/_images/architecture.png)
 
-# Exercise
+# Exercises
 
 ## Pandas tutorial
 
