@@ -128,7 +128,8 @@ Process ever larger and more numerous datasets
 - Optimized for one specific application or purpose
 - For instance: 
   - TFRecord format
-  - Cloud Optimized GeoTIFF: Optimze satellite images in cloud storage
+  - Cloud Optimized GeoTIFF: Optimize satellite images in cloud storage
+
 
 
 ## Choice of the file format
@@ -144,11 +145,11 @@ The optimum format depends on:
 
 ## Distributed data storage
 
-Object storage:
 - HDFS
-- Amazon S3
-- Azure storage
-- Google Cloud Storage
+- Object storage:
+  - Amazon S3
+  - Azure storage
+  - Google Cloud Storage
 
 # Pandas and large datasets
 
