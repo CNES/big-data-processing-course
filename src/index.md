@@ -50,13 +50,15 @@ Includes [Pandas library tutorial](https://github.com/esarrazin/pandas-cookbook)
 
 [Distributed processing](23_Distributed_Processing.html)
 
+Includes [Parallel tutorials](https://github.com/esarrazin/parallel-cookbook)
+
 ### Day 4: Python for distributed processing
 
 [Manage large datasets](24_Large_Datasets.html)
 
 [Dask processing framework](25_Dask.html)
 
-Includes [Dask tutorial](https://github.com/dask/dask-tutorial).
+Includes [Dask tutorial](https://github.com/esarrazin/dask-tutorial).
 
 [If necessary, finish data processing platform deployment](13_Dask_On_Cloud.html)
 
