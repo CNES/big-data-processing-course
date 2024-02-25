@@ -56,6 +56,8 @@ Includes [Parallel tutorials](https://github.com/esarrazin/parallel-cookbook)
 
 [Manage large datasets](24_Large_Datasets.html)
 
+Includes [Large dataset tutorials](https://github.com/esarrazin/large-dataset-cookbook)
+
 [Dask processing framework](25_Dask.html)
 
 Includes [Dask tutorial](https://github.com/esarrazin/dask-tutorial).
