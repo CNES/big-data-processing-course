@@ -428,7 +428,8 @@ times.</li>
 <ul>
 <li>Task graphs can be executed by schedulers on a single machine or a
 cluster</li>
-<li>Dask offers several backend execution systems</li>
+<li>Dask offers several backend execution systems, resilience to
+failures</li>
 </ul>
 <p><img data-src="images/dask_scheduler.png" style="width:70.0%" /></p>
 </section>
@@ -497,6 +498,25 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a h
 style="width:90.0%" /></p>
 </div>
 </div>
+</section>
+<section id="quizz" class="slide level2">
+<h2>Quizz</h2>
+<p>What Dask does better than Spark (multiple choices)?</p>
+<ul>
+<li>Answer A: Dataframes manipulation</li>
+<li>Answer B: N-dimensionnal Arrays manipulation</li>
+<li>Answer C: Low level parallelization</li>
+<li>Answer D: Scaling to Petabytes dataset</li>
+<li>Answer E: Reliability</li>
+</ul>
+<figure>
+<img
+data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAAG9UlEQVR42u3d0ZKjKhQF0PZW/v+X%20+z6kqmsqUSQi5xzjWk9TM+2IxB0QWlh+f39/gDz/qQLI9dj9iWVZ/v6s2YTTLe/peqbu+Tdbf/7s%20HEcPXP0u+L4vglPqZ2rZVr+FG/90laur1R19qdCCLv0pLstSv4Yb+Xn69z5p/FMjw+w8E67W11/9%20+j6b+v1Ss2JfCvbSIdr6Jwk8/5nw2P3R6D2e/pDZ2S9qlPDvxnr/rnn5m63Cv99w7/fl6hfZpxX1%20UtRP63Dky7RxbKPeRLG3JWz0KAa7Mavfju0+zFldpmMl7Dyq0TfbajFWW7zdR6mtRuZAHb4U+EB3%20evWbYvebi97u6KRhhsZnc0oOD/TlGiX89Kitwg/2MHfPdawOP73k98tZbfC3vpKk6+Pu6LNNCOg8%20nHuK4N7O1pPze9WVfcwbOfZ5mavt+cs/rTbd8rb/TBjTgz/xw9jqCMUX/v1J77a33epDrwSGdkdX%20OyeNsYoTY/NRr6ynhJ2F/+gqen54XgdvpKgvk8a7Y0701vPuk9tgHt6HHAcHMxtN3+rw5kgJ+wu/%20NTraLn/7qPbo6IHP68C4tMn6iBCqnVvdKCJR/ZmQuz2woSUEvMoEQghCCAghCCEghCCEgBCCEAJC%20CEIICCEIISCEIISAEIIQAkIIXy5ojZmCGxI09lTIOntuzfcXKff/zL1DtISgOwoIIQghIIQghMBZ%20MpfBLzhMn1v4guXc2o8x5vBL3yFaQtAdBYQQhBAQQhBCoK3cTr2Dg8UzBrX737cY/MkZL3YMThIM%20/p8FJ3IK7oqrJQQhBCEEhBCEEBBCuKeHKvjXjNmIfrmD74OXOWMuREsICCEIISCEIISAEMIXM0Wx%20b3BhosGdG2YstTTj7OYttIQghIAQghACQghCCHyk3BRF7vj1jCH13NWfwpZaCvvgvm+GQ0sIQghC%20CAghCCEghHBPmVMUuXsUzyh82K4Vq8LO3v/Bhb0CoiUEhBCEEBBCEEJACOFygqYo7ry2T+4WETPO%20PviT7hAtIQghIIQghIAQghACPz8/S7Wh4Rkj3WH7XfcXaUaF5M5bFKzPq8yaaAlBdxSEEBBCEEJA%20COGegt6iCFvCKGz0PGyUP2zov7+cMz7igruCawlBdxQQQhBCQAhBCIGpyu1FEbY39YzD+y9z8CcL%20LotUsObD7jotIeiOAkIIQggIIQghcEDmXhRhv7qeO/EwY+y+v0gzBt9zZyO+b7dtLSEIIQghIIQg%20hIAQwj0tl9imuOB+DIOFD9ugot+Mqiv4yoK3KAAhBCEEhBCEEBBCKOJRrUC5g+9hh4dd++AV5W4m%20cZXDtYSgOwoIIQghIIQghMABmdtlDwqbOcitkNzLnLGtd//hgzdD2OFaQtAdBYQQhBAQQhBC4IBy%20Cz1delGmsMIPTvnMeLEjbC4kt0K0hKA7CgghCCEghCCEwFnsRZFz9kG5J5pRS2E3g5YQEEIQQkAI%20QQgBIYQiMhd6GpxOuMpQ9YwR+YKzJoPXPmNFqRl3nZYQdEcBIQQhBIQQhBA4y+O6RS/4JkG/wTHx%20sK0XcudCZpw9dzZCSwi6o4AQghACQghCCPzJnKLIXX8p9zJzK2SwlsLqM+zavUUBuqOAEIIQAkII%20QgjEC5qiuPQmDWFLA+UO/c9YFqngCyhhi1xpCUF3FBBCEEJACEEIgbbMvSgGzfit/0vvyx32weVO%20OM2YNcmdt9ASgu4oCCEghCCEgBDCPWUu9GSU/3CFDNZn7oxR7gso9qIAhBCEEBBCEEJACKGIa2yX%20nbuyUH+RVhXc2rr/RIMbaYRV8oz61BKC7igghCCEgBCCEAJTLTEjtjPWCwr7xfncxY4Gr/0qn2ZY%20hRR8z0ZLCLqjIISAEIIQAkII97QU/KXyzOqYsApQ2PTMTTbSyK0lLSHojgJCCEIICCEIIXCWC2+X%20PWhwnaiwDRVmbCYRNhsRVqSw1bS0hKA7CgghCCEghCCEwFnKbZc9Q9iA/uDODWEVEjaVElak3DdI%20tISgOwoIIQghIIQghMAB5bbLLjjSHbaq0uDZc3fXCHsFZPBzL/hCj5YQhBCEEBBCEEJACOGeHqrg%20mIKbdedee+78ymDV5c5baAlBdxSEEBBCEEJACOGeTFHsm7HBcth2DoPlzC18/34huVtZaAlBdxQQ%20QhBCQAhBCIEDyk1RXOX9gFUzVqkaXCtpxvJNua6y4YeWEHRHASEEIQSEEIQQaMucoii4K0C/gltE%20hC1hlLuZxODhBecttISgOwpCCAghCCEghHBPS8FfKgctISCEIISAEIIQAkIIQggIIQghIIQghIAQ%20ghACQghCCAghCCEghCCEgBCCEAJCCEIICCEIISCEIISAEIIQAkIIQggIIQghIIRwGf8DRf3ThK9d%20jUAAAAAASUVORK5CYII="
+alt="Answer" />
+<figcaption aria-hidden="true">Answer</figcaption>
+</figure>
+<p><a href="https://toreply.univ-lille.fr/reponse_334">Answer link</a>
+<em>Key: tw</em></p>
 </section></section>
 <section>
 <section id="dask-and-machine-learning"
@@ -591,18 +611,18 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a h
 </section>
 <section id="dask-tutorial" class="slide level2">
 <h2>Dask Tutorial</h2>
-<p><a
-href="https://mybinder.org/v2/gh/dask/dask-tutorial/main?urlpath=lab">Just
-use the Dask tutorial in Binder</a></p>
+<p><a href="https://github.com/esarrazin/dask-tutorial">Dask
+tutorial</a></p>
 <p>Try to follow by order of importance:</p>
 <ul>
 <li>Dask Dataframes</li>
 <li>Distributed</li>
+<li>Delayed</li>
 <li>Parallel and Distributed Machine Learning</li>
 <li>Next, if you have more time
 <ul>
 <li>Array</li>
-<li>Bag (this should remind RDDs of Spark)</li>
+<li>Futures</li>
 </ul></li>
 </ul>
 </section>
@@ -614,7 +634,7 @@ class="slide level2">
 here</a></p>
 <p>or</p>
 <p><a
-href="https://github.com/SupaeroDataScience/OBD/blob/master/notebooks/Kubernetes_Daskhub.ipynb">Finish
+href="https://github.com/SupaeroDataScience/DE/blob/main/notebooks/Kubernetes_Daskhub.ipynb">Finish
 yesterday deployment</a> (needed for tomorrow).</p>
 </section></section>
 <section>
