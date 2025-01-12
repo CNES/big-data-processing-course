@@ -1,7 +1,7 @@
 ---
 title: SDD DE Data Distribution Course
 author: Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2024-01-08
+date: 2025-01
 ---
 
 # Welcome
@@ -36,8 +36,8 @@ By the end of this module, participants will be able to:
 - Since 2016: 
   - 6 years in CNES Computing Center team
   - 1 year of holydays
-  - 1 year in developping image processing tools
-  - 6 years of using Dask/Python on HPC and in the Cloud
+  - 2 year in developping image processing tools
+  - 7 years of using Dask/Python on HPC and in the Cloud
   - A bit of Kubernetes and Google Cloud
 - Before that: 5 years on Hadoop and Spark
 - Originally: Software developer (a lot of Java)
@@ -53,7 +53,7 @@ By the end of this module, participants will be able to:
 - Before that:
   - System Architect
   - 8 years as Software Enginner and Tech Lead (a lot of Java)
-  - 5 years as System & Network Technician
+  - 6 years as System & Network Technician
 
 :::
 ::::::::::::::
@@ -76,19 +76,6 @@ What is this course module main subject?
 
 # Program
 
-## Deployment & Intro to Kubernetes (3h)
-
-- MLOps: deploying your model as a Web App 
-- [Introduction to Orchestration](https://supaerodatascience.github.io/DE/slides/2_2b_orchestration.html)
-- [Introduction to Kubernetes](12_OrchestrationKubernetes.html)
-
-## Kubernetes hands on (3h)
-
-- Zero to Jupyterhub: deploy a Jupyterhub on Kubernetes
-- Deploy a Daskhub: a Dask enables Jupyterhub (for later use)
-
-[Slides](13_Dask_On_Cloud.html)
-
 ## Big Data & Distributed Computing (3h)
 
 - [Introduction to Big Data and its ecosystem (1h)](01_Introduction_Big_Data.html)
@@ -104,10 +91,26 @@ What is this course module main subject?
   - Hadoop legacy: Spark, Dask, Object Storage ...
 - [Object Storage (30m)](14_ObjectStorage.html)
 
-## Spark & Dask hands on (4h)
+## Deployment & Intro to Kubernetes (3h)
+
+- MLOps: deploying your model as a Web App 
+- [Introduction to Orchestration](https://supaerodatascience.github.io/DE/slides/2_2b_orchestration.html)
+- [Introduction to Kubernetes](12_OrchestrationKubernetes.html)
+
+## Kubernetes hands on (3h)
+
+- Zero to Jupyterhub: deploy a Jupyterhub on Kubernetes
+- Deploy a Daskhub: a Dask enables Jupyterhub (for later use)
+
+[Slides](13_Dask_On_Cloud.html)
+
+## Spark hands on (3h)
 
 - [Spark Introduction (30m)](03_Spark_Introduction.html)
 - Play with MapReduce through Spark (Notebook on small datasets) (1.5h)
+
+## Dask hands on (3h)
+
 - [Dask Introduction (30m)](22_Dask_Pangeo.html)
 - Dask tutorial (1.5h)
 
