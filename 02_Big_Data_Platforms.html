@@ -20,14 +20,18 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -482,7 +486,6 @@ Spark job.</p>
 <p>Let’s say you want to train a ML model every time a text file is
 updated on a website and evaluate it next.</p>
 <p>You’ll need to:</p>
-<div>
 <ul>
 <li class="fragment">Periodically poll the website for new data</li>
 <li class="fragment">Launch your model training when new text file is
@@ -491,7 +494,6 @@ availaible</li>
 <li class="fragment">Push the evaluation result somewhere you can see
 it</li>
 </ul>
-</div>
 </section>
 <section id="processing-pipelines" class="slide level2">
 <h2>Processing pipelines</h2>
@@ -767,7 +769,7 @@ alt="Jean-Zay supercomputer" />
 <col style="width: 18%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Rank</th>
 <th>System</th>
 <th>Cores</th>
@@ -777,7 +779,7 @@ alt="Jean-Zay supercomputer" />
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>1</td>
 <td>Frontier - United States</td>
 <td>8,699,904</td>
@@ -785,7 +787,7 @@ alt="Jean-Zay supercomputer" />
 <td>1,679.82</td>
 <td>22,703</td>
 </tr>
-<tr class="even">
+<tr>
 <td>2</td>
 <td>Aurora - United States</td>
 <td>4,742,808</td>
@@ -793,7 +795,7 @@ alt="Jean-Zay supercomputer" />
 <td>1,059.33</td>
 <td>24,687</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>4</td>
 <td>Supercomputer Fugaku - Japan</td>
 <td>7,630,848</td>
@@ -801,7 +803,7 @@ alt="Jean-Zay supercomputer" />
 <td>537.21</td>
 <td>29,899</td>
 </tr>
-<tr class="even">
+<tr>
 <td>5</td>
 <td>LUMI - Finland</td>
 <td>2,752,704</td>
@@ -809,7 +811,7 @@ alt="Jean-Zay supercomputer" />
 <td>531.51</td>
 <td>7,107</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>17</td>
 <td>Adastra - France</td>
 <td>319,072</td>
@@ -817,7 +819,7 @@ alt="Jean-Zay supercomputer" />
 <td>61.61</td>
 <td>921</td>
 </tr>
-<tr class="even">
+<tr>
 <td>167</td>
 <td>Jean Zay - France</td>
 <td>93,960</td>

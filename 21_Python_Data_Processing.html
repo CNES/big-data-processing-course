@@ -19,14 +19,18 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -887,34 +891,34 @@ data-src="images/conda_logo.svg" height="100" /></p>
 <p>Difference between Conda and Pip according to Anaconda.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th></th>
 <th>conda</th>
 <th>pip</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>manages</td>
 <td>binaries</td>
 <td>wheel or source</td>
 </tr>
-<tr class="even">
+<tr>
 <td>can require compilers</td>
 <td>no</td>
 <td>yes</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>package types</td>
 <td>any</td>
 <td>Python-only</td>
 </tr>
-<tr class="even">
+<tr>
 <td>create environment</td>
 <td>yes, built-in</td>
 <td>no, requires virtualenv or venv</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>dependency checks</td>
 <td>yes</td>
 <td>no</td>

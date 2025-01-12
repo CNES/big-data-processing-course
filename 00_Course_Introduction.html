@@ -20,8 +20,11 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
@@ -81,37 +84,37 @@ Dask</li>
 <h2>Typical daily schedule</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Time slot</th>
 <th>Content</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>9:00-10:30</td>
 <td>Slides, tutorial or exercises</td>
 </tr>
-<tr class="even">
+<tr>
 <td>10:30-10:45</td>
 <td>Coffee Break</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>10:45-12:15</td>
 <td>Slides, tutorial or exercises</td>
 </tr>
-<tr class="even">
+<tr>
 <td>12:15-13:30</td>
 <td>Lunch (I know it’s a bit short)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>13:30-15:15</td>
 <td>Slides, tutorial or exercises (not nap)</td>
 </tr>
-<tr class="even">
+<tr>
 <td>15:15-15:30</td>
 <td>Coffee Break (we may also make two breaks)</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>15:30-17:15</td>
 <td>Slides, tutorial or exercises (last session, at last)</td>
 </tr>
