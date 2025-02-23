@@ -1,7 +1,7 @@
 ---
 title: Python for Distributed Processing 
 author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2024-01
+date: 2025-02
 ---
 
 # Parallel algorithm concepts
@@ -472,12 +472,4 @@ Population based training of neural networks (Deepmind)
 ## Let's try
 
 [Parallel tutorials](https://github.com/esarrazin/parallel-cookbook)
-
-Try to follow by order of importance:
-
-- Multiprocessing
-- Scikit-learn
-- Numpy
-
-
 
