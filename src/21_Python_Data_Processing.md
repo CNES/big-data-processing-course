@@ -1,7 +1,7 @@
 ---
 title: The rise of the Python ecosystem for Data Processing 
 author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2024-01
+date: 2025-02
 ---
 
 # Data Science programming languages
@@ -147,19 +147,6 @@ Matlab (and equivalent Scilab)
 
 ![](images/kaggle_survey_2022_ide.png)
 
-## Quizz
-
-What is the most used language (in Data Science)?
-
-- Answer A: R
-- Answer B: Go
-- Answer C: Python
-- Answer D: Matlab
-
-![Answer](data:image/png;base64,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)
-
-[Answer link](https://toreply.univ-lille.fr/reponse_414) _Key: ay_
-
 # Python scientific ecosystem{background-image=https://jupytearth.org/_images/python-stack.png}
 
 # Core (Numpy, SciPy, Pandas ...)
@@ -298,19 +285,6 @@ pd.describe()
 :::
 ::::::::::::::
 
-## Quizz
-
-Which tools allows manipulating tabular data?
-
-- Answer A: Numpy
-- Answer B: Xarray
-- Answer C: Pandas
-- Answer D: Scipy
-
-![Answer](data:image/png;base64,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)
-
-[Answer link](https://toreply.univ-lille.fr/reponse_830) _Key: qa_
-
 # Visualization
 
 ## Landscape
@@ -443,19 +417,21 @@ clf.fit(X, y)
 
 ## Sickit Learn
 
-![](https://scikit-learn.org/stable/_static/ml_map.png){width=60%}
+![](images/ml_map.svg){width=60%}
 
-## TensorFlow, Keras
+## Pytorch
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-![](images/TFLogo.png){height=100px}
-![](https://keras.io/img/logo.png){height=100px}
+![](images/Pytorch_logo.png){height=100px}
 
 - Deep Learning on GPU with no previous knowledge
-- Keras on top of Tensorflow
-- Tensorflow complete platform, with TensorBoard and other tools
+- Additional librairies:
+    * pytorch-lightning
+    * pytorch3d
+    * tensorboard
+    * keras (>=3)
 
 :::
 ::: {.column width="50%"}
@@ -464,16 +440,6 @@ clf.fit(X, y)
 
 :::
 ::::::::::::::
-
-## Pytorch
-
-![](images/Pytorch_logo.png){height=100px}
-
-- Deep Learning on GPU with no previous knowledge
-- Always trolls about Keras/TF vs PyTorch
-- Additional librairies:
-    * pytorch-lightning
-    * pytorch3d
 
 ## Gradient boosting algorithms
 
@@ -537,19 +503,6 @@ clf.fit(X, y)
 
 ![](images/mlflow_tracking.jpeg)
 
-## Quizz
-
-Which is the best Deep Learning library in Python?
-
-- Answer A: Sickit-Learn
-- Answer B: Keras
-- Answer C: TensorFlow
-- Answer D: PyTorch
-- Answer E: XGBoost
-
-![Answer](data:image/png;base64,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)
-
-[Answer link](https://toreply.univ-lille.fr/reponse_971) _Key: ca_
 
 # Others scientific libraries
 
@@ -710,23 +663,25 @@ shapely.contains(polygon, geoms)
 
 # Packaging
 
-## Pip / Conda
+## Pip / Conda / Pixi
 
 ![](images/pypilogo.svg){height=100px}
 ![](images/conda_logo.svg){height=100px}
+![](images/pixi_logo.png){height=100px}
 
 - Package libraries
 - Make them available on repositories
 - Build environments automatically
 
-## Packaging: Pip / Conda
+## Packaging: Pip / Conda / Pixi
 
 ![](images/pypilogo.svg){height=100px}
 ![](images/conda_logo.svg){height=100px}
+![](images/pixi_logo.png){height=100px}
 
 Difference between Conda and Pip according to Anaconda.
 
-|     | conda | pip |
+|     | conda / pixi | pip |
 |-----|-------|-----|
 | manages | binaries | wheel or source |
 | can require compilers | no | yes |
@@ -750,9 +705,5 @@ Difference between Conda and Pip according to Anaconda.
 
 [Pandas tutorial](https://github.com/esarrazin/pandas-cookbook)
 
-Follow this first tutorial at least till chapter 6. 
+[Xarray tutorial](https://github.com/esarrazin/xarray-cookbook)
 
-[Scikit-learn tutorial](https://github.com/INRIA/scikit-learn-mooc)
-
-See the instruction to run the notebooks locally [here](https://github.com/INRIA/scikit-learn-mooc/blob/main/local-install-instructions.md)
-If you have time, go through part "The predictive modeling pipeline" with notebooks 01 to 03. You can use the [online book](https://inria.github.io/scikit-learn-mooc) 

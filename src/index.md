@@ -46,7 +46,7 @@ Includes Kubernetes exercices.
 
 [The rise of the Python ecosystem for Data Processing](21_Python_Data_Processing.html)
 
-Includes [Pandas library tutorial](https://github.com/esarrazin/pandas-cookbook), [Scikit-learn mooc](https://github.com/INRIA/scikit-learn-mooc/)
+Includes [Pandas library tutorial](https://github.com/esarrazin/pandas-cookbook), [Xarray library tutorial](https://github.com/esarrazin/xarray-cookbook/)
 
 [Distributed processing](23_Distributed_Processing.html)
 
