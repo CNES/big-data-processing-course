@@ -162,7 +162,7 @@ What is this course module main subject?
 - [Dask processing framework](25_Dask.html)
 - Includes [Dask tutorial](https://github.com/dask/dask-tutorial).
 
-## Day 4: Evaluation
+## Day 5: Evaluation
 
 - [Final Evaluation](30_Evaluation.html)
   - Prerequisite: Pangeo platform deployed before (on day 2 and 3)
