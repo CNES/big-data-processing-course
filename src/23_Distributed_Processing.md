@@ -19,7 +19,7 @@ date: 2025-02
 
 - **CPU bound**: the time for executing a task is determined principally by the speed of the CPU
 - **I/O bound**: the time for executing a task is determined principally by the period spent waiting for input/output operations to be completed
-- **Memeory bound**: the time for executing a task is determined principally by the data access in memeory 
+- **memory bound**: the time for executing a task is determined principally by the data access in memory 
 
 ## Several kind of problems
 
@@ -31,7 +31,7 @@ date: 2025-02
 
 In addition to paying attention to the resources consumed in terms of memory and computing time, it is also necessary to take into account:  
 
-- Latency / Communication between different processors: shared memeory, message passing
+- Latency / Communication between different processors: shared memory, message passing
 - Load balance
 
 ## Granularity
@@ -53,8 +53,8 @@ In addition to paying attention to the resources consumed in terms of memory and
 
 ## Scalability
 
-A system is scalable is adding a resource reduces the computation time. 
-You want to be abe to reduce the runtime by a factor *N* when using *N* nodes.
+A system is scalable if adding a resource reduces the computation time. 
+You want to be able to reduce the runtime by a factor *N* when using *N* nodes.
 
 ## Data parallelism vs Task parallelism
 
@@ -96,7 +96,7 @@ Example process an array or a matrices by working on each element in parallel.
 ### Threads
 
 - A thread is a subset of the process.
-- A Thread exists within a process — every process has at least one. 
+- A thread exists within a process — every process has at least one. 
 - Threads share the process's resources, including memory and open files. This makes for efficient, but potentially problematic, communication.
 
 :::
@@ -214,7 +214,7 @@ if __name__ == '__main__':
 
 - High-level interface for running concurrent tasks
 - Abstraction for managing pool of threads or processes
-- More limited interface than usung directly multiprocessing module
+- More limited interface than using directly multiprocessing module
 
 :::
 ::: {.column width="60%"}
@@ -285,7 +285,7 @@ def monte_carlo_pi(nsamples):
 - Just-in-time compilation implies that the code is compiled during the first call of the function
 - JIT compilation takes time
 - Numba caches the machine code version of the function for the particular types of arguments presented
-- Usefull if the function is called several times
+- Useful if the function is called several times
 
 :::
 ::: {.column width="60%"}
