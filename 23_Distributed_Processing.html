@@ -135,8 +135,8 @@ determined principally by the speed of the CPU</li>
 <li><strong>I/O bound</strong>: the time for executing a task is
 determined principally by the period spent waiting for input/output
 operations to be completed</li>
-<li><strong>Memeory bound</strong>: the time for executing a task is
-determined principally by the data access in memeory</li>
+<li><strong>memory bound</strong>: the time for executing a task is
+determined principally by the data access in memory</li>
 </ul>
 </section>
 <section id="several-kind-of-problems" class="slide level2">
@@ -157,8 +157,8 @@ class="slide level2">
 memory and computing time, it is also necessary to take into
 account:</p>
 <ul>
-<li>Latency / Communication between different processors: shared
-memeory, message passing</li>
+<li>Latency / Communication between different processors: shared memory,
+message passing</li>
 <li>Load balance</li>
 </ul>
 </section>
@@ -209,8 +209,8 @@ fine-grained and coarse-grained parallelism</li>
 </section>
 <section id="scalability" class="slide level2">
 <h2>Scalability</h2>
-<p>A system is scalable is adding a resource reduces the computation
-time. You want to be abe to reduce the runtime by a factor <em>N</em>
+<p>A system is scalable if adding a resource reduces the computation
+time. You want to be able to reduce the runtime by a factor <em>N</em>
 when using <em>N</em> nodes.</p>
 </section>
 <section id="data-parallelism-vs-task-parallelism" class="slide level2">
@@ -264,7 +264,7 @@ resources; in particular, each process has its own memory space.</li>
 <h3 id="threads">Threads</h3>
 <ul>
 <li>A thread is a subset of the process.</li>
-<li>A Thread exists within a process — every process has at least
+<li>A thread exists within a process — every process has at least
 one.</li>
 <li>Threads share the process’s resources, including memory and open
 files. This makes for efficient, but potentially problematic,
@@ -428,7 +428,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a hr
 <ul>
 <li>High-level interface for running concurrent tasks</li>
 <li>Abstraction for managing pool of threads or processes</li>
-<li>More limited interface than usung directly multiprocessing
+<li>More limited interface than using directly multiprocessing
 module</li>
 </ul>
 </div><div class="column" style="width:60%;">
@@ -503,7 +503,7 @@ the first call of the function</li>
 <li>JIT compilation takes time</li>
 <li>Numba caches the machine code version of the function for the
 particular types of arguments presented</li>
-<li>Usefull if the function is called several times</li>
+<li>Useful if the function is called several times</li>
 </ul>
 </div><div class="column" style="width:60%;">
 <div class="sourceCode" id="cb6"><pre
