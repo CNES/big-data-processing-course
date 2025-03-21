@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout our files
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: mkdir output && cp -r images output/
       # Just a test for example build.
       - uses: docker://pandoc/latex:latest
@@ -18,7 +18,7 @@ jobs:
       - uses: docker://pandoc/latex:latest
         with:
           args: -s -o output/index.html -f markdown src/index.md
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: cache-html
         with:
           path: output/*
@@ -49,7 +49,7 @@ jobs:
     needs: [build_index]
     steps:
       # Checkout our files
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: mkdir output
       # Build slidedeck
       - uses: docker://pandoc/latex:latest
@@ -58,7 +58,7 @@ jobs:
             -t revealjs -s src/${{ matrix.slides }}.md -o output/${{ matrix.slides }}.html
             -V theme=solarized -V minScale=0.1 -V width=1800 -V height=900
             -V background-image=images/background-logo.png
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: cache-html
         with:
           path: output/*
@@ -89,7 +89,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout our files
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: mkdir output_pdf && cp -r images output_pdf/
       # Build slidedeck
       - uses: docker://pandoc/latex:latest
@@ -97,7 +97,7 @@ jobs:
           args: >- # allows you to break string into multiple lines
             -t beamer -s src/${{ matrix.slides }}.md -o output_pdf/${{ matrix.slides }}.pdf
             -V theme:Warsaw --verbose
-      - uses: actions/cache@v2
+      - uses: actions/cache@v4
         id: cache-pdf
         with:
           path: output_pdf/*
@@ -108,8 +108,8 @@ jobs:
     needs: [build_slides]
     steps:
       # Checkout our files
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
         id: cache-html
         with:
           path: output/*
@@ -129,8 +129,8 @@ jobs:
     needs: [build_slides_pdf]
     steps:
       # Checkout our files
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
         id: cache-pdf
         with:
           path: output_pdf/*
