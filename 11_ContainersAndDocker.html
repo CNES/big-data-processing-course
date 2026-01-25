@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d’Etudes Spatiales - French Space Agency)">
-  <meta name="dcterms.date" content="2024-01-08">
+  <meta name="dcterms.date" content="2026-01-01">
   <title>Containers and Docker</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -109,7 +109,7 @@
   <h1 class="title">Containers and Docker</h1>
   <p class="author">Guillaume Eynard-Bontemps, Hugues Larat, CNES
 (Centre National d’Etudes Spatiales - French Space Agency)</p>
-  <p class="date">2024-01-08</p>
+  <p class="date">2026</p>
 </section>
 
 <section>
@@ -234,12 +234,11 @@ needs to run (system, apps, dependencies)</li>
 </ul>
 <figure>
 <img
-data-src="data:image/png;base64,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"
-alt="Answer" />
-<figcaption aria-hidden="true">Answer</figcaption>
+data-src="https://cdn.strawpoll.com/images/polls/qr/1MnwklJd1n7.png"
+alt="https://strawpoll.com/1MnwklJd1n7" />
+<figcaption
+aria-hidden="true">https://strawpoll.com/1MnwklJd1n7</figcaption>
 </figure>
-<p><a href="https://toreply.univ-lille.fr/reponse_827">Answer
-link</a></p>
 </section></section>
 <section>
 <section id="docker" class="title-slide slide level1">
@@ -418,12 +417,11 @@ height="200" /></p>
 </ul>
 <figure>
 <img
-data-src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAIAAAD2HxkiAAAGr0lEQVR42u3d226rOhQF0M0R///LOQ+VoighhOKui8MYL5WatoBh1g4r2MvtdvsH1PlPE4AQwqWtP1+WZbl/q3aA+rMn0fvweLyPR/3u+zl78rStzZde97DDWWPoGrjdbo/XfUIG9jeRE8J323r6TvTO7LT88ZOS2WKEDEefTuG7DiHN7Xbrcz2FtsZOy3c7KWQMR0c6itfh0JHB3ub/7/sPvOZwZ2x278znGkv/7PayLK/d3c5LukE3ZjZO/1PAHr//9OpjL7fZ430ccW32CT8Xa3l38dQCv+ppX7O085IECuG/346XBkeYH7fVZNj2tBsj/8g+/t+RwO8cjp44qZuX+30odaSL+zInWu8xuvch6M5LEvjNIdwMz7lr7vWd3uMFROY7TyYYjm6+9b/fHnj3Vmdz+HS/s3c8yUd++N17zoaX+6+Ofee4dl6SwC/8r7r5Fut15PPv4Sbku8LxTkH5XBn63R3XnVHZwWs0olh/7gMP54r1QviFIcRAESGEq74n1AQghCCEgBCCEAJCCEIICCEIISCEIISAEIIQAkIIQggIIQghIIQghECcNWczDRcz2ZlYvmrrtS1/boa4/L9Ze4XoCcFwFBBCEEJACEEIgb+yFm674W362p1vuJ/vlqDM+fWprxA9IRiOAkIIQggIIQghsG/ttkODN4sjbmoff95i8CcjHuwYLBIM/s2GhZyGS1PrCUEIQQgBIQQhBIQQrmnVBI8iqhHH1d58HzzMiFqInhAQQhBCQAhBCAEhhC+mRPHZ4MREtSs3DG5d3UJPCEIICCEIISCEIIRAkHYlitr71xG31Adv/Uf8zbTJo2ZZBURPCIajgBCCEAJCCEII5KssUdSuURyx82mrVjT8SVeInhCEEBBCEEJACEEIgV9JKlGY2yehPdOezHCF6AlBCAEhBCEEhBCEEBi3dLs1HLFk9NQTE6UtJpF2jtLas3b5cT0hGI4CQghCCAghCCGwL+kpirQP+EdUI2qrOIPHHnHiBnc+4gqJKOToCcFwFBBCEEJACEEIgVBJT1FE1APSqhENb3/Psqj4LJWD2vbUE4LhKAghIIQghIAQwjVVrkVRewO6tmoyi+OtVFsHGtwlPSEYjgJCCEIICCEIIZBvLdx22r37tLUoIlbCSFtdY3DereMtn3YxNJzTSU8IhqOAEIIQAkIIQgjcrd12KOJBhKmfohh8jqF2NYiL/LqeEAxHASEEIQSEEIQQOKFyuexNDR8aGDyitAZJO3GbuzR44iKqUGm/ricEw1FACEEIASEEIQROWKZeKaFda2Z9GD9iQqrBDUWUfNKWnVCiAMNRQAhBCAEhBCEE8s1RoqhdirnhEw+1G4o4R2kXg54QEEIQQkAIQQgBIYQmkkoUEQtB57VR6T3xtBW8B4+o4WISgw1iLQowHAWEEIQQEEIQQiBU5VMUDReoOL71iGNvePd8ljUzahcm0ROC4SgghCCEgBCCEAInfNtaFFM/hLGpdj2GWZaIqJ3kSk8IhqOAEIIQAkIIQgicsOZs5iJzJQ3u/CzViOM/WfsASkTT6QnBcBQQQhBCQAhBCIG/sn7Z8dQuxVy7HsPgYdbOpnW8kSOqJrV1Cz0hGI6CEAJCCEIICCFcU2WJonZmoYhb/xFPUUy9Ykfa6WhYB9ITguEoIIQghIAQghAC++Z4iqJ2ZqHju7QprW5xfJdqn42IaOTB9tQTguEoIIQghIAQghAC+dYrHGTELEARlYNNEZWYiCczIs7RYCtFHLueEAxHASEEIQSEEIQQ+CtLww+VVzZHwP3riEcWaqeESmu6iA0pUQBCCEIICCEIISCE0ETSUxS18wVtql1LefBvRjzYEVGNiDii42dz8GLQE4LhKCCEIISAEIIQAqHaLZcdYZaJidLqFhEnLm2mpsHTEfEEiZ4QDEcBIQQhBIQQhBA4od1aFBe5091wUqa0/axdBLvhAz16QhBCEEJACEEIASGEa1o1wUeD0w2llROO/3pEgwyWPSKOKKISoycEw1FACEEIASEEIQT+ihLFZ2lraDfcz9qdH1wvJG0pCz0hGI4CQghCCAghCCFwQrsSRe3N4sGP2KctUBEx/1LD0zHYyLUrTOgJwXAUEEIQQkAIQQiBfZUlioarAhzXcImItCmMaheTGPz1hnULPSEYjoIQAkIIQggIIVzT0vBD5aAnBIQQhBAQQhBCQAhBCAEhBCEEhBCEEBBCEEJACEEIASEEIQSEEIQQEEIQQkAIQQgBIQQhBIQQhBAQQhBCQAhBCAEhBCEEhBCm8T/H3Ih2bleqngAAAABJRU5ErkJggg=="
-alt="Answer" />
-<figcaption aria-hidden="true">Answer</figcaption>
+data-src="https://cdn.strawpoll.com/images/polls/qr/BDyNzM644yR.png"
+alt="https://strawpoll.com/BDyNzM644yR" />
+<figcaption
+aria-hidden="true">https://strawpoll.com/BDyNzM644yR</figcaption>
 </figure>
-<p><a href="https://toreply.univ-lille.fr/reponse_887">Answer
-link</a></p>
 </section></section>
 <section>
 <section id="hands-on-docker" class="title-slide slide level1">
