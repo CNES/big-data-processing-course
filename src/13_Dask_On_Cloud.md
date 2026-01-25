@@ -1,7 +1,7 @@
 ---
 title: Deploy Data processing platform on the Cloud
 author: Guillaume Eynard-Bontemps, Hugues Larat, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2024-01-08
+date: 2026
 ---
 
 # Zero to Jupyterhub

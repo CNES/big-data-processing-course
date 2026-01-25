@@ -1,7 +1,7 @@
 ---
 title: Python for Distributed Processing 
 author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National d'Etudes Spatiales - French Space Agency)
-date: 2025-02
+date: 2026
 ---
 
 # Parallel algorithm concepts
