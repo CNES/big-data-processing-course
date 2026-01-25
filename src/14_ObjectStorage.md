@@ -40,9 +40,7 @@ What makes object storage efficient? (multiple choices)
 - Answer D: POSIX API
 - Answer E: Dedicated API developed for simple transactions
 
-![Answer](https://cdn.strawpoll.com/images/polls/qr/6QnMQkd2bne.png)
-
-[Answer link](https://strawpoll.com/6QnMQkd2bne)
+![https://strawpoll.com/6QnMQkd2bne](https://cdn.strawpoll.com/images/polls/qr/6QnMQkd2bne.png)
 
 # Processing and Cloud Optimized datasets
 
@@ -186,6 +184,5 @@ What is Cloud Optimized?
 
 Object storage is always performant for scientific data processing.
 
-![Answer](https://cdn.strawpoll.com/images/polls/qr/kjn1DxzMjyQ.png)
+![https://strawpoll.com/kjn1DxzMjyQ](https://cdn.strawpoll.com/images/polls/qr/kjn1DxzMjyQ.png)
 
-[Answer link](https://strawpoll.com/kjn1DxzMjyQ)
