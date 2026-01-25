@@ -20,12 +20,12 @@ date: 2026
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
-![](images/a-day-in-data.jpg){width="40%"}
+![](images/a-day-in-data.jpg)
 
 :::
 ::: {.column width="50%"}
 
-![](https://www.digitalsilk.com/wp-content/uploads/2024/12/how-much-data-is-generated-per-day-hero-image.jpg){width="40%"}
+![](https://www.digitalsilk.com/wp-content/uploads/2024/12/how-much-data-is-generated-per-day-hero-image.jpg)
 
 :::
 ::::::::::::::
