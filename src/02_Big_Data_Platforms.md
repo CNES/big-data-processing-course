@@ -532,23 +532,22 @@ python /data/training/SLURM/plot_template.py
 :::
 ::: {.column width="50%"}
 
-![Jean-Zay supercomputer](http://www.idris.fr/media/images/jean-zay-annonce-01.jpg?id=web%3Aeng%3Ajean-zay%3Acpu%3Ajean-zay-cpu-hw-eng)
+![Jean-Zay supercomputer](images/jean-zay-hpc.png)
 
 :::
 ::::::::::::::
 
 ## TOP500
 
-| Rank | System | Cores | Rmax (TFlop/s) | Rpeak (PFlop/s) | Power (kW) |
+| Rank | System | Cores | Rmax (PFlop/s) | Rpeak (PFlop/s) | Power (kW) |
 |------| -------|-------|----------------|-----------------|------------|
-| 1 | Frontier - United States  | 8,699,904 | 1,194.00 | 1,679.82 | 22,703 |
-| 2 | Aurora - United States | 4,742,808 	 | 585.34 | 1,059.33 | 24,687 |
-| 4 | Supercomputer Fugaku - Japan | 7,630,848 | 442.01 | 537.21 | 29,899 |
-| 5 | LUMI - Finland | 2,752,704 | 2379.70 | 531.51 | 7,107 |
-| 17 | Adastra - France | 319,072 | 46.10 | 61.61 | 921 |
-| 167 | Jean Zay - France | 93,960 | 4.48 | 7.35 | |
+| 1 | El Capitan - United States  | 11,340,000	 | 1,809.00 | 2,821.10 | 29,685 |
+| 4 | JUPITER Booster - Germany  | 4,801,344 | 1,000.00 | 1,226.28 | 15,794 |
+| 7 | Supercomputer Fugaku - Japan | 7,630,848 | 442.01 | 537.21 | 29,899 |
+| 26 | CEA-HE - France | 548,352 | 90.79 | 171.26 | 1,770 |
+| 290 | Jean Zay - France | 93,960 | 4.48 | 7.35 | |
 
-[Top 500 (november 2023)](https://top500.org/lists/top500/2023/11/)
+[Top 500 (november 2025)](https://top500.org/lists/top500/2025/11/)
 
 ## Big Data and Hadoop
 
@@ -628,7 +627,7 @@ Hence the cloud computing model...
 ### GPGPU
 
 - Specific hardware (expensive)
-- Really efficient for Deep Learning algorithms
+- Really efficient for Deep Learning algorithms (learning and inference)
 - Image processing, Language processing
 
 ## Quizz
