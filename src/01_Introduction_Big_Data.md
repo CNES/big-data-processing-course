@@ -17,7 +17,8 @@ date: 2026
 
 ## Some figures
 
-![Volume of data produced in a day in 2019 (source www.visualcapitalist.com)](images/a-day-in-data.jpg){width="50%"}
+![](images/a-day-in-data.jpg){width="50%"}
+![](https://www.digitalsilk.com/wp-content/uploads/2024/12/how-much-data-is-generated-per-day-hero-image.jpg)
 
 ## Some figures in sciences
 
@@ -78,7 +79,7 @@ Not a technology.
 
 ## Quizz
 
-What is the estimated size of the global data sphere?
+What is the estimated size of the global data sphere in 2025?
 
 - Answer A: 175 Petabytes
 - Answer B: 175 Exabytes
@@ -253,7 +254,7 @@ Data production or scientific exploration:
 
 ## Quizz
 
-What is the typical volumes of scientific Datasets (multiple choices)?
+What are the typical volumes of scientific Datasets (multiple choices)?
 
 - Answer A: MBs
 - Answer B: GBs

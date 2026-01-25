@@ -146,7 +146,7 @@ What is Cloud Optimized?
 :::
 ::: {.column width="50%"}
 
-![](https://staging.dev.element84.com/wp-content/uploads/2019/04/smiley_tiled.png)
+![](https://guide.cloudnativegeo.org/images/cog-diagram-2.png)
 
 :::
 ::::::::::::::

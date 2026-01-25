@@ -14,14 +14,15 @@ Harnessing the complexity of large amounts of data is a challenge in itself.
 
 But Big Data processing is more than that: originally characterized by the 3 Vs of Volume, Velocity and Variety, 
 the concepts popularized by Hadoop and Google require dedicated computing solutions (both software and infrastructure), 
-which will be explored in this module. We'll also take a dive in new programming and infrastructure technologies
-that emerged from these concepts.
+which will be explored in this module. 
+
+We'll also take a dive in new programming and infrastructure technologies that emerged from these concepts.
 
 ## Objectives
 
 By the end of this module, participants will be able to:
 
-- Understand the differences and usage between main distributed computing architectures (HPC, Big Data, Cloud, CPU vs GPGPU)
+- Understand the differences and usages of main distributed computing architectures (HPC, Big Data, Cloud, CPU vs GPGPU)
 - Implement the distribution of simple operations via the Map/Reduce principle in PySpark and Dask
 - Understand the principle of Kubernetes
 - Deploy a Big Data Processing Platform on the Cloud
@@ -77,6 +78,7 @@ What is this course module main subject?
 
 ## Big Data & Distributed Computing (3h)
 
+- [Current introduction (30min)](00_SDD_DE_Course_Introduction.html)
 - [Introduction to Big Data and its ecosystem (1h)](01_Introduction_Big_Data.html)
   - What is Big Data?
   - Legacy “Big Data” ecosystem
@@ -92,14 +94,15 @@ What is this course module main subject?
 
 ## Deployment & Intro to Kubernetes (3h)
 
-- MLOps: deploying your model as a Web App 
+MLOps: deploying your model as a Web App 
+
 - [Introduction to Orchestration](https://supaerodatascience.github.io/DE/slides/2_2b_orchestration.html)
 - [Introduction to Kubernetes](12_OrchestrationKubernetes.html)
 
 ## Kubernetes hands on (3h)
 
 - Zero to Jupyterhub: deploy a Jupyterhub on Kubernetes
-- Deploy a Daskhub: a Dask enables Jupyterhub (for later use)
+- Deploy a Daskhub: a Dask enabled Jupyterhub (for later use)
 
 [Slides](13_Dask_On_Cloud.html)
 
@@ -113,11 +116,11 @@ What is this course module main subject?
   - Machine and Deep Learning (Sickit Learn, TensorFlow, Pytorch)
   - Jupyter notebooks, Binder, Google Colab
 - [Spark Introduction (30m)](03_Spark_Introduction.html)
-- Play with MapReduce through Spark (Notebook on small datasets) (1.5h)
+- Play with MapReduce using Spark (Notebook on small datasets) (1.5h)
 
 ## Distributed Processing and Dask hands on (3h)
 
-- [Manage large datasets(30m)](24_Large_Datasets.html)
+- [Manage large datasets (30m)](24_Large_Datasets.html)
 - [Dask Introduction (30m)](22_Dask_Pangeo.html)
 - Includes [Dask tutorial(2h)](https://github.com/dask/dask-tutorial).
 
@@ -127,7 +130,7 @@ What is this course module main subject?
   - Subject presentation
   - Everyone should have a Daskhub cloud platform setup or Dask on local computer
   - Get the data
-- Notebook with cell codes to fill or answers to give
+- Notebook with codes cell to fill and answers to give
   - Clean big amounts of data using Dask in the cloud or on a big computer
   - Train machine learning models in parallel (hyper parameter search)
   - Complete with yor own efforts!
@@ -145,4 +148,3 @@ What will we do today?
 ![Answer](https://cdn.strawpoll.com/images/polls/qr/xVg71DedQyr.png)
 
 [Answer link](https://strawpoll.com/xVg71DedQyr)
-

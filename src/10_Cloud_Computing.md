@@ -35,8 +35,7 @@ I took most of the content from theirs:
 :::
 ::: {.column width="70%"}
 
-![](https://www.datacenterknowledge.com/sites/datacenterknowledge.com/files/wp-content/uploads/2013/06/lulea-rows.jpg){width="35%"}
-![](https://www.datacenterknowledge.com/sites/datacenterknowledge.com/files/wp-content/uploads/2013/06/fb-lulea-external-fans.jpg){width="35%"}
+![](https://www.akita.co.uk/wp-content/uploads/2023/09/cloud-storage-facilities-1.jpg)
 
 (Facebook's data center & server racks)
 
@@ -45,7 +44,7 @@ I took most of the content from theirs:
 
 ## Google Cloud Data Center locations
 
-![Data Centers](https://cloud.google.com/images/locations/regions.png)
+![Data Centers](images/google-dc-map.png)
 
 ## Cloud Definition
 
@@ -226,13 +225,13 @@ What means IaaS?
 ## Public (European)
 
 ![](https://www.comptoir-hardware.com/images/stories/_logos/ovhcloud.png){width=20%}
-![](https://cloud.orange.com/ui/app/static/assets/brand/logo_header_login.png){width=20%}
+![](https://www.orange-business.com/sites/default/files/illustration-obs---cloud---infrastructures.png){width=20%}
 ![](images/open_telekom_cloud.png){width=20%}
 
 Academic, public founded:
 
 ![gaiax](https://gaia-x.eu/wp-content/uploads/2022/12/Gaia-X_Logo_Inverted_White_Transparent_210401-3-1000x687.png){width=20%}
-![EOSC](https://eosc-portal.eu/sites/all/themes/theme1/logo.png){width=20%}
+![EOSC](https://eosc.eu/wp-content/uploads/2023/08/EOSCA_logo.svg){width=20%}
 
 ## Private/on premise
 
