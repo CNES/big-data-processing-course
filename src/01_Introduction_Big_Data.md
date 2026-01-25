@@ -17,8 +17,18 @@ date: 2026
 
 ## Some figures
 
-![](images/a-day-in-data.jpg){width="50%"}
-![](https://www.digitalsilk.com/wp-content/uploads/2024/12/how-much-data-is-generated-per-day-hero-image.jpg)
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+![](images/a-day-in-data.jpg){width="40%"}
+
+:::
+::: {.column width="50%"}
+
+![](https://www.digitalsilk.com/wp-content/uploads/2024/12/how-much-data-is-generated-per-day-hero-image.jpg){width="40%"}
+
+:::
+::::::::::::::
 
 ## Some figures in sciences
 
@@ -247,7 +257,7 @@ Data production or scientific exploration:
 :::
 ::: {.column width="50%"}
 
-![Airplane Digital Twin](https://www.prolim.com/wp-content/uploads/2019/08/digital-twin.jpg)
+![Airplane Digital Twin](images/airplane-dt.png)
 
 :::
 ::::::::::::::
