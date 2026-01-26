@@ -96,8 +96,8 @@ What is this course module main subject?
 
 MLOps: deploying your model as a Web App 
 
-- [Introduction to Orchestration](https://supaerodatascience.github.io/DE/slides/2_2b_orchestration.html)
-- [Introduction to Kubernetes](12_OrchestrationKubernetes.html)
+- [Introduction to Orchestration](https://supaerodatascience.github.io/DE/2_2_orchestration.html)
+- [Introduction to Kubernetes](https://supaerodatascience.github.io/DE/2_2_orchestration.html)
 
 ## Kubernetes hands on (3h)
 
