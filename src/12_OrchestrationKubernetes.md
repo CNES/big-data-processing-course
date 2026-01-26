@@ -14,8 +14,8 @@ for their work on this subject.
 
 I took most of the content from theirs:
 
-- [https://supaerodatascience.github.io/DE/slides/1_5_orchestration.html](https://supaerodatascience.github.io/DE/slides/1_5_orchestration.html)
-- [https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/](https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/)
+- [https://supaerodatascience.github.io/DE/slides/1_5_orchestration.html](https://supaerodatascience.github.io/DE/2_2_orchestration.html)
+- [https://supaerodatascience.github.io/DE/slides/2_3_kubernetes.html#/](https://supaerodatascience.github.io/DE/2_2_orchestration.html)
 
 # Kubernetes
 
