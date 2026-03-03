@@ -153,7 +153,7 @@ The optimum format depends on:
 
 # Pandas and large datasets
 
-## Good pratices: Load less data
+## Good practices: Load less data
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -170,7 +170,7 @@ pd.read_parquet("timeseries_wide.parquet", columns=required_columns)
 :::
 ::::::::::::::
 
-## Good pratices: Use efficient datatypes
+## Good practices: Use efficient datatypes
 
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
@@ -250,9 +250,7 @@ for index_slice in index_slices:
 
 ## Let's try
 
-[Tutorial](https://github.com/esarrazin/large-dataset-cookbook)
+Clone [https://github.com/esarrazin/big-data-processing-course-tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
 
-
-
-
+Look at large dataset tutorial
 

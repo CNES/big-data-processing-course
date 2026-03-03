@@ -506,9 +506,10 @@ pip install dask-ml
 
 ## Dask Tutorial
 
-[Dask tutorial](https://github.com/esarrazin/dask-tutorial)
 
-Try to follow by order of importance:
+Clone [https://github.com/esarrazin/big-data-processing-course-tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
+
+Look at dask tutorial, try to follow by order of importance:
 
 - Dask Dataframes
 - Distributed

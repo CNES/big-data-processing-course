@@ -46,21 +46,21 @@ Includes Kubernetes exercices.
 
 [The rise of the Python ecosystem for Data Processing](21_Python_Data_Processing.html)
 
-Includes [Pandas library tutorial](https://github.com/esarrazin/pandas-cookbook), [Xarray library tutorial](https://github.com/esarrazin/xarray-cookbook/)
+Includes pandas and xarray tutorials in [tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
 
 [Distributed processing](23_Distributed_Processing.html)
 
-Includes [Parallel tutorials](https://github.com/esarrazin/parallel-cookbook)
+Includes parallel tutorial in [tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
 
 ### Day 4: Python for distributed processing
 
 [Manage large datasets](24_Large_Datasets.html)
 
-Includes [Large dataset tutorials](https://github.com/esarrazin/large-dataset-cookbook)
+Includes large dataset tutorial in [tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
 
 [Dask processing framework](25_Dask.html)
 
-Includes [Dask tutorial](https://github.com/esarrazin/dask-tutorial).
+Includes dask tutorial in [tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
 
 [If necessary, finish data processing platform deployment](13_Dask_On_Cloud.html)
 
