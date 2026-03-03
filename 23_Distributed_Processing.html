@@ -122,8 +122,8 @@ class="title-slide slide level1">
 <h2>Why parallelize an algorithm ?</h2>
 <ul>
 <li>To speed-up the execution (execute several fragments of code at the
-same time/ reduce latcency) and/or to distribute the requested
-ressources or tasks on several cpu/machines</li>
+same time/ reduce latency) and/or to distribute the requested resources
+or tasks on several cpu/machines</li>
 <li>You have to analyze our algorithm in order to know how
 parallelizable it is.</li>
 <li>Given problem, there may be different algorithms, which may be more
@@ -200,7 +200,7 @@ fine-grained and coarse-grained parallelism</li>
 <tbody>
 <tr>
 <td>Pros</td>
-<td>Possibility to use a lot of ressources</td>
+<td>Possibility to use a lot of resources</td>
 <td>Low communication and synchronization overhead</td>
 </tr>
 <tr>
@@ -333,7 +333,7 @@ class="title-slide slide level1">
 <h2>Parallel computing with Python</h2>
 <ul>
 <li>Python packages including parallelization in their
-processings/methods</li>
+processing/methods</li>
 <li>Python package dedicated to parallelization</li>
 </ul>
 </section>
@@ -359,8 +359,8 @@ Lock</li>
 <li>To be used only for dealing with I/O bound tasks</li>
 </ul>
 </section>
-<section id="built-in-mutliprocessing" class="slide level2">
-<h2>Built-in mutliprocessing</h2>
+<section id="built-in-multiprocessing" class="slide level2">
+<h2>Built-in multiprocessing</h2>
 <ul>
 <li>Python core package</li>
 <li>Spawning processes using an API similar to the threading module</li>
@@ -376,7 +376,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a hr
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> Pool(<span class="dv">5</span>) <span class="im">as</span> p:</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(p.<span class="bu">map</span>(f, [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span></code></pre></div>
 </section>
-<section id="built-in-multiprocessing" class="slide level2">
+<section id="built-in-multiprocessing-1" class="slide level2">
 <h2>Built-in multiprocessing</h2>
 <p>Exchanging objects between processes: Data serialization</p>
 <ul>
@@ -388,7 +388,7 @@ parallelization</li>
 <li>Limited to types handled by pickle module</li>
 </ul>
 </section>
-<section id="built-in-multiprocessing-1" class="slide level2">
+<section id="built-in-multiprocessing-2" class="slide level2">
 <h2>Built-in multiprocessing</h2>
 <p>Exchanging objects between processes:</p>
 <ul>
@@ -407,7 +407,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a hr
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    p2.join()   <span class="co"># Wait for all work to complete in both processes</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    total_result <span class="op">=</span> <span class="bu">sum</span>(sl)  <span class="co"># Consolidate the partial results now in sl</span></span></code></pre></div>
 </section>
-<section id="built-in-multiprocessing-2" class="slide level2">
+<section id="built-in-multiprocessing-3" class="slide level2">
 <h2>Built-in multiprocessing</h2>
 <p>Synchronization between processes using Lock</p>
 <div class="sourceCode" id="cb3"><pre
@@ -710,8 +710,9 @@ class="slide level2">
 </section>
 <section id="lets-try" class="slide level2">
 <h2>Let’s try</h2>
-<p><a href="https://github.com/esarrazin/parallel-cookbook">Parallel
-tutorials</a></p>
+<p>Clone <a
+href="https://github.com/esarrazin/big-data-processing-course-tutorials">https://github.com/esarrazin/big-data-processing-course-tutorials</a></p>
+<p>Look at parallel tutorial</p>
 </section></section>
     </div>
   </div>
