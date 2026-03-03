@@ -8,7 +8,7 @@ date: 2026
 
 ## Why parallelize an algorithm ?
 
-- To speed-up the execution (execute several fragments of code at the same time/ reduce latcency) and/or to distribute the requested ressources or tasks on several cpu/machines
+- To speed-up the execution (execute several fragments of code at the same time/ reduce latency) and/or to distribute the requested resources or tasks on several cpu/machines
 - You have to analyze our algorithm in order to know how parallelizable it is.
 - Given problem, there may be different algorithms, which may be more or less parallelizable. 
 
@@ -48,7 +48,7 @@ In addition to paying attention to the resources consumed in terms of memory and
 
 |     | Fine-grained | Coarse-grained |
 |-----|-------|-----|
-| Pros | Possibility to use a lot of ressources  | Low communication and synchronization overhead |
+| Pros | Possibility to use a lot of resources  | Low communication and synchronization overhead |
 | Cons | Increases the communication and synchronization overhead | Risks of load imbalance |
 
 ## Scalability
@@ -126,7 +126,7 @@ Distributed computing
 
 ## Parallel computing with Python
 
- - Python packages including parallelization in their processings/methods
+ - Python packages including parallelization in their processing/methods
  - Python package dedicated to parallelization
 
 ## A word on Python Global Interpreter Lock
@@ -142,7 +142,7 @@ Distributed computing
 - To be avoided in CPython implementation due to Global Interpreter Lock 
 - To be used only for dealing with I/O bound tasks
 
-## Built-in mutliprocessing
+## Built-in multiprocessing
 
 - Python core package
 - Spawning processes using an API similar to the threading module
@@ -471,5 +471,6 @@ Population based training of neural networks (Deepmind)
 
 ## Let's try
 
-[Parallel tutorials](https://github.com/esarrazin/parallel-cookbook)
+Clone [https://github.com/esarrazin/big-data-processing-course-tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
 
+Look at parallel tutorial

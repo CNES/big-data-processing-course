@@ -4,149 +4,6 @@ author: Guillaume Eynard-Bontemps and Emmanuelle Sarrazin, CNES (Centre National
 date: 2026
 ---
 
-# Data Science programming languages
-
-## R
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-- Programming language and free software environment
-- Open source
-- Interactive
-- Ecosystem
-  - Statistical computing
-  - Graphics, vizualisation
-  - Data analysis
-
-:::
-::: {.column width="50%"}
-
-![R Studio](https://www.rstudio.com/images/screenshots/rstudio-windows.png){width=80%}
-
-:::
-::::::::::::::
-
-## Julia
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](https://julialang.org/assets/infra/lorenz.gif)
-
-:::
-::: {.column width="50%"}
-
-- Fast: designed for high performance
-- Open source
-- Dynamically typed, interactive use
-- Ecosystem
-  - Scientific and parallel computing
-  - Visualisation and plotting
-  - Data science and machine learning
-
-
-:::
-::::::::::::::
-
-## C/C++
-
-- Static languages
-- Not much visualization
-- For under layers of use libraries
-- Easy to interface with Python (Cython, pybind11)
-
-## Lua
-
-- Lightweight, high-level, multi-paradigm programming language 
-- Designed primarily for embedded use in applications
-- Cross-platform
-- For under layers of use libraries
-- C API
-
-## Java
-
-- Static languages
-- Not much visualization
-- Not completely compatible with IEEE Standard 754 Floating Points Numbers
-
-## Matlab and others
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-![](https://fr.mathworks.com/help/matlab/learn_matlab/desktop.png)
-
-:::
-::: {.column width="50%"}
-
-Matlab (and equivalent Scilab)
-
-- Interactive
-- With IDE and plotting
-- Closed, not reproducible
-- For some researchers
-
-:::
-::::::::::::::
-
-## Python
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-- Created in 1991
-- Interpreted and so interactive language
-- Really simple syntax (Code readability)
-- Dynamically typed and garbage-collected
-- Supports multiple programming paradigms: 
-  - structured (particularly procedural), 
-  - object-oriented and 
-  - functional programming
-
-:::
-::: {.column width="50%"}
-
-![](images/python_logo.png){width=200px}
-
-:::
-::::::::::::::
-
-## Python
-
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-
-- High-level and general-purpose programming language
-- Many, many (many) libraries
-  - A lot of scientific ones!
-- Ecosystem
-  - Scientific and parallel computing
-  - Visualisation and plotting
-  - Machine Learning, Deep Learning
-  - Web developement
-
-:::
-::: {.column width="50%"}
-
-![](images/Python.png)
-
-:::
-::::::::::::::
-
-## Python the most used language?
-
-[comment]: # (https://insights.stackoverflow.com/trends)
-![](images/stackoverflow_trends.svg){width=65%}
-
-## Kaggle Languages Popularity
-
-![](images/kaggle_survey_2022_languages.png)
-
-## Kaggle IDE Popularity
-
-![](images/kaggle_survey_2022_ide.png)
-
 # Python scientific ecosystem{background-image=https://jupytearth.org/_images/python-stack.png}
 
 # Core (Numpy, SciPy, Pandas ...)
@@ -156,7 +13,7 @@ Matlab (and equivalent Scilab)
 :::::::::::::: {.columns}
 ::: {.column width="60%"}
 
-- Manipulate N-dimensionnal arrays
+- Manipulate N-dimensional arrays
 - Numerical computing tools :
     - math functions
     - linear algebra
@@ -273,14 +130,14 @@ pd.describe()
 
 ![](https://docs.xarray.dev/en/stable/_static/Xarray_Logo_RGB_Final.svg){height=100px}
 
-- Manipulate N-dimensionnal **labelled** arrays and **datasets**
+- Manipulate N-dimensional **labelled** arrays and **datasets**
 - Introduce dimensions, coordinates and attributes on top of Numpy
 - Borrows heavily from Pandas
 
 :::
 ::: {.column width="60%"}
 
-![](https://gdfa.ugr.es/python/climate_data/img/xarray2.png)
+![](https://docs.xarray.dev/en/stable/_images/dataset-diagram.png)
 
 :::
 ::::::::::::::
@@ -383,8 +240,8 @@ plt.show()
 
 ![](https://pyviz.org/_static/logo.png){height=100px}
 
-- **HoloViews**: Declarative objects for instantly visualizable data, building Bokeh plots from convenient high-level specifications
-- **GeoViews**: Visualizable geographic data that that can be mixed and matched with HoloViews objects
+- **HoloViews**: Declarative objects for instantly viewable data, building Bokeh plots from convenient high-level specifications
+- **GeoViews**: Viewable geographic data that that can be mixed and matched with HoloViews objects
 - **Panel**: Assembling objects from many different libraries into a layout or app, whether in a Jupyter notebook or in a standalone serveable dashboard
 - **Datashader**: Rasterizing huge datasets quickly as fixed-size images
 - **hvPlot**: Quickly return interactive HoloViews or GeoViews objects from your Pandas, Xarray, or other data structures
@@ -427,7 +284,7 @@ clf.fit(X, y)
 ![](images/Pytorch_logo.png){height=100px}
 
 - Deep Learning on GPU with no previous knowledge
-- Additional librairies:
+- Additional libraries:
     * pytorch-lightning
     * pytorch3d
     * tensorboard
@@ -583,6 +440,10 @@ shapely.contains(polygon, geoms)
 :::
 ::::::::::::::
 
+## Xarray Extension
+
+Like Pandas, there are xarray extensions like **rioxarray** which extends xarray with geospatial raster capabilities
+
 # Development Tools
 
 ## Jupyter (Lab and Notebook)
@@ -691,19 +552,50 @@ Difference between Conda and Pip according to Anaconda.
 
 # Others
 
-## Binder
+## Code check
 
-![](https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b)
+Python linters help to ensure that your code complies with coding standards, to identify potential errors, and to improve code readability
 
-> Turn a Git repo into a collection of interactive notebooks
+- **pylint**
+- **ruff**
+- **flake8**
 
-![](https://binderhub.readthedocs.io/en/latest/_images/architecture.png)
+## Code format
+
+- **black** 
+- **isort**
+- **ruff**
+
+## Type checker
+
+### Why 
+
+- to allow developers to optionally specify the types of variables and function signatures.
+- to improve code readability and maintainability
+
+### Examples
+
+- **mypy**
+- **jaxtyping**
+
+## Test
+
+### Why write tests
+
+- To verify that the software works as intended
+- To avoid non regressions,
+- To improve quality of your code
+
+### Test framework
+
+- **pytest**
+- **unittest**
 
 # Exercises
 
 ## Tutorials
 
-[Pandas tutorial](https://github.com/esarrazin/pandas-cookbook)
+Clone [https://github.com/esarrazin/big-data-processing-course-tutorials](https://github.com/esarrazin/big-data-processing-course-tutorials)
 
-[Xarray tutorial](https://github.com/esarrazin/xarray-cookbook)
+Look at pandas and xarray tutorials
 
