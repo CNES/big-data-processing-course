@@ -298,6 +298,37 @@ clf.fit(X, y)
 :::
 ::::::::::::::
 
+## Pytorch
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+
+### High-level libraries
+
+- **lightning**: Provides all the necessary features:
+    * Fine-grained control of epochs and validation cycles
+    * Optimizer and scheduler
+    * Checkpointing, Tensorboard interface
+    * Gradient clipping
+    * Distributed learning
+- **keras**: A high-level neural networks API written in Python which simplifies building and training deep learning models.
+
+:::
+::: {.column width="50%"}
+
+### Hyperparameter tuning
+
+- **Optima**
+- **Raytune**
+
+### Configuration management
+
+- **hydra**: Framework for managing complex configurations in Python applications through YAML files. Can be used for machine learning experiments and scalable applications.
+
+
+:::
+::::::::::::::
+
 ## Gradient boosting algorithms
 
 :::::::::::::: {.columns}
@@ -575,8 +606,9 @@ Python linters help to ensure that your code complies with coding standards, to 
 
 ### Examples
 
-- **mypy**
-- **jaxtyping**
+- **mypy**: static type checking
+- **jaxtyping**: static type checking for tensors
+- **typeguards**: dynamic type checking during test execution
 
 ## Test
 
