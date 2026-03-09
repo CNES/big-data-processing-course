@@ -13,7 +13,7 @@ date: 2026
 1,000,000,000,000 GB  
 1,000,000,000,000,000,000,000 B  
 
-![Evolution of the global datasphere size (IDC)](https://supaerodatascience.github.io/DE/slides/static/img/datasphere.png)
+![Global Data Volume Growth](image/datavolgrowth.png)
 
 ## Some figures
 
@@ -89,11 +89,11 @@ Not a technology.
 
 ## Quizz
 
-What is the estimated size of the global data sphere in 2025?
+What is the size of the global data sphere in 2025?
 
-- Answer A: 175 Petabytes
-- Answer B: 175 Exabytes
-- Answer C: 175 Zetabytes
+- Answer A: 181 Petabytes
+- Answer B: 181 Exabytes
+- Answer C: 181 Zetabytes
 
 ![Answer](https://cdn.strawpoll.com/images/polls/qr/YVyPv9qP4gN.png)
 
